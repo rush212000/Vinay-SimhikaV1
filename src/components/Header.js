@@ -20,7 +20,7 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed w-full px-4 lg:px-10 z-30 h-16 lg:h-20 flex items-center ${
+      className={`fixed w-full px-4 lg:px-10 z-30 h-16 lg:h-20 flex items-center justify-start ${
         isScrolled ? 'bg-black' : ''
       }`}
     >
@@ -45,13 +45,13 @@ const Header = () => {
             Our Event
           </Link>
           <Link to={'/portfolio'} className='hover:text-primary transition'>
-            Wedding Party
-          </Link>
-          <Link to={'/contact'} className='hover:text-primary transition'>
             Our Story
           </Link>
           <Link to={'/contact'} className='hover:text-primary transition'>
             Photos
+          </Link>
+          <Link to={'/contact'} className='hover:text-primary transition'>
+            FAQs
           </Link>
         </nav>
       </div>
