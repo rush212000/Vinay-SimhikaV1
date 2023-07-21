@@ -34,26 +34,41 @@ const Header = () => {
 
         {/* Nav - Initially hidden - show on desktop mode */}
         <nav
-          className={`hidden xl:flex flex-1 justify-center items-center gap-x-12 font-semibold ${
+          className={`hidden xl:flex flex-1 justify-center items-center gap-x-12 font-normal${
             isScrolled ? 'text-white' : 'text-white'
           }`}
         >
-          <Link to={'/'} className='hover:text-primary transition'>
+          <Link to={'/'} className='hover:text-primary transition' style={{ marginLeft: '-162px' }}>
             Home
           </Link>
-          <Link to={'/about'} className='hover:text-primary transition'>
+          <Link to={'/about'} className='hover:text-primary transition' style={{ marginLeft: '-25px' }}>
             Our Event
           </Link>
-          <Link to={'/portfolio'} className='hover:text-primary transition'>
+          <Link to={'/portfolio'} className='hover:text-primary transition' style={{ marginLeft: '-25px' }}>
             Our Story
           </Link>
-          <Link to={'/contact'} className='hover:text-primary transition'>
+          <Link to={'/contact'} className='hover:text-primary transition' style={{ marginLeft: '-25px' }}>
             Photos
           </Link>
-          <Link to={'/contact'} className='hover:text-primary transition'>
+          <Link to={'/contact'} className='hover:text-primary transition' style={{ marginLeft: '-25px' }}>
             FAQs
           </Link>
         </nav>
+        <div className="fixed top-5 right-20" style={{ zIndex: '1' }}>
+          <Link
+            to="/contact"
+            className="btn rounded-lg"
+            style={{
+              marginLeft: 'auto',
+              color: 'black',
+              width: '85px', // Adjust the width as desired
+              height: '20px', // Adjust the height as desired
+              fontSize: '12px', // Adjust the font size as desired
+            }}
+          >
+            RSVP
+          </Link>
+        </div>
       </div>
       {/* Socials */}
       <Socials />

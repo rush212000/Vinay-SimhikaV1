@@ -104,7 +104,7 @@ const Home = () => {
                 <h1
                   className="h1 text-center text-2xl font-semibold mb-4"
                   style={{
-                    fontSize: '30px',
+                    fontSize: '25px',
                     color: 'white',
                     fontWeight: 'normal',
                     fontFamily: 'adobe-garamond-pro',
@@ -118,7 +118,7 @@ const Home = () => {
                   style={{
                     fontFamily: 'shelby, sans-serif',
                     fontStyle: 'normal',
-                    fontSize: '100px',
+                    fontSize: '105px',
                     color: 'white',
                     fontWeight: '400',
                     textAlign: 'center',
@@ -129,7 +129,7 @@ const Home = () => {
                 <p
                   className="text-[15px] lg:text-[20px] font-primary mb-4 lg:mb-12 color: white"
                   style={{
-                    fontSize: '20px',
+                    fontSize: '25px',
                     color: 'white',
                     fontWeight: 'normal',
                     fontFamily: 'adobe-garamond-pro',
@@ -141,21 +141,6 @@ const Home = () => {
               </div>
             </div>
           </div>
-        </div>
-        <div className="fixed top-6 right-20" style={{ zIndex: '1' }}>
-          <Link
-            to="/contact"
-            className="btn rounded-lg"
-            style={{
-              marginLeft: 'auto',
-              color: 'black',
-              width: '85px', // Adjust the width as desired
-              height: '25px', // Adjust the height as desired
-              fontSize: '12px', // Adjust the font size as desired
-            }}
-          >
-            RSVP
-          </Link>
         </div>
       </section>
 
@@ -236,6 +221,11 @@ const Home = () => {
             With Lots of Love,
             <br />
             Vinay & Simhika
+            <br />
+            <br />
+            <br />
+            <br />
+            
           </div>
           </div>
       </section>
@@ -257,21 +247,8 @@ const Home = () => {
           {/* Content */}
           {/* Add your content here */}
         </div>
-        <div className="fixed top-6 right-20" style={{ zIndex: '1' }}>
-          <Link
-            to="/contact"
-            className="btn rounded-lg"
-            style={{
-              marginLeft: 'auto',
-              color: 'black',
-              width: '85px', // Adjust the width as desired
-              height: '25px', // Adjust the height as desired
-              fontSize: '12px', // Adjust the font size as desired
-            }}
-          >
-            RSVP
-          </Link>
-        </div>
+     
+        
       </section>
       <Footer />
     </>
