@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import VSTImage from '../img/home/V&Stitle.jpg';
 import VS1Image from '../img/home/V&S1.jpg';
 import VS2Image from '../img/home/V&S2.jpg';
 import VS3Image from '../img/home/V&S3.jpg';
@@ -9,9 +8,7 @@ import VS4Image from '../img/home/V&S4.jpg';
 import VS5Image from '../img/home/V&S5.jpg';
 import VS6Image from '../img/home/V&S6.jpg';
 import VS7Image from '../img/home/V&S7.jpg';
-import VS8Image from '../img/home/V&S8.jpg';
-import VS9Image from '../img/home/V&S9.jpg';
-import VS10Image from '../img/home/V&S10Foot.jpg';
+import VS8Image from '../img/home/V&SVV8Foot.jpg';
 import VSfoot from '../img/home/V&SFOOT.png';
 
 const Footer = () => {
@@ -32,7 +29,7 @@ const Footer = () => {
 
 const Home = () => {
   const [currentImage, setCurrentImage] = useState(0);
-  const images = [VSTImage, VS1Image, VS2Image, VS3Image, VS4Image, VS5Image, VS6Image, VS7Image, VS8Image, VS9Image];
+  const images = [VS1Image, VS2Image, VS3Image, VS4Image, VS5Image, VS6Image, VS7Image];
   const imagePositions = [
     'center',
     'top',
@@ -53,27 +50,6 @@ const Home = () => {
     return () => clearInterval(interval);
   }, [images]);
 
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const sectionRef = useRef(null);
-
-  const backgroundImageStyle = {
-    backgroundImage: `url(${images[currentImage]})`,
-    backgroundSize: 'cover',
-    backgroundPosition: imagePositions[currentImage], // Set background position based on current image index
-    backgroundRepeat: 'no-repeat',
-    transition: 'opacity 1.5s ease-in-out',
-    opacity: isTransitioning ? 0 : 1,
-  };
-
-  useEffect(() => {
-    setIsTransitioning(true);
-    const transitionTimeout = setTimeout(() => {
-      setIsTransitioning(false);
-    }, 1000);
-
-    return () => clearTimeout(transitionTimeout);
-  }, [currentImage]);
-
   const calculateCountdown = () => {
     const targetDate = new Date('2024-04-04T00:00:00');
     const currentDate = new Date();
@@ -93,9 +69,18 @@ const Home = () => {
 
   return (
     <>
+      {/* Add the meta tag for responsive design */}
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+
       <style>
         {`
         @import url('https://use.typekit.net/upl4fxr.css');
+
+        /* Add custom CSS styles for responsive images */
+        .responsive-image {
+          width: 100%;
+          height: auto;
+        }
         `}
       </style>
 
@@ -105,7 +90,15 @@ const Home = () => {
 
       <section className="section" style={{ backgroundColor: '#E0E0E0' }}>
         <div className="mx-auto h-screen relative">
-          <div className="flex flex-col justify-center h-full" style={backgroundImageStyle}>
+          <div
+            className="flex flex-col justify-center h-full"
+            style={{
+              backgroundImage: `url(${images[currentImage]})`,
+              backgroundSize: 'cover',
+              backgroundPosition: imagePositions[currentImage],
+              backgroundRepeat: 'no-repeat',
+            }}
+          >
             <div className="container mx-auto flex flex-col h-full justify-center items-center">
               <div className="pt-8 pb-14 lg:pt-0 lg:pb-0 lg:w-auto z-10">
                 <h1
@@ -169,7 +162,6 @@ const Home = () => {
       {/* New Page Section */}
       <section>
         <div
-          ref={sectionRef}
           className="container mx-auto h-full flex flex-col"
           style={{
             fontFamily: 'shelby, sans-serif',
@@ -239,14 +231,13 @@ const Home = () => {
               fontFamily: 'adobe-garamond-pro',
               fontStyle: 'italic',
               textAlign: 'right',
-              //marginRight: '10px'
             }}
           >
             With Lots of Love,
             <br />
             Vinay & Simhika
           </div>
-        </div>
+          </div>
       </section>
 
       <section
@@ -254,11 +245,12 @@ const Home = () => {
         style={{
           margin: '0',
           padding: '0',
-          backgroundImage: `url(${VS10Image})`, // Add the gradient overlay
+          backgroundImage: `url(${VS8Image})`, // Add the gradient overlay
           backgroundSize: '100%',
-          backgroundPosition: 'center',
+          backgroundPosition: 'top center',
           backgroundRepeat: 'no-repeat',
           marginBottom: '10px',
+          marginTop: '1px',
         }}
       >
         <div className="container mx-auto h-full flex relative">
@@ -281,7 +273,6 @@ const Home = () => {
           </Link>
         </div>
       </section>
-
       <Footer />
     </>
   );
