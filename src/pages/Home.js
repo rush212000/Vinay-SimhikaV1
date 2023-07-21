@@ -84,6 +84,12 @@ const Home = () => {
         `}
       </style>
 
+      <style>
+        {`
+          @import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,400;1,400;1,600&display=swap');
+        `}
+      </style>
+
       <nav className="navbar" style={{ zIndex: '2' }}>
         {/* Replace with your navbar component */}
       </nav>
@@ -104,10 +110,10 @@ const Home = () => {
                 <h1
                   className="h1 text-center text-2xl font-semibold mb-4"
                   style={{
-                    fontSize: '25px',
+                    fontSize: '35px',
                     color: 'white',
                     fontWeight: 'normal',
-                    fontFamily: 'adobe-garamond-pro',
+                    fontFamily: 'cormorant infant',
                     textAlign: 'center',
                   }}
                 >
@@ -155,15 +161,14 @@ const Home = () => {
             color: 'black',
             fontWeight: 'normal',
             maxHeight: 'calc(100vh - 200px)',
-            overflowY: 'scroll',
           }}
         >
           <h3
-            className="text-center text-2xl font-semibold mb-4"
+            className="text-center text-2xl mb-4"
             style={{
-              fontFamily: 'shelby, sans-serif',
+              fontFamily: 'shelby, ragular',
               fontStyle: 'regular',
-              fontSize: '125px',
+              fontSize: '115px',
               color: 'black',
               fontWeight: '400',
             }}
@@ -178,17 +183,17 @@ const Home = () => {
 
           <div
             style={{
-              fontSize: '20px',
+              fontSize: '21px',
               color: 'black',
               fontWeight: 'regular 400',
-              fontFamily: 'adobe-garamond-pro',
+              fontFamily: 'cormorant infant',
               fontStyle: 'regular',
               textAlign: 'center',
             }}
           >
             {/* Content */}
             <br />
-            <br />
+            
             Dear Friends and Family,
             <br />
             <br />
@@ -210,24 +215,26 @@ const Home = () => {
 
           <div
             style={{
-              fontSize: '20px',
+              fontSize: '21px',
               color: 'black',
               fontWeight: 'regular 400',
-              fontFamily: 'adobe-garamond-pro',
+              fontFamily: 'cormorant infant',
               fontStyle: 'italic',
               textAlign: 'right',
             }}
           >
             With Lots of Love,
             <br />
+
             Vinay & Simhika
+            <br/>
             <br />
             <br />
             <br />
             <br />
-            
+
           </div>
-          </div>
+        </div>
       </section>
 
       <section
@@ -243,12 +250,48 @@ const Home = () => {
           marginTop: '1px',
         }}
       >
-        <div className="container mx-auto h-full flex relative">
+   <div className="container mx-auto flex flex-col h-full justify-center items-center">
           {/* Content */}
           {/* Add your content here */}
+          <div className="flex flex-col items-center justify-center text-center">
+          <br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+            <h1 style={{ 
+              fontSize: '70px', fontFamily: 'cormorant infant',          }}>  We hope to see you there</h1>
+
+
+            <br />
+            <Link
+              to="/contact"
+              className="btn rounded-lg"
+              style={{
+                color: 'black',
+                width: '95px', // Adjust the width as desired
+                height: '25px', // Adjust the height as desired
+                fontSize: '12px', // Adjust the font size as desired
+                fontFamily: 'Montserrat, sans-serif', // Add the font-family here too
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              RSVP
+            </Link>
+          </div>
         </div>
-     
-        
       </section>
       <Footer />
     </>
