@@ -1,21 +1,27 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 // import components
 import Header from './components/Header';
-import Home from './pages/Home'; // Updated import statement for Home component
-// import router
-import { BrowserRouter as Router } from 'react-router-dom';
-
+import Home from './pages/Home';
+import OurEvent from './pages/OurEvent';
+import OurStory from './pages/OurStory';
+import FAQs from './pages/FAQs';
 
 const App = () => {
-  
   return (
-    <>
-      <Router>
+    <Router>
+      <>
         <Header />
-        <Home/>
-      </Router>
-    </>
+        <Routes>
+          {/* Define your routes */}
+          <Route path="/" element={<Home />} />
+          <Route path="/pages/OurEvent" element={<OurEvent />} />
+          <Route path="/pages/OurStory" element={<OurStory />} />
+          <Route path="/pages/FAQs" element={<FAQs />} />  
+        </Routes>
+      </>
+    </Router>
   );
 };
 

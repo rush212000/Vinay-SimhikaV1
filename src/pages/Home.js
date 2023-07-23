@@ -176,8 +176,6 @@ const Home = () => {
             <br />
             <br />
             <br />
-            <br />
-            <br />
             Welcome!
           </h3>
 
@@ -231,6 +229,7 @@ const Home = () => {
             <br />
             <br />
             <br />
+            <br/>
             <br />
 
           </div>
@@ -246,7 +245,7 @@ const Home = () => {
           backgroundSize: '100%',
           backgroundPosition: 'top center',
           backgroundRepeat: 'no-repeat',
-          marginBottom: '10px',
+          marginBottom: '20px',
           marginTop: '1px',
         }}
       >

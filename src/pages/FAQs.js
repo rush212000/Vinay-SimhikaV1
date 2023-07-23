@@ -1,7 +1,7 @@
 import React from 'react';
-import OurStoryP from '../img/OurStory/V&Sourstory.jpg';
+import FAQsP from '../img/FAQs/V&SFAQs.jpg';
 
-const OurStory = () => {
+const FAQs = () => {
   return (
     <>
       <style>
@@ -12,15 +12,15 @@ const OurStory = () => {
 
       <div
         style={{
-          background: `url(${OurStoryP})`,
+          background: `url(${FAQsP})`,
           backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundPosition: 'top center',
           backgroundRepeat: 'no-repeat',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
-          height: '100vh',
+          height: '130vh',
           overflowY: 'scroll', // Enable vertical scrolling for the entire container
         }}
       >
@@ -33,7 +33,7 @@ const OurStory = () => {
             fontSize: '105px',
           }}
         >
-          Our Story
+          FAQs
         </h1>
       </div>
 
@@ -59,7 +59,7 @@ const OurStory = () => {
           <br />
           <br />
           <br />
-          How We Met
+          Frequently asked questions 
         </h2>
 
         {/* New Section with Scroll */}
@@ -80,4 +80,4 @@ const OurStory = () => {
   );
 };
 
-export default OurStory;
+export default FAQs;

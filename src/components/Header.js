@@ -24,10 +24,6 @@ const Header = () => {
         {`
           @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-
-
-
-          
           /* Add custom CSS styles for responsive images */
           .responsive-image {
             width: 100%;
@@ -41,7 +37,7 @@ const Header = () => {
           @import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,400;1,400;1,600&display=swap');
         `}
       </style>
-      
+
       <header
         className={`fixed w-full px-4 lg:px-10 z-30 h-16 lg:h-20 flex items-center justify-start ${
           isScrolled ? 'bg-black' : ''
@@ -61,19 +57,21 @@ const Header = () => {
             }`}
             style={{ fontFamily: 'Montserrat, sans-serif' }}
           >
-            <Link to={'/'} className="hover:text-primary transition" style={{ marginLeft: '-162px' }}>
+            {/* Use relative URLs in the "to" prop */}
+            <Link to={'/'} className="hover:text-primary transition"style={{ marginLeft: '-120px' }}>
+              
               Home
             </Link>
-            <Link to={'/about'} className="hover:text-primary transition">
+            <Link to={'/pages/OurEvent'} className="hover:text-primary transition">
               Our Events
             </Link>
-            <Link to={'/portfolio'} className="hover:text-primary transition">
+            <Link to={'/pages/OurStory'} className="hover:text-primary transition">
               Our Story
             </Link>
             <Link to={'/contact'} className="hover:text-primary transition">
               Photos
             </Link>
-            <Link to={'/contact'} className="hover:text-primary transition">
+            <Link to={'/pages/FAQs'} className="hover:text-primary transition">
               FAQs
             </Link>
           </nav>
