@@ -7,10 +7,14 @@ import SangeetNight from '../img/OurEvent/Sangeet Icon.svg'; // Import the new i
 import Wedding from '../img/OurEvent/Wedding Icon.svg'; // Import the new image here
 import VSfoot from'../img/OurEvent/vsFoot.png';
 
+
+
 const OurEvent = () => {
 
   return (
+
     <>
+    
       <style>
         {`
         @import url('https://use.typekit.net/upl4fxr.css');
@@ -20,7 +24,7 @@ const OurEvent = () => {
         style={{
             background: `url(${OurEventP}) `,
             backgroundSize: 'cover',
-            backgroundPosition: 'top center',
+            backgroundPosition: 'bottom center',
             backgroundRepeat: 'no-repeat',
             display: 'flex',
             flexDirection: 'column',
@@ -40,9 +44,25 @@ const OurEvent = () => {
         >
           Our Wedding Events
         </h1>
+
       </div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
       {/* Mehndi Night section */}
+
       <div
       
         style={{
@@ -59,13 +79,11 @@ const OurEvent = () => {
             textAlign: 'center',
             fontFamily: 'shelby, sans-serif',
             fontStyle: 'normal',
-            fontSize: '69px',
+            fontSize: '70px',
             color: '#333',
           }}
         >
-            <br/>
-            <br/>
-            <br/>
+           
 
           Mehndi Night
         </h2>
@@ -74,10 +92,11 @@ const OurEvent = () => {
           alt="Mehndi Night"
           style={{
             maxWidth: '150px',
-            maxHeight: '80px', // Adjust the height accordingly
+            maxHeight: '100px', // Adjust the height accordingly
             marginTop: '40px', // Add some spacing between the heading and the image
           }}
         />
+
 
         {/* Mehndi images */}
         <div style={{ marginTop: '20px', color: 'black',
@@ -85,6 +104,7 @@ const OurEvent = () => {
               fontFamily: 'cormorant infant',
               fontStyle: 'regular',
               textAlign: 'center',
+              fontSize: '21px'
     }}>
 
           {/* Add more img elements here as needed */}
@@ -92,26 +112,31 @@ const OurEvent = () => {
           <br />
             
             Tuseday 2nd April 2024
-
+<br/>
             <br />
             Time Square Club, Bhuj
             <br />
+            <br/>
             We kick of the wedding shenanigans with the mehndi party where we invite you to adorn your hands with the traditional art of mehndi, or henna.
             <br/>
             Immerse yourself in the ambiance of uplifting music, the aromatic scent of mehndi and dance performanfes.
+            <br/>
           
           
         </div>
-
+<br/>
+<br/>
+<br/>
         <h3
         style={{
             textAlign: 'center',
             fontFamily: 'shelby, sans-serif',
             fontStyle: 'normal',
-            fontSize: '69px',
+            fontSize: '70px',
             color: '#333',
           }}
         >
+        
           Vinay's Mandvo
           </h3>
 
@@ -120,7 +145,7 @@ const OurEvent = () => {
           alt="Vinay's Mandvo "
           style={{
             maxWidth: '150px',
-            maxHeight: '80px', // Adjust the height accordingly
+            maxHeight: '100px', // Adjust the height accordingly
             marginTop: '20px', // Add some spacing between the heading and the image
           }}
         />
@@ -131,6 +156,7 @@ const OurEvent = () => {
               fontFamily: 'cormorant infant',
               fontStyle: 'regular',
               textAlign: 'center',
+              fontSize: '21px'
     }}>
 
           {/* Add more img elements here as needed */}
@@ -140,8 +166,11 @@ const OurEvent = () => {
             Wednesday 3rd April 2024
 
             <br />
+            <br/>
+
             Time Square Club, Bhuj
             <br />
+            <br/>
             Vinay's Mandvo signifies the sacred commencement of the Hindu weeding starting with a Ganesh Pooja, where we seek obstacles from our path.
             <br/>
              During the ceremony, a bamboo plant is planted signifying growth,strength and prosperity in our journey.
@@ -149,12 +178,15 @@ const OurEvent = () => {
         A traditional oil lamp, a Diva, is also lit and kept loght until we return home after the Hindu wedding, guiding and protecting us.
           
         </div>
+        <br/>
+        <br/>
+        <br/>
         <h3
         style={{
             textAlign: 'center',
             fontFamily: 'shelby, sans-serif',
             fontStyle: 'normal',
-            fontSize: '69px',
+            fontSize: '70px',
             color: '#333',
           }}
         >
@@ -166,7 +198,7 @@ const OurEvent = () => {
           alt="Haldi "
           style={{
             maxWidth: '150px',
-            maxHeight: '80px', // Adjust the height accordingly
+            maxHeight: '90px', // Adjust the height accordingly
             marginTop: '20px', // Add some spacing between the heading and the image
           }}
         />
@@ -177,6 +209,7 @@ const OurEvent = () => {
               fontFamily: 'cormorant infant',
               fontStyle: 'regular',
               textAlign: 'center',
+              fontSize: '21px'
     }}>
 
           {/* Add more img elements here as needed */}
@@ -184,22 +217,26 @@ const OurEvent = () => {
           
             
             Wednesday 3rd April 2024
-
+            <br/>
             <br />
             Time Square Club, Bhuj
             <br />
+            <br/>
            Join us in our light hearted Haldi ceremony, 
             <br/>
             where we invite you to shower your blessings on us in the form of applying haldi paste a paste made from turmeric,known for its cleansing and purifying properties.
             
           
         </div>
+        <br/>
+          <br/>
+          <br/>
         <h3
         style={{
             textAlign: 'center',
             fontFamily: 'shelby, sans-serif',
             fontStyle: 'normal',
-            fontSize: '69px',
+            fontSize: '70px',
             color: '#333',
           }}
         >
@@ -211,7 +248,7 @@ const OurEvent = () => {
           alt="Sangeet Night "
           style={{
             maxWidth: '150px',
-            maxHeight: '80px', // Adjust the height accordingly
+            maxHeight: '100px', // Adjust the height accordingly
             marginTop: '20px', // Add some spacing between the heading and the image
           }}
         />
@@ -222,6 +259,7 @@ const OurEvent = () => {
               fontFamily: 'cormorant infant',
               fontStyle: 'regular',
               textAlign: 'center',
+              fontSize: '21px'
     }}>
 
           {/* Add more img elements here as needed */}
@@ -229,10 +267,11 @@ const OurEvent = () => {
           
             
             Wednesday 3rd April 2024
-
+      <br/>
             <br />
             Time Square Club, Bhuj
             <br />
+            <br/>
             Immerse yourselves in an evening of traditional live Gujarati music,
             
             energetic dancing and a vibrant atmosphere clebrating love,
@@ -240,23 +279,27 @@ const OurEvent = () => {
             unity and the spirit of togetherness
             
         </div>
+        <br/>
+          <br/>
+          <br/>
         <h3
         style={{
             textAlign: 'center',
             fontFamily: 'shelby, sans-serif',
             fontStyle: 'normal',
-            fontSize: '69px',
+            fontSize: '70px',
             color: '#333',
           }}
         >
+         
           Hindu Wedding
           </h3>
         <img
           src={Wedding}
           alt="Wedding"
           style={{
-            maxWidth: '180px',
-            maxHeight: '80px', // Adjust the height accordingly
+            maxWidth: '200px',
+            maxHeight: '150px', // Adjust the height accordingly
             marginTop: '20px', // Add some spacing between the heading and the image
           }}
         />
@@ -267,6 +310,7 @@ const OurEvent = () => {
               fontFamily: 'cormorant infant',
               fontStyle: 'regular',
               textAlign: 'center',
+              fontSize: '21px'
     }}>
 
         {/* Add more img elements here as needed */}
@@ -274,35 +318,54 @@ const OurEvent = () => {
         
         
         Thursday 4th April 2024
-
+<br/>
         <br />
         Time Square Club, Bhuj
+        <br/>
         <br />
         The Hindu wedding holds, a deeply sacred and spiritual significance, marking the beginning of a new phase of our lives.
         <br/>
         We invite you to witness us take our seven sacred vows and make a lifelong commitment to each other.
         <br/>
         We eagerly await the company and blessing of our closest friends and family to celebrate this joyous occasion as we start our new beginning.
+        <br/>
+        <br/>
+        
         
     </div>
-    </div>
 
-   {/* Footer */}
-   <section>
-        <footer className="footer mt-auto">
-          <div className="container mx-auto py-4">
-            {/* Add your footer content here */}
-            <div className="flex justify-center items-center">
-              <img src={VSfoot} alt="Footer Image" className="w-20 h-20 mr-4" />
-              <p className="text-center text-gray-600">
-                <span>© {new Date().getFullYear()}</span> <span className="ml-auto"></span>
-              </p>
-            </div>
-          </div>
-        </footer>
-      </section>
+    
+    </div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+    {/* Footer */}
+    <footer className="footer mt-auto">
+      <div className="container mx-auto py-4">
+        {/* Add your footer content here */}
+        <div className="flex justify-center items-center">
+          <img src={VSfoot} alt="Footer Image" className="w-20 h-20 mr-4" />
+          <p className="text-center text-gray-600">
+            <span>© {new Date().getFullYear()}</span> <span className="ml-auto"></span>
+          </p>
+        </div>
+      </div>
+     
+    </footer>
+
     </>
   );
 };
-  
+
 export default OurEvent;

@@ -151,7 +151,7 @@ const Home = () => {
       </section>
 
       {/* New Page Section */}
-      <section>
+      <section style={{ zIndex: '2' }}>
         <div
           className="container mx-auto h-full flex flex-col"
           style={{
@@ -171,8 +171,12 @@ const Home = () => {
               fontSize: '115px',
               color: 'black',
               fontWeight: '400',
+              textAlign: 'centre',
+              Display: 'flex',
             }}
           >
+            <br />
+            <br />
             <br />
             <br />
             <br />
@@ -191,7 +195,6 @@ const Home = () => {
           >
             {/* Content */}
             <br />
-            
             Dear Friends and Family,
             <br />
             <br />
@@ -225,13 +228,12 @@ const Home = () => {
             <br />
 
             Vinay & Simhika
-            <br/>
             <br />
             <br />
             <br />
-            <br/>
             <br />
-
+            <br />
+            <br />
           </div>
         </div>
       </section>
@@ -239,49 +241,50 @@ const Home = () => {
       <section
         className="section"
         style={{
-          margin: '0',
           padding: '0',
           backgroundImage: `url(${VS8Image})`, // Add the gradient overlay
-          backgroundSize: '100%',
+          backgroundSize: 'cover',
           backgroundPosition: 'top center',
           backgroundRepeat: 'no-repeat',
-          marginBottom: '20px',
-          marginTop: '1px',
         }}
       >
-   <div className="container mx-auto flex flex-col h-full justify-center items-center">
+        <div className="container mx-auto flex flex-col h-full justify-center items-center">
           {/* Content */}
           {/* Add your content here */}
           <div className="flex flex-col items-center justify-center text-center">
-          <br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-            <h1 style={{ 
-              fontSize: '70px', fontFamily: 'cormorant infant',          }}>  We hope to see you there</h1>
-
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <h1
+              style={{
+                fontSize: '3.5rem',
+                fontFamily: 'cormorant infant',
+              }}
+            >
+              We hope to see you there
+            </h1>
 
             <br />
             <Link
-              to="/contact"
+              to="/pages/RSVP"
               className="btn rounded-lg"
               style={{
                 color: 'black',
-                width: '95px', // Adjust the width as desired
-                height: '25px', // Adjust the height as desired
-                fontSize: '12px', // Adjust the font size as desired
+                width: '150px', // Adjust the width as desired
+                height: '40px', // Adjust the height as desired
+                fontSize: '1.2rem', // Adjust the font size as desired
                 fontFamily: 'Montserrat, sans-serif', // Add the font-family here too
+                fontWeight: '600',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',

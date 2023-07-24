@@ -22,13 +22,9 @@ const Header = () => {
     <>
       <style>
         {`
-          @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-
-          /* Add custom CSS styles for responsive images */
-          .responsive-image {
-            width: 100%;
-            height: auto;
-          }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+       
         `}
       </style>
 
@@ -58,8 +54,7 @@ const Header = () => {
             style={{ fontFamily: 'Montserrat, sans-serif' }}
           >
             {/* Use relative URLs in the "to" prop */}
-            <Link to={'/'} className="hover:text-primary transition"style={{ marginLeft: '-120px' }}>
-              
+            <Link to={'/'} className="hover:text-primary transition" style={{ marginLeft: '-120px' }}>
               Home
             </Link>
             <Link to={'/pages/OurEvent'} className="hover:text-primary transition">
@@ -76,19 +71,26 @@ const Header = () => {
             </Link>
           </nav>
           <div className="fixed top-5 right-20" style={{ zIndex: '1' }}>
-            <Link
-              to="/contact"
-              className="btn rounded-lg"
-              style={{
-                marginLeft: 'auto',
-                color: 'black',
-                width: '85px', // Adjust the width as desired
-                height: '20px', // Adjust the height as desired
-                fontSize: '12px', // Adjust the font size as desired
-                fontFamily: 'Montserrat, sans-serif', // Add the font-family here too
-              }}
-            >
-              RSVP
+            {/* Use the Link component to navigate to RSVP.js */}
+            <Link to="/pages/RSVP" style={{ color: 'black', textDecoration: 'none', position: 'relative' }}>
+              <button className="btn rounded-lg" style={{ width: '85px', height: '20px', fontSize: '12px', fontFamily: 'Montserrat, sans-serif' }}>
+                RSVP
+              </button>
+              <span
+                style={{
+                  color: 'black',
+                  fontFamily: 'Montserrat',
+                  fontStyle: 'semi bold',
+                  fontWeight: '600',
+                  position: 'absolute',
+                  top: '50%',
+                  left: '50%',
+                  transform: 'translate(-50%, -50%)',
+                  pointerEvents: 'none',
+                }}
+              >
+                RSVP
+              </span>
             </Link>
           </div>
         </div>

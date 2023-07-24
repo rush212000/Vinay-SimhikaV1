@@ -20,7 +20,7 @@ const FAQs = () => {
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
-          height: '130vh',
+          height: '133vh',
           overflowY: 'scroll', // Enable vertical scrolling for the entire container
         }}
       >
