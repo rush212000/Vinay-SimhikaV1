@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef} from 'react';
 import { Link } from 'react-router-dom';
 
 import VS1Image from '../img/home/V&S1.jpg';
@@ -49,22 +49,43 @@ const Home = () => {
     return () => clearInterval(interval);
   }, [images]);
 
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const sectionRef = useRef(null); 
+
   const calculateCountdown = () => {
     const targetDate = new Date('2024-04-04T00:00:00');
     const currentDate = new Date();
     const timeDifference = targetDate - currentDate;
-
+  
     if (timeDifference > 0) {
       const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
       const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-
+  
       return `${days} days ${hours} hrs ${minutes} mins ${seconds} secs`;
     }
-
+  
     return 'Countdown finished!';
   };
+  
+  // Function to update the countdown every second
+  const updateCountdown = () => {
+    const countdownElement = document.getElementById('countdown'); // Replace 'countdown' with the ID of the HTML element where you want to display the countdown
+  
+    const update = () => {
+      const countdownText = calculateCountdown();
+      countdownElement.textContent = countdownText;
+    };
+  
+    // Update countdown immediately and then every second
+    update();
+    setInterval(update, 1000);
+  };
+  
+  // Call the function to start the countdown
+  updateCountdown();
+  
 
   return (
     <>
@@ -102,8 +123,13 @@ const Home = () => {
               backgroundImage: `url(${imagePositions[currentImage].url})`,
               backgroundSize: 'cover',
               backgroundRepeat: 'no-repeat',
+              transition: 'opacity 1.5s ease-in-out',
+              opacity: isTransitioning ? 0 : 1,
             }}
-          >
+>
+          
+
+          
             <div className="container mx-auto flex flex-col h-full justify-center items-center">
               <div className="pt-8 pb-14 lg:pt-0 lg:pb-0 lg:w-auto z-10">
                 <h1
