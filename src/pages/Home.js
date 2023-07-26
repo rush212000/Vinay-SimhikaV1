@@ -29,18 +29,17 @@ const Footer = () => {
 
 const Home = () => {
   const [currentImage, setCurrentImage] = useState(0);
-  const images = [VS1Image, VS2Image, VS3Image, VS4Image, VS5Image, VS6Image, VS7Image];
   const imagePositions = [
-    'center',
-    'top',
-    'bottom',
-    'left',
-    'right',
-    'top left',
-    'top right',
-    'bottom left',
-    'bottom right',
+    { url: VS1Image, position: ' center' },
+    { url: VS2Image, position: 'bottom center' },
+    { url: VS3Image, position: 'top  bottom ' },
+    { url: VS4Image, position: 'bottom center' },
+    { url: VS5Image, position: 'center' },
+    { url: VS6Image, position: 'bottom centre' },
+    { url: VS7Image, position: 'bottom centre ' },
+   
   ];
+  const images = imagePositions.map((item) => item.url);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -99,9 +98,9 @@ const Home = () => {
           <div
             className="flex flex-col justify-center h-full"
             style={{
-              backgroundImage: `url(${images[currentImage]})`,
+              backgroundPosition: imagePositions[currentImage].position,
+              backgroundImage: `url(${imagePositions[currentImage].url})`,
               backgroundSize: 'cover',
-              backgroundPosition: imagePositions[currentImage],
               backgroundRepeat: 'no-repeat',
             }}
           >

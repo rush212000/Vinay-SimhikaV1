@@ -2,7 +2,7 @@ import React from 'react';
 
 const RSVP = () => {
   return (
-    <div>
+    <div style={{ backgroundColor: '#F6F6F6' }}>
      
       <div>
         <br/>
