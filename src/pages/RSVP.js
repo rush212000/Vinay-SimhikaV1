@@ -3,10 +3,7 @@ import React from 'react';
 const RSVP = () => {
   return (
     <div>
-      <div style={{ backgroundColor: 'black', height: '150px' }}></div>
-      <nav>
-        {/* Your navigation bar content */}
-      </nav>
+     
       <div>
         <h1></h1>
         <iframe
