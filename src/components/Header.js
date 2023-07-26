@@ -54,7 +54,7 @@ const Header = () => {
             style={{ fontFamily: 'Montserrat, sans-serif' }}
           >
             {/* Use relative URLs in the "to" prop */}
-            <Link to={'/'} className="hover:text-primary transition" style={{ marginLeft: '-120px' }}>
+            <Link to={'/'} className="hover:text-primary transition" style={{ marginLeft: '-165px' }}>
               Home
             </Link>
             <Link to={'/pages/OurEvent'} className="hover:text-primary transition">

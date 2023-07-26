@@ -26,6 +26,9 @@ const RSVP = () => {
         <h1>Navbar Content</h1>
       </nav>
       <div>
+        <br/>
+        <br/>
+        <br/>
         <h1></h1>
         <iframe
           src="https://withjoy.com/vinayandsimhika/rsvp"

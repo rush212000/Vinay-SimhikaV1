@@ -109,7 +109,7 @@ const Home = () => {
                 <h1
                   className="h1 text-center text-2xl font-semibold mb-4"
                   style={{
-                    fontSize: '35px',
+                    fontSize: '30px',
                     color: 'white',
                     fontWeight: 'normal',
                     fontFamily: 'cormorant infant',
@@ -127,6 +127,8 @@ const Home = () => {
                     color: 'white',
                     fontWeight: '400',
                     textAlign: 'center',
+                    position: 'relative',
+                    bottom: 20,
                   }}
                 >
                   Vinay & Simhika
@@ -137,8 +139,10 @@ const Home = () => {
                     fontSize: '25px',
                     color: 'white',
                     fontWeight: 'normal',
-                    fontFamily: 'adobe-garamond-pro',
+                    fontFamily: 'cormorant infant',
                     textAlign: 'center',
+                    position: 'relative',
+                    bottom: 25,
                   }}
                 >
                   {calculateCountdown()}
@@ -159,7 +163,7 @@ const Home = () => {
             fontSize: '100px',
             color: 'black',
             fontWeight: 'normal',
-            maxHeight: 'calc(100vh - 200px)',
+            maxHeight: 'calc(100vh)',
           }}
         >
           <h3
@@ -232,7 +236,6 @@ const Home = () => {
             <br />
             <br />
             <br />
-            <br />
           </div>
         </div>
       </section>
@@ -261,12 +264,23 @@ const Home = () => {
             <br />
             <br />
             <br />
-            <br />
-            <br />
-            <br />
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
             <h1
               style={{
-                fontSize: '3.5rem',
+                fontSize: '75px',
                 fontFamily: 'cormorant infant',
               }}
             >
@@ -279,9 +293,9 @@ const Home = () => {
               className="btn rounded-lg"
               style={{
                 color: 'black',
-                width: '150px', // Adjust the width as desired
-                height: '40px', // Adjust the height as desired
-                fontSize: '1.2rem', // Adjust the font size as desired
+                width: '250px', // Adjust the width as desired
+                height: '50px', // Adjust the height as desired
+                fontSize: '20px', // Adjust the font size as desired
                 fontFamily: 'Montserrat, sans-serif', // Add the font-family here too
                 fontWeight: '600',
                 display: 'flex',
