@@ -23,7 +23,7 @@ const RSVP = () => {
     <div style={{ backgroundColor: '#F6F6F6' }}>
       <nav className="navbar" style={{ backgroundColor: 'black', color: 'white' }}>
         {/* Add your navbar content here */}
-        <h1>Navbar Content</h1>
+        <h1></h1>
       </nav>
       <div>
         <br/>
@@ -32,7 +32,7 @@ const RSVP = () => {
         <h1></h1>
         <iframe
           src="https://withjoy.com/vinayandsimhika/rsvp"
-          title="Zola RSVP"
+          title="With Joy RSVP"
           width="100%"
           height="900"
           top="-25vh"
