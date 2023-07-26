@@ -109,7 +109,7 @@ const Home = () => {
                 <h1
                   className="h1 text-center text-2xl font-semibold mb-4"
                   style={{
-                    fontSize: '35px',
+                    fontSize: '30px',
                     color: 'white',
                     fontWeight: 'normal',
                     fontFamily: 'cormorant infant',
