@@ -49,8 +49,7 @@ const Home = () => {
     return () => clearInterval(interval);
   }, [images]);
 
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const sectionRef = useRef(null); 
+
 
   const calculateCountdown = () => {
     const targetDate = new Date('2024-04-04T00:00:00');
@@ -123,8 +122,7 @@ const Home = () => {
               backgroundImage: `url(${imagePositions[currentImage].url})`,
               backgroundSize: 'cover',
               backgroundRepeat: 'no-repeat',
-              transition: 'opacity 1.5s ease-in-out',
-              opacity: isTransitioning ? 0 : 1,
+            
             }}
 >
           
