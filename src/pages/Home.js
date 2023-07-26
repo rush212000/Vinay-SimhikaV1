@@ -127,6 +127,8 @@ const Home = () => {
                     color: 'white',
                     fontWeight: '400',
                     textAlign: 'center',
+                    position: 'relative',
+                    bottom: 20,
                   }}
                 >
                   Vinay & Simhika
@@ -137,8 +139,10 @@ const Home = () => {
                     fontSize: '25px',
                     color: 'white',
                     fontWeight: 'normal',
-                    fontFamily: 'adobe-garamond-pro',
+                    fontFamily: 'cormorant infant',
                     textAlign: 'center',
+                    position: 'relative',
+                    bottom: 25,
                   }}
                 >
                   {calculateCountdown()}
@@ -159,7 +163,7 @@ const Home = () => {
             fontSize: '100px',
             color: 'black',
             fontWeight: 'normal',
-            maxHeight: 'calc(100vh - 200px)',
+            maxHeight: 'calc(100vh)',
           }}
         >
           <h3
