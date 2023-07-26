@@ -233,7 +233,6 @@ const Home = () => {
             <br />
             <br />
             <br />
-            <br />
           </div>
         </div>
       </section>
@@ -262,12 +261,23 @@ const Home = () => {
             <br />
             <br />
             <br />
-            <br />
-            <br />
-            <br />
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
             <h1
               style={{
-                fontSize: '3.5rem',
+                fontSize: '75px',
                 fontFamily: 'cormorant infant',
               }}
             >
@@ -280,9 +290,9 @@ const Home = () => {
               className="btn rounded-lg"
               style={{
                 color: 'black',
-                width: '150px', // Adjust the width as desired
-                height: '40px', // Adjust the height as desired
-                fontSize: '1.2rem', // Adjust the font size as desired
+                width: '250px', // Adjust the width as desired
+                height: '50px', // Adjust the height as desired
+                fontSize: '20px', // Adjust the font size as desired
                 fontFamily: 'Montserrat, sans-serif', // Add the font-family here too
                 fontWeight: '600',
                 display: 'flex',
