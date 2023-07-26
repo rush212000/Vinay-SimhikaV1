@@ -8,7 +8,7 @@ import VS4Image from '../img/home/V&S4.jpg';
 import VS5Image from '../img/home/V&S5.jpg';
 import VS6Image from '../img/home/V&S6.jpg';
 import VS7Image from '../img/home/V&S7.jpg';
-import VS8Image from '../img/home/V&SVV8Foot.jpg';
+import VS8Image from '../img/home/V&S8Foot.jpg';
 import VSfoot from '../img/home/V&SFOOT.png';
 
 const Footer = () => {
@@ -68,22 +68,6 @@ const Home = () => {
     return 'Countdown finished!';
   };
   
-  // Function to update the countdown every second
-  const updateCountdown = () => {
-    const countdownElement = document.getElementById('countdown'); // Replace 'countdown' with the ID of the HTML element where you want to display the countdown
-  
-    const update = () => {
-      const countdownText = calculateCountdown();
-      countdownElement.textContent = countdownText;
-    };
-  
-    // Update countdown immediately and then every second
-    update();
-    setInterval(update, 1000);
-  };
-  
-  // Call the function to start the countdown
-  updateCountdown();
   
 
   return (
