@@ -21,9 +21,9 @@ const RSVP = () => {
 
   return (
     <div style={{ backgroundColor: '#F6F6F6' }}>
-      <nav className="navbar" style={{ backgroundColor: 'black', color: 'white' }}>
-        {/* Add your navbar content here */}
-        <h1></h1>
+           <div style={{ backgroundColor: 'black', height: '100px' }}></div>
+      <nav>
+        {/* Your navigation bar content */}
       </nav>
       <div>
         <br/>
