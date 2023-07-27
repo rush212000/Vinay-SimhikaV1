@@ -52,16 +52,16 @@ const Header = () => {
             <Link to={'/'} className="hover:underline md:underline-offset-4" style={{ marginLeft: '-165px' }}>
               Home
             </Link>
-            <Link to={'/pages/OurEvent'} className="hover:text-primary transition">
+            <Link to={'/pages/OurEvent'} className="hover:underline md:underline-offset-4">
               Our Events
             </Link>
-            <Link to={'/pages/OurStory'} className="hover:text-primary transition">
+            <Link to={'/pages/OurStory'} className="hover:underline md:underline-offset-4">
               Our Story
             </Link>
-            <Link to={'/pages/Photos'} className="hover:text-primary transition">
+            <Link to={'/pages/Photos'} className="hover:underline md:underline-offset-4">
               Photos
             </Link>
-            <Link to={'/pages/FAQs'} className="hover:text-primary transition">
+            <Link to={'/pages/FAQs'} className="hover:underline md:underline-offset-4">
               FAQs
             </Link>
           </nav>

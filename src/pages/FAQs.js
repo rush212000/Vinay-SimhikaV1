@@ -1,6 +1,6 @@
 import React from 'react';
 import FAQsP from '../img/FAQs/V&SFAQs.jpg';
-
+import VSfoot from '../img/FAQs/vsFoot.png'
 const FAQs = () => {
   return (
     <>
@@ -155,7 +155,19 @@ const FAQs = () => {
         <br/>
         <br/>
         <br/>
-
+  {/* Footer */}
+  <footer className="footer mt-auto">
+      <div className="container mx-auto py-4">
+        {/* Add your footer content here */}
+        <div className="flex justify-center items-center">
+          <img src={VSfoot} alt="Footer Image" className="w-20 h-20 mr-4" />
+          <p className="text-center text-gray-600">
+            <span>© {new Date().getFullYear()}</span> <span className="ml-auto"></span>
+          </p>
+        </div>
+      </div>
+     
+    </footer>
       </div>
     </>
   );
