@@ -222,7 +222,7 @@ const OurStory = () => {
           The plan then nearly fell apart once again when we landed in Dubrovnik. 
           It was late in the evening and we were both tired on the coach to our 
           accommodation. Simhika asked me if I would post anything from the trip 
-          on social media, to which Ireplied without thinking “of course I am, I’m 
+          on social media, to which I replied without thinking “of course I am, I’m 
           going to post the proposal.” 
           <br/>
           <br/>

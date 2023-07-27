@@ -108,7 +108,7 @@ const OurEvent = () => {
           {/* Add more img elements here as needed */}
           {/* Content */}
             
-            Tuseday 2nd April 2024
+            Tuesday 2nd April 2024
 <br/>
             <br />
             Time Square Club, Bhuj
