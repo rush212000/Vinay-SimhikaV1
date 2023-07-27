@@ -115,6 +115,19 @@ const Photos = () => {
         {/* For example: */}
         
       </nav>
+      <div
+      className='container mx-auto h-full flex flex-col'
+        style={{
+          background: '',
+          display: 'flex',
+          flexDirection: 'column', // Change flexDirection to column
+          justifyContent: 'center',
+          alignItems: 'center',
+          position: 'relative',
+          top: -100,
+          padding: "0% 0%",
+        }}
+      >
       <h3
         style={{
           textAlign: "center",
@@ -125,8 +138,27 @@ const Photos = () => {
         }}
       >
         <br />
-        Gallery
+        Photos
       </h3>
+      </div>
+      <div 
+        style={{ marginTop: '20px', color: 'black',
+              fontWeight: 'regular 400',
+              fontFamily: 'cormorant infant',
+              fontStyle: 'regular',
+              textAlign: 'center',
+              fontSize: '20px',
+              position: 'relative',
+              top: -150,
+              
+    }}>
+     
+          Vinay to provide some text 
+          <br/>
+    
+        </div>
+
+
       <div className="gallery">
         <ImageGallery onImageClick={openModal} />
       </div>
