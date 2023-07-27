@@ -47,7 +47,7 @@ const FAQs = () => {
       <div
       className='container mx-auto h-full flex flex-col'
         style={{
-          background: '#E0E0E0',
+          background: '',
           display: 'flex',
           flexDirection: 'column', // Change flexDirection to column
           justifyContent: 'center',
@@ -78,21 +78,30 @@ const FAQs = () => {
           <br/>
           <p style={{fontSize: '30px'}}><span style={{fontWeight: 'bold'}}>How can I RSVP and when is the deadline?</span></p>
           <br/>
-          Kindly RSVP through our wedding website or by contacting either of us directly. We kindly request your response by XXXX
+          Kindly RSVP through our wedding website or by contacting either of us directly. We kindly request your response by 1st November 2023.
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <p style={{fontSize: '30px'}}><span style={{fontWeight: 'bold'}}>I’ve missed the RSVP deadline; can I still attend?</span></p>
+          <br/>
+          Not to worry, you can still attend. RSVP through the website and pop Vinay or Simhika a message letting them know you’ve done so.
           <br/>
           <br/>
           <br/>
           <br/>
           <p style={{fontSize: '30px'}}><span style={{fontWeight: 'bold'}}>I’m travelling from abroad, where is the best place to fly in to?</span></p>
           <br/>
-          We suggest landing in either Ahmedabad (Sardar Vallabhbhai Patel International Airport) or Rajkot Airport and hiring a car to travel to Bhuj. Alternatively, you may be able to find limited flights to Bhuj or Kandla Airports. 
+          We suggest landing in either Ahmedabad (Sardar Vallabhbhai Patel International Airport) or Rajkot Airport and hiring a car to travel to Bhuj. 
+          Alternatively, you may be able to find limited flights to Bhuj or Kandla Airports. 
           <br/>
           <br/>
           <br/>
           <br/>
           <p style={{fontSize: '30px'}}><span style={{fontWeight: 'bold'}}>How do I reserve a room at Time Square Club?</span></p>
           <br/>
-          For our international guests, we have blocked out rooms at the resort. Please contact Vinay or Simhika directly for more information. Rooms will be allocated on a first come first served basis. 
+          For our international guests, we have blocked out rooms at the resort. Please contact Vinay or Simhika directly for more information. 
+          Rooms will be allocated on a first come first served basis. 
           <br/>
           <br/>
           <br/>
@@ -134,6 +143,8 @@ const FAQs = () => {
           Vijay Villas Palace
           <br/>
           Bhujia Hill 
+          <br/>
+          Mandvi Beach
           <br/>
           <br/>
 

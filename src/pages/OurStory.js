@@ -47,7 +47,7 @@ const OurStory = () => {
         <div
       className='container mx-auto h-full flex flex-col'
         style={{
-          background: '#E0E0E0',
+          background: '',
           display: 'flex',
           flexDirection: 'column', // Change flexDirection to column
           justifyContent: 'center',
