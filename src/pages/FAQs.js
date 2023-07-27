@@ -49,20 +49,7 @@ const FAQs = () => {
           alignItems: 'center',
         }}
       >
-        <h2
-          style={{
-            textAlign: 'center',
-            fontFamily: 'shelby, sans-serif',
-            fontStyle: 'normal',
-            fontSize: '69px',
-            color: '#333',
-          }}
-        >
-          <br />
-          <br />
-          <br />
-          Frequently asked questions 
-        </h2>
+       
 
         {/* New Section with Scroll */}
         <div className='container mx-auto h-full flex flex-col'
