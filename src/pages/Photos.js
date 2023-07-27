@@ -8,7 +8,6 @@ const images = [
   "./img/Photos/V&S5.jpg",
   "./img/Photos/V&S6.jpg",
   "./img/Photos/V&S7.jpg",
-
   // Add more image filenames here
 ];
 
@@ -67,7 +66,7 @@ const galleryStyle = {
   gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
   gap: '10px',
   padding: '10px',
-  justifyContent: 'center' // Center the gallery horizontally
+  justifyItems: 'center' // Center the gallery items horizontally
 };
 
 const imageContainerStyle = {

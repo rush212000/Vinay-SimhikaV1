@@ -1,70 +1,55 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
-//Import Icons
+// Import Icons
 import { IoMdClose } from 'react-icons/io';
 import { CgMenuRight } from 'react-icons/cg';
 
-//Import Link
-import {Link} from 'react-router-dom';
-
-//Import Motion
-import { motion } from 'framer-motion';
-
-//Menu Variants
-const menuVariants = {
-  hidden: {
-    x: '100%',
-  },
-  show: {
-    x: 0,
-    transition: {
-      ease: [0.6, 0.01, -0.05, 0.9],
-    },
-  },
-};
-
+// Import Link
+import { Link } from 'react-router-dom';
 
 const MobileNav = () => {
-
   const [openMenu, setOpenMenu] = useState(false);
+
+  const toggleMenu = () => {
+    setOpenMenu(!openMenu);
+  };
+
   return (
-  <nav className='text-primary xl:hidden'>
-    {/* Nav Open Button */}
-    <div onClick={() => setOpenMenu(true)} className='text-3xl cursor-pointer'>
-      <CgMenuRight />
-    </div>
+    <nav className="text-primary xl:hidden">
+      {/* Nav Open Button */}
+      <div onClick={toggleMenu} className="text-3xl cursor-pointer">
+        <CgMenuRight />
+      </div>
 
-    {/* Mobile Nav */}
-    <motion.div 
-    variants={menuVariants} 
-    initial='hidden'
-    animate={openMenu ? 'show' : ''}
-    className='bg-white shadow-2xl w-full absolute top-0 right-0 h-screen z-20 max-w-xs'>
-    {/* Icons */}
-    <div onClick={() => setOpenMenu(false)} className='text-4xl absolute z-30 right-5 top-8 text-primary cursor-pointer'>
-      <IoMdClose />
-    </div>
+      {/* Mobile Nav */}
+      {openMenu && (
+        <div className="bg-white shadow-2xl w-full absolute top-0 right-0 h-screen z-20 max-w-xs">
+          {/* Icons */}
+          <div onClick={toggleMenu} className="text-4xl absolute z-30 right-5 top-8 text-primary cursor-pointer">
+            <IoMdClose />
+          </div>
 
-    {/* List Of Menus */}
-    <ul className='h-full flex flex-col justify-center items-center gap-y-8 text-primary font-primary font-bold text-3xl'>
-      <li>
-          <Link to='/pages/Home'>Home</Link>
-      </li>
-      <li>
-          <Link to='/pages/OurEvent'>OurEvent</Link>
-      </li>
-      <li>
-          <Link to='/pages/OurStory'>OurStory</Link>
-      </li>
-      <li>
-          <Link to='/pages/Photos'>Photos</Link>
-      </li>
-      <li>
-          <Link to='/pages/FAQs'>FAQs</Link>
-      </li>
-    </ul>
-    </motion.div>
-  </nav>
+          {/* List Of Menus */}
+          <ul className="h-full flex flex-col justify-center items-center gap-y-8 text-primary font-primary font-bold text-3xl">
+            <li>
+              <Link to="/pages/Home">Home</Link>
+            </li>
+            <li>
+              <Link to="/pages/OurEvent">OurEvent</Link>
+            </li>
+            <li>
+              <Link to="/pages/OurStory">OurStory</Link>
+            </li>
+            <li>
+              <Link to="/pages/Photos">Photos</Link>
+            </li>
+            <li>
+              <Link to="/pages/FAQs">FAQs</Link>
+            </li>
+          </ul>
+        </div>
+      )}
+    </nav>
   );
 };
 
