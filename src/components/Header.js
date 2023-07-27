@@ -27,6 +27,11 @@ const Header = () => {
     };
   }, []);
 
+  const handleNavbarButtonClick = () => {
+    // Scroll to the top of the page
+    window.scrollTo(0, 0);
+  };
+
   return (
     <>
       {/* Styles (omitted for brevity) */}
@@ -50,19 +55,19 @@ const Header = () => {
             style={{ fontFamily: 'Montserrat, sans-serif' }}
           >
             {/* Use relative URLs in the "to" prop */}
-            <Link to={'/'} className="hover:underline md:underline-offset-4" style={{ marginLeft: '-165px' }}>
+            <Link to={'/'} className="hover:underline md:underline-offset-4" style={{ marginLeft: '-165px' }} onClick={handleNavbarButtonClick}>
               Home
             </Link>
-            <Link to={'/pages/OurEvent'} className="hover:underline md:underline-offset-4">
+            <Link to={'/pages/OurEvent'} className="hover:underline md:underline-offset-4" onClick={handleNavbarButtonClick}>
               Our Events
             </Link>
-            <Link to={'/pages/OurStory'} className="hover:underline md:underline-offset-4">
+            <Link to={'/pages/OurStory'} className="hover:underline md:underline-offset-4" onClick={handleNavbarButtonClick}>
               Our Story
             </Link>
-            <Link to={'/pages/Photos'} className="hover:underline md:underline-offset-4">
+            <Link to={'/pages/Photos'} className="hover:underline md:underline-offset-4" onClick={handleNavbarButtonClick}>
               Photos
             </Link>
-            <Link to={'/pages/FAQs'} className="hover:underline md:underline-offset-4">
+            <Link to={'/pages/FAQs'} className="hover:underline md:underline-offset-4" onClick={handleNavbarButtonClick}>
               FAQs
             </Link>
           </nav>
