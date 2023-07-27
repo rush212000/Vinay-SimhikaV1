@@ -171,7 +171,7 @@ const Home = () => {
             fontSize: '100px',
             color: 'black',
             fontWeight: 'normal',
-            padding: "0% 5%",
+            padding: "0% 0%",
           }}
         >
           <h3

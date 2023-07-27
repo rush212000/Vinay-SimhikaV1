@@ -61,7 +61,7 @@ const OurEvent = () => {
           alignItems: 'center',
           position: 'relative',
           top: 120,
-          padding: "0% 5%",
+          padding: "0% 0%",
         }}
       >
         <h2
