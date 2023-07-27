@@ -30,7 +30,7 @@ const OurStory = () => {
             textAlign: 'center',
             fontFamily: 'shelby, sans-serif',
             fontStyle: 'normal',
-            fontSize: '105px',
+            fontSize: '100px',
           }}
         >
           Our Story

@@ -30,7 +30,7 @@ const FAQs = () => {
             textAlign: 'center',
             fontFamily: 'shelby, sans-serif',
             fontStyle: 'normal',
-            fontSize: '105px',
+            fontSize: '100px',
           }}
         >
           FAQs
