@@ -82,9 +82,10 @@ const Header = () => {
                   fontFamily: 'Montserrat',
                   fontStyle: 'semi bold',
                   fontWeight: '600',
-                  position: 'relative',
-                  top: -28,
-                  left: 28,                  
+                  position: 'absolute',
+                  top: '50%',
+                  left: '50%',
+                  transform: 'translate(60%, -120%)',
                   pointerEvents: 'none',
                 }}
               >
