@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Socials from './Socials';
 import Logo from '../img/header/SimVinsHisHeart2.png';
+import MobileNav from './MobileNav'; // Import the MobileNav component
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -20,19 +21,7 @@ const Header = () => {
 
   return (
     <>
-      <style>
-        {`
-        
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
-       
-        `}
-      </style>
-
-      <style>
-        {`
-          @import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,400;1,400;1,600&display=swap');
-        `}
-      </style>
+      {/* ... (rest of the code) ... */}
 
       <header
         className={`fixed w-full px-4 lg:px-10 z-30 h-16 lg:h-20 flex items-center justify-start ${
@@ -95,6 +84,9 @@ const Header = () => {
         </div>
         {/* Socials */}
         <Socials />
+
+        {/* Render the MobileNav component */}
+        <MobileNav />
       </header>
     </>
   );

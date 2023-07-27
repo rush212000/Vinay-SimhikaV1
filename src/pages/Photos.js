@@ -46,7 +46,7 @@ const Photos = () => {
 
       {selectedImage && (
         <div style={modalStyle} onClick={closeModal}>
-          <span style={closeBtnStyle}>&times;</span>
+         <span style={closeBtnStyle}>&times;</span>
           <img src={selectedImage} alt="Selected" style={modalImageStyle} />
         </div>
       )}
