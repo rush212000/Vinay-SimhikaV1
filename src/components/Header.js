@@ -21,6 +21,12 @@ const Header = () => {
 
   return (
     <>
+    <style>
+    {`
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+  `}
+</style>
+
       {/* ... (rest of the code) ... */}
 
       <header
@@ -62,7 +68,7 @@ const Header = () => {
           <div className="fixed top-5 right-20" style={{ zIndex: '1' }}>
             {/* Use the Link component to navigate to RSVP.js */}
             <Link to="/pages/RSVP" style={{ color: 'black', textDecoration: 'none', position: 'relative' }}>
-              <button className="btn rounded-lg" style={{ width: '85px', height: '20px', fontSize: '12px', fontFamily: 'Montserrat, sans-serif' }}>
+              <button className="btn rounded-lg bg-white hover:bg-opacity-90" style={{ width: '85px', height: '20px', fontSize: '16px', fontFamily: 'Montserrat, sans-serif', color: '#ffffff' }}>
                 RSVP
               </button>
               <span

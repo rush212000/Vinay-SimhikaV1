@@ -299,7 +299,7 @@ const Home = () => {
             <br />
             <Link
               to="/pages/RSVP"
-              className="btn rounded-lg"
+              className="btn rounded-lg bg-white hover:bg-opacity-90"
               style={{
                 color: 'black',
                 width: '250px', // Adjust the width as desired
