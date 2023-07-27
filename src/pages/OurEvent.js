@@ -20,6 +20,13 @@ const OurEvent = () => {
         @import url('https://use.typekit.net/upl4fxr.css');
         `}
       </style>
+
+      <style>
+        {`
+          @import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,400;1,400;1,600&display=swap');
+        `}
+      </style>
+
       <div 
         style={{
             background: `url(${OurEventP}) `,
