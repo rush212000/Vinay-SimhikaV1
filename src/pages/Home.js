@@ -171,6 +171,7 @@ const Home = () => {
             fontSize: '100px',
             color: 'black',
             fontWeight: 'normal',
+            padding: "0% 5%",
           }}
         >
           <h3
@@ -201,6 +202,7 @@ const Home = () => {
               fontFamily: 'cormorant infant',
               fontStyle: 'regular',
               textAlign: 'center',
+
             }}
           >
             {/* Content */}

@@ -20,7 +20,7 @@ const OurEvent = () => {
         @import url('https://use.typekit.net/upl4fxr.css');
         `}
       </style>
-      <div
+      <div 
         style={{
             background: `url(${OurEventP}) `,
             backgroundSize: 'cover',
@@ -52,7 +52,7 @@ const OurEvent = () => {
       {/* Mehndi Night section */}
 
       <div
-      ClassName="container mx-auto h-full flex-col"
+      className='container mx-auto h-full flex flex-col'
         style={{
           background: '#E0E0E0',
           display: 'flex',
@@ -61,7 +61,7 @@ const OurEvent = () => {
           alignItems: 'center',
           position: 'relative',
           top: 120,
-          padding: "0% 20%",
+          padding: "0% 5%",
         }}
       >
         <h2
