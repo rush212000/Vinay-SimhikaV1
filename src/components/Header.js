@@ -6,29 +6,30 @@ import MobileNav from './MobileNav'; // Import the MobileNav component
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileView, setIsMobileView] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    const handleResize = () => {
+      setIsMobileView(window.innerWidth <= 768); // Adjust the breakpoint to your desired value for mobile view
+    };
 
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize);
+
+    // Clean up event listeners
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
   return (
     <>
-    <style>
-    {`
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
-  `}
-</style>
-
-      {/* ... (rest of the code) ... */}
-
+      {/* Styles (omitted for brevity) */}
       <header
         className={`fixed w-full px-4 lg:px-10 z-30 h-16 lg:h-20 flex items-center justify-start ${
           isScrolled ? 'bg-black' : ''
@@ -65,29 +66,35 @@ const Header = () => {
               FAQs
             </Link>
           </nav>
-          <div className="fixed top-5 right-20" style={{ zIndex: '1' }}>
-            {/* Use the Link component to navigate to RSVP.js */}
-            <Link to="/pages/RSVP" style={{ color: 'black', textDecoration: 'none', position: 'relative' }}>
-              <button className="btn rounded-lg bg-white hover:bg-opacity-80 transition-all duration-300" style={{ width: '85px', height: '20px', fontSize: '16px', fontFamily: 'Montserrat, sans-serif', color: '#ffffff' }}>
-                RSVP
-              </button>
-              <span
+
+          {/* Render the RSVP button only in non-mobile view */}
+          {!isMobileView && (
+            <div className="fixed top-5 right-20" style={{ zIndex: '1' }}>
+              <Link
+                to="/pages/RSVP"
                 style={{
                   color: 'black',
-                  fontFamily: 'Montserrat',
-                  fontStyle: 'semi bold',
-                  fontWeight: '600',
+                  textDecoration: 'none',
                   position: 'relative',
-                  top: -28,
-                  left: 28,
-                  pointerEvents: 'none',
                 }}
               >
-                RSVP
-              </span>
-            </Link>
-          </div>
+                <button
+                  className="btn rounded-lg bg-white hover:bg-opacity-80 transition-all duration-300"
+                  style={{
+                    width: '85px',
+                    height: '20px',
+                    fontSize: '16px',
+                    fontFamily: 'Montserrat, sans-serif',
+                    color: '#000000',
+                  }}
+                >
+                  RSVP
+                </button>
+              </Link>
+            </div>
+          )}
         </div>
+
         {/* Socials */}
         <Socials />
 

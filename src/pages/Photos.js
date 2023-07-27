@@ -15,12 +15,43 @@ import VS12 from "../img/Photos/V&S12.jpg";
 import VS13  from "../img/Photos/V&S13.jpg";
 
 const images = [VS1, VS2, VS3, VS4, VS5, VS6, VS8, VS9, VS10, VS11, VS12, VS13];
-
 const ImageGallery = ({ onImageClick }) => {
+  const [currentIndex, setCurrentIndex] = useState(null);
+
+  const handleNextImage = () => {
+    const nextIndex = (currentIndex + 1) % images.length;
+    setCurrentIndex(nextIndex);
+  };
+
+  const handlePreviousImage = () => {
+    const previousIndex = (currentIndex - 1 + images.length) % images.length;
+    setCurrentIndex(previousIndex);
+  };
+
+  const handleCloseModal = () => {
+    setCurrentIndex(null);
+  };
+
+  if (currentIndex !== null) {
+    return (
+      <div style={modalStyle}>
+        <div style={arrowStyleLeft} onClick={handlePreviousImage}>
+          &#8249;
+        </div>
+        <div onClick={handleCloseModal}>
+          <img src={images[currentIndex]} alt={`Image ${currentIndex + 1}`} style={modalImageStyle} />
+        </div>
+        <div style={arrowStyleRight} onClick={handleNextImage}>
+          &#8250;
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div style={galleryStyle}>
       {images.map((image, index) => (
-        <div key={index} style={imageContainerStyle} onClick={() => onImageClick(image)}>
+        <div key={index} style={imageContainerStyle} onClick={() => setCurrentIndex(index)}>
           <img src={image} alt={`Image ${index + 1}`} style={imageStyle} />
         </div>
       ))}
@@ -33,7 +64,9 @@ const Modal = ({ selectedImage, onCloseModal }) => {
     selectedImage && (
       <div style={modalStyle} onClick={onCloseModal}>
         <span style={closeBtnStyle}>&times;</span>
-        <img src={selectedImage} alt="Selected" style={modalImageStyle} />
+        <div style={centeredImageContainer}>
+          <img src={selectedImage} alt="Selected" style={centeredImageStyle} />
+        </div>
       </div>
     )
   );
@@ -118,7 +151,7 @@ const Photos = () => {
 
 // Styles
 const containerStyle = {
-  display: "flex",
+  display: "relative",
   flexDirection: "column",
   alignItems: "center",
   minHeight: "100vh",
@@ -146,6 +179,7 @@ const imageContainerStyle = {
 const imageStyle = {
   maxWidth: "100%",
   height: "auto",
+
 };
 
 const modalStyle = {
@@ -163,15 +197,15 @@ const modalStyle = {
 const closeBtnStyle = {
   color: "white",
   fontSize: "30px",
-  position: "absolute",
+  position: "relative",
   top: "20px",
   right: "20px",
   cursor: "pointer",
 };
 
 const modalImageStyle = {
-  maxWidth: "90%",
-  maxHeight: "90%",
+  maxWidth: "50%",
+  maxHeight: "50%",
   display: "block",
 };
 
@@ -184,4 +218,40 @@ const navbarStyle = {
   justifyContent: "center",
   color: "white",
 };
+
+
+
+
+const arrowStyleLeft = {
+  fontSize: "30px",
+  cursor: "pointer",
+  position: "absolute",
+  top: "50%",
+  left: "20px",
+  transform: "translateY(-50%)",
+};
+
+const arrowStyleRight = {
+  fontSize: "30px",
+  cursor: "pointer",
+  position: "absolute",
+  top: "50%",
+  right: "20px",
+  transform: "translateY(-50%)",
+};
+
+const centeredImageContainer = {
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  height: "50%",
+};
+
+const centeredImageStyle = {
+  maxWidth: "50%",
+  maxHeight: "50%",
+  display: "block",
+};
+
+
 export default Photos;

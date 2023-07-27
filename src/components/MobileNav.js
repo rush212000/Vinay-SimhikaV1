@@ -8,6 +8,10 @@ const MobileNav = () => {
     setIsOpen(!isOpen);
   };
 
+  const closeNavbar = () => {
+    setIsOpen(false);
+  };
+
   // Function to check if the screen is mobile view
   const isMobileView = () => {
     return window.innerWidth <= 768; // You can adjust the breakpoint (768px) as needed
@@ -37,30 +41,43 @@ const MobileNav = () => {
   }
 
   return (
-    <div className="navbar">
+    <div className={`navbar ${isOpen ? 'active' : ''}`}>
       <button className="menu-btn" onClick={toggleNavbar}>
         ☰
       </button>
       <CSSTransition in={isOpen} timeout={300} classNames="slide" unmountOnExit>
         <div className="menu">
           {/* Add your navigation links here */}
-          <a href="/">Home</a>
-          <a href="/pages/OurEvent">OurEvent</a>
-          <a href="/pages/OurStory">OurStory</a>
-          <a href="/pages/Photos">Photos</a>
-          <a href="/pages/FAQs">FAQs</a>
+          <a href="/" onClick={closeNavbar}>Home</a>
+          <a href="/pages/OurEvent" onClick={closeNavbar}>OurEvent</a>
+          <a href="/pages/OurStory" onClick={closeNavbar}>OurStory</a>
+          <a href="/pages/Photos" onClick={closeNavbar}>Photos</a>
+          <a href="/pages/FAQs" onClick={closeNavbar}>FAQs</a>
         </div>
       </CSSTransition>
 
-      <style>{`
+      <style jsx>{`
         /* Navbar container */
         .navbar {
-          position: relative;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: #E0E0E0;
+          color: #000;
+          z-index: 999;
+        }
+
+        .navbar.active {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
         }
 
         /* Button for opening the menu */
         .menu-btn {
-          font-size: 24px;
+          font-size: 50px;
           background: none;
           border: none;
           cursor: pointer;
@@ -87,13 +104,6 @@ const MobileNav = () => {
 
         /* Menu styling */
         .menu {
-          position: absolute;
-          top: 0;
-          right: 0;
-          height: 100%;
-          width: 200px;
-          background-color: #f0f0f0;
-          box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
           padding: 20px;
           display: flex;
           flex-direction: column;
