@@ -34,6 +34,12 @@ const Header = () => {
 
   return (
     <>
+    <style>
+    {`
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+  `}
+</style>
+
       {/* Styles (omitted for brevity) */}
       <header
         className={`fixed w-full px-4 lg:px-10 z-30 h-16 lg:h-20 flex items-center justify-start ${
@@ -90,6 +96,7 @@ const Header = () => {
                     height: '20px',
                     fontSize: '16px',
                     fontFamily: 'Montserrat, sans-serif',
+                    fontStyle: 'regular',
                     color: '#000000',
                   }}
                 >
