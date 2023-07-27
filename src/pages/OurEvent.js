@@ -41,7 +41,7 @@ const OurEvent = () => {
             fontStyle: 'normal',
             fontSize: '100px',
             position: 'relative',
-            bottom: 50,
+            bottom: 10,
           }}
         >
           Our Wedding Events

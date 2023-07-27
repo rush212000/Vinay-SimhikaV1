@@ -31,6 +31,8 @@ const OurStory = () => {
             fontFamily: 'shelby, sans-serif',
             fontStyle: 'normal',
             fontSize: '100px',
+            position: 'relative',
+            bottom: 10
           }}
         >
           Our Story
