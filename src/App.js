@@ -8,7 +8,7 @@ import OurEvent from './pages/OurEvent';
 import OurStory from './pages/OurStory';
 import FAQs from './pages/FAQs';
 import RSVP from './pages/RSVP';
-
+import Photos from './pages/Photos';
 const App = () => {
   return (
     <Router>
@@ -19,6 +19,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/pages/OurEvent" element={<OurEvent />} />
           <Route path="/pages/OurStory" element={<OurStory />} />
+          <Route path="/pages/Photos" element={<Photos />} />  
           <Route path="/pages/FAQs" element={<FAQs />} /> 
           <Route path="/pages/RSVP" element={<RSVP />} /> {/* Corrected the path and used "element" prop */}
         </Routes>

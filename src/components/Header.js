@@ -63,7 +63,7 @@ const Header = () => {
             <Link to={'/pages/OurStory'} className="hover:text-primary transition">
               Our Story
             </Link>
-            <Link to={'/contact'} className="hover:text-primary transition">
+            <Link to={'/pages/Photos'} className="hover:text-primary transition">
               Photos
             </Link>
             <Link to={'/pages/FAQs'} className="hover:text-primary transition">
@@ -82,10 +82,9 @@ const Header = () => {
                   fontFamily: 'Montserrat',
                   fontStyle: 'semi bold',
                   fontWeight: '600',
-                  position: 'absolute',
-                  top: '50%',
-                  left: '50%',
-                  transform: 'translate(60%, -120%)',
+                  position: 'relative',
+                  top: -28,
+                  left: 28,                  
                   pointerEvents: 'none',
                 }}
               >
