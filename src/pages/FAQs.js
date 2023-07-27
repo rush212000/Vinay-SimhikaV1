@@ -65,7 +65,7 @@ const FAQs = () => {
         </h2>
 
         {/* New Section with Scroll */}
-        <div
+        <div className='container mx-auto h-full flex flex-col'
           style={{
             height: '400px', // Adjust the height as needed
             background: '#E0E0E0',
