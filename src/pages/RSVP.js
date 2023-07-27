@@ -21,14 +21,11 @@ const RSVP = () => {
 
   return (
     <div style={{ backgroundColor: '#F6F6F6' }}>
-           <div style={{ backgroundColor: 'black', height: '100px' }}></div>
+           <div style={{ backgroundColor: 'black', height: '80px' }}></div>
       <nav>
         {/* Your navigation bar content */}
       </nav>
       <div>
-        <br/>
-        <br/>
-        <br/>
         <h1></h1>
         <iframe
           src="https://withjoy.com/vinayandsimhika/rsvp"

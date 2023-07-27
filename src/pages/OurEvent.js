@@ -39,39 +39,29 @@ const OurEvent = () => {
             textAlign: 'center',
             fontFamily: 'shelby, sans-serif',
             fontStyle: 'normal',
-            fontSize: '105px',
+            fontSize: '100px',
+            position: 'relative',
+            bottom: 50,
           }}
         >
           Our Wedding Events
         </h1>
 
       </div>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
 
       {/* Mehndi Night section */}
 
       <div
-      
+      ClassName="container mx-auto h-full flex-col"
         style={{
-          height: '200vh',
           background: '#E0E0E0',
           display: 'flex',
           flexDirection: 'column', // Change flexDirection to column
           justifyContent: 'center',
           alignItems: 'center',
+          position: 'relative',
+          top: 120,
+          padding: "0% 20%",
         }}
       >
         <h2
@@ -79,8 +69,8 @@ const OurEvent = () => {
             textAlign: 'center',
             fontFamily: 'shelby, sans-serif',
             fontStyle: 'normal',
-            fontSize: '70px',
-            color: '#333',
+            fontSize: '75px',
+            color: '#000000',
           }}
         >
            
@@ -93,23 +83,23 @@ const OurEvent = () => {
           style={{
             maxWidth: '150px',
             maxHeight: '100px', // Adjust the height accordingly
-            marginTop: '40px', // Add some spacing between the heading and the image
+            marginTop: '-10px', // Add some spacing between the heading and the image
           }}
         />
 
 
         {/* Mehndi images */}
-        <div style={{ marginTop: '20px', color: 'black',
+        <div 
+        style={{ marginTop: '20px', color: 'black',
               fontWeight: 'regular 400',
               fontFamily: 'cormorant infant',
               fontStyle: 'regular',
               textAlign: 'center',
-              fontSize: '21px'
+              fontSize: '20px'
     }}>
 
           {/* Add more img elements here as needed */}
           {/* Content */}
-          <br />
             
             Tuseday 2nd April 2024
 <br/>
@@ -117,9 +107,10 @@ const OurEvent = () => {
             Time Square Club, Bhuj
             <br />
             <br/>
-            We kick of the wedding shenanigans with the mehndi party where we invite you to adorn your hands with the traditional art of mehndi, or henna.
+            We kick of the wedding shenanigans with the mehndi party where we invite you to adorn your hands with the traditional art of mehndi, or henna. Immerse yourself in the ambiance of uplifting music, the aromatic scent of mehndi and dance performances.
             <br/>
-            Immerse yourself in the ambiance of uplifting music, the aromatic scent of mehndi and dance performanfes.
+            <br/>
+            Dress code: Bright and vibrant outfits 
             <br/>
           
           
@@ -132,8 +123,8 @@ const OurEvent = () => {
             textAlign: 'center',
             fontFamily: 'shelby, sans-serif',
             fontStyle: 'normal',
-            fontSize: '70px',
-            color: '#333',
+            fontSize: '75px',
+            color: '#000000',
           }}
         >
         
@@ -146,7 +137,7 @@ const OurEvent = () => {
           style={{
             maxWidth: '150px',
             maxHeight: '100px', // Adjust the height accordingly
-            marginTop: '20px', // Add some spacing between the heading and the image
+            marginTop: '-10px', // Add some spacing between the heading and the image
           }}
         />
 
@@ -156,7 +147,7 @@ const OurEvent = () => {
               fontFamily: 'cormorant infant',
               fontStyle: 'regular',
               textAlign: 'center',
-              fontSize: '21px'
+              fontSize: '20px'
     }}>
 
           {/* Add more img elements here as needed */}
@@ -171,11 +162,10 @@ const OurEvent = () => {
             Time Square Club, Bhuj
             <br />
             <br/>
-            Vinay's Mandvo signifies the sacred commencement of the Hindu weeding starting with a Ganesh Pooja, where we seek obstacles from our path.
+            Vinay’s Mandvo signifies the sacred commencement of the Hindu wedding starting with a Ganesh Pooja, where we seek the blessings of Lord Ganesh to remove obstacles from our path. During the ceremony, a bamboo plant is planted signifying growth, strength and prosperity in our journey. A traditional oil lamp, a Diva, is also lit and kept alight until we return home after the Hindu wedding, guiding and protecting us.
             <br/>
-             During the ceremony, a bamboo plant is planted signifying growth,strength and prosperity in our journey.
-        <br/>
-        A traditional oil lamp, a Diva, is also lit and kept loght until we return home after the Hindu wedding, guiding and protecting us.
+            <br/>
+             Dress code: Bright and vibrant outfits
           
         </div>
         <br/>
@@ -186,8 +176,8 @@ const OurEvent = () => {
             textAlign: 'center',
             fontFamily: 'shelby, sans-serif',
             fontStyle: 'normal',
-            fontSize: '70px',
-            color: '#333',
+            fontSize: '75px',
+            color: '#000000',
           }}
         >
           Haldi
@@ -198,8 +188,8 @@ const OurEvent = () => {
           alt="Haldi "
           style={{
             maxWidth: '150px',
-            maxHeight: '90px', // Adjust the height accordingly
-            marginTop: '20px', // Add some spacing between the heading and the image
+            maxHeight: '80px', // Adjust the height accordingly
+            marginTop: '-10px', // Add some spacing between the heading and the image
           }}
         />
 
@@ -209,7 +199,7 @@ const OurEvent = () => {
               fontFamily: 'cormorant infant',
               fontStyle: 'regular',
               textAlign: 'center',
-              fontSize: '21px'
+              fontSize: '20px'
     }}>
 
           {/* Add more img elements here as needed */}
@@ -222,9 +212,10 @@ const OurEvent = () => {
             Time Square Club, Bhuj
             <br />
             <br/>
-           Join us in our light hearted Haldi ceremony, 
+           Our light hearted Haldi ceremony is an opportunity for you to shower your blessings on us in a fun-loving way in the form of applying haldi paste, a paste made from turmeric, known for its cleansing and purifying properties. 
             <br/>
-            where we invite you to shower your blessings on us in the form of applying haldi paste a paste made from turmeric,known for its cleansing and purifying properties.
+            <br/>
+            Dress code: White or yellow outfits that you don’t mind getting wet and stained with turmeric.
             
           
         </div>
@@ -236,8 +227,8 @@ const OurEvent = () => {
             textAlign: 'center',
             fontFamily: 'shelby, sans-serif',
             fontStyle: 'normal',
-            fontSize: '70px',
-            color: '#333',
+            fontSize: '75px',
+            color: '#000000',
           }}
         >
           Sangeet Night
@@ -247,19 +238,19 @@ const OurEvent = () => {
           src={SangeetNight}
           alt="Sangeet Night "
           style={{
-            maxWidth: '150px',
-            maxHeight: '100px', // Adjust the height accordingly
-            marginTop: '20px', // Add some spacing between the heading and the image
+            maxWidth: '200px',
+            maxHeight: '115px', // Adjust the height accordingly
+            marginTop: '-20px', // Add some spacing between the heading and the image
           }}
         />
 
         {/* Mehndi images */}
-        <div style={{ marginTop: '20px', color: 'black',
+        <div style={{ marginTop: '0px', color: 'black',
               fontWeight: 'regular 400',
               fontFamily: 'cormorant infant',
               fontStyle: 'regular',
               textAlign: 'center',
-              fontSize: '21px'
+              fontSize: '20px'
     }}>
 
           {/* Add more img elements here as needed */}
@@ -272,11 +263,10 @@ const OurEvent = () => {
             Time Square Club, Bhuj
             <br />
             <br/>
-            Immerse yourselves in an evening of traditional live Gujarati music,
-            
-            energetic dancing and a vibrant atmosphere clebrating love,
-            
-            unity and the spirit of togetherness
+            Immerse yourselves in an evening of traditional live Gujarati music, energetic dancing and a vibrant atmosphere celebrating love, unity and the spirit of togetherness. The Sangeet night will showcase the infectious energy of the traditional Gujarati folk dance, Garba.
+            <br/>
+            <br/>
+            Dress code: Traditional Gujarati attire or vibrant outfits
             
         </div>
         <br/>
@@ -287,8 +277,8 @@ const OurEvent = () => {
             textAlign: 'center',
             fontFamily: 'shelby, sans-serif',
             fontStyle: 'normal',
-            fontSize: '70px',
-            color: '#333',
+            fontSize: '75px',
+            color: '#000000',
           }}
         >
          
@@ -299,18 +289,18 @@ const OurEvent = () => {
           alt="Wedding"
           style={{
             maxWidth: '200px',
-            maxHeight: '150px', // Adjust the height accordingly
-            marginTop: '20px', // Add some spacing between the heading and the image
+            maxHeight: '175px', // Adjust the height accordingly
+            marginTop: '-60px', // Add some spacing between the heading and the image
           }}
         />
 
         {/* Mehndi images */}
-        <div style={{ marginTop: '20px', color: 'black',
+        <div style={{ marginTop: '-30px', color: 'black',
               fontWeight: 'regular 400',
               fontFamily: 'cormorant infant',
               fontStyle: 'regular',
               textAlign: 'center',
-              fontSize: '21px'
+              fontSize: '20px'
     }}>
 
         {/* Add more img elements here as needed */}
@@ -323,11 +313,10 @@ const OurEvent = () => {
         Time Square Club, Bhuj
         <br/>
         <br />
-        The Hindu wedding holds, a deeply sacred and spiritual significance, marking the beginning of a new phase of our lives.
+        The Hindu wedding holds a deeply sacred and spiritual significance, marking the beginning of a new phase of our lives. Witness us take our seven sacred vows and make a lifelong commitment to each other. We eagerly await the company and blessings of our closest friends and family to celebrate this joyous occasion as we start our new beginning.
         <br/>
-        We invite you to witness us take our seven sacred vows and make a lifelong commitment to each other.
         <br/>
-        We eagerly await the company and blessing of our closest friends and family to celebrate this joyous occasion as we start our new beginning.
+        Dress code: Dress to impress
         <br/>
         <br/>
         
@@ -336,11 +325,6 @@ const OurEvent = () => {
 
     
     </div>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
 <br/>
 <br/>
 <br/>

@@ -30,13 +30,13 @@ const Footer = () => {
 const Home = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const imagePositions = [
-    { url: VS1Image, position: ' center' },
-    { url: VS2Image, position: 'bottom center' },
-    { url: VS3Image, position: 'top  bottom ' },
-    { url: VS4Image, position: 'bottom center' },
+    { url: VS1Image, position: 'center' },
+    { url: VS2Image, position: 'bottom' },
+    { url: VS3Image, position: 'center' },
+    { url: VS4Image, position: 'bottom' },
     { url: VS5Image, position: 'center' },
-    { url: VS6Image, position: 'bottom centre' },
-    { url: VS7Image, position: 'bottom centre ' },
+    { url: VS6Image, position: 'center' },
+    { url: VS7Image, position: 'bottom' },
    
   ];
   const images = imagePositions.map((item) => item.url);
@@ -171,7 +171,6 @@ const Home = () => {
             fontSize: '100px',
             color: 'black',
             fontWeight: 'normal',
-            maxHeight: 'calc(100vh)',
           }}
         >
           <h3
