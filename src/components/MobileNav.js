@@ -3,6 +3,7 @@ import { CSSTransition } from 'react-transition-group';
 
 const MobileNav = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
@@ -12,42 +13,33 @@ const MobileNav = () => {
     setIsOpen(false);
   };
 
-  // Function to check if the screen is mobile view
   const isMobileView = () => {
-    return window.innerWidth <= 768; // You can adjust the breakpoint (768px) as needed
+    return window.innerWidth <= 768;
   };
 
-  // State to track if the screen is in mobile view
-  const [isMobile, setIsMobile] = useState(isMobileView());
-
   useEffect(() => {
-    // Event listener to detect changes in screen size
     const handleResize = () => {
       setIsMobile(isMobileView());
     };
 
-    // Attach event listener
     window.addEventListener('resize', handleResize);
 
-    // Clean up the event listener on component unmount
+    // Check on initial mount
+    setIsMobile(isMobileView());
+
     return () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
 
-  // Only render the MobileNav component on mobile view
   if (!isMobile) {
     return null;
   }
 
   return (
-    <div className={`navbar ${isOpen ? 'active' : ''}`}>
-      <button className="menu-btn" onClick={toggleNavbar}>
-        ☰
-      </button>
+    <div className="navbar">
       <CSSTransition in={isOpen} timeout={300} classNames="slide" unmountOnExit>
-        <div className="menu">
-          {/* Add your navigation links here */}
+        <div className={`menu ${isOpen ? 'active' : ''}`}>
           <a href="/" onClick={closeNavbar}>Home</a>
           <a href="/pages/OurEvent" onClick={closeNavbar}>OurEvent</a>
           <a href="/pages/OurStory" onClick={closeNavbar}>OurStory</a>
@@ -55,13 +47,17 @@ const MobileNav = () => {
           <a href="/pages/FAQs" onClick={closeNavbar}>FAQs</a>
         </div>
       </CSSTransition>
+      
+      {/* Menu button */}
+      <button className={`menu-btn ${isOpen ? 'active' : ''}`} onClick={toggleNavbar}>
+        ☰
+      </button>
 
       <style jsx>{`
-        /* Navbar container */
         .navbar {
           position: fixed;
           top: 0;
-          left: 0;
+          right: ${isOpen ? '0' : '-260px'}; // Slide the menu in or out based on isOpen state
           width: 100%;
           height: 100%;
           background-color: #E0E0E0;
@@ -69,21 +65,20 @@ const MobileNav = () => {
           z-index: 999;
         }
 
-        .navbar.active {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-        }
-
-        /* Button for opening the menu */
         .menu-btn {
           font-size: 50px;
           background: none;
           border: none;
           cursor: pointer;
+          position: fixed;
+          top: 20px;
+          right: 20px;
         }
 
-        /* Slide-in animation for the menu */
+        .menu-btn.active {
+          right: 300px; /* Adjust this value to fit your menu width */
+        }
+
         .slide-enter {
           transform: translateX(100%);
         }
@@ -102,12 +97,16 @@ const MobileNav = () => {
           transition: transform 300ms ease-in-out;
         }
 
-        /* Menu styling */
         .menu {
           padding: 20px;
           display: flex;
           flex-direction: column;
           align-items: flex-start;
+          width: 260px; /* Width of the menu */
+        }
+
+        .menu.active {
+          display: flex; /* Show the menu when active */
         }
 
         .menu a {
