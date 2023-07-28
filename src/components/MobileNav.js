@@ -56,32 +56,37 @@ const MobileNav = () => {
         {isOpen ? '✕' : '☰'}
       </button>
 
-      <div className='hidden xl:flex ml-24'>
-      <ul className='absolute top-0 right-0'>
-        {/* Add "ml-auto" class to move to the right */}
-        <li>
+      <div>
           <a href='https://www.instagram.com/' target='_blank' rel='noopener noreferrer'>
-            <img src={gramImage} alt='Instagram' style={{ width: 'auto', height: 'auto', position: 'auto',size:'auto' }} />
+            <img src={gramImage} alt='Instagram' 
+            className="container mx-auto h-full flex flex-col"
+            style={{ 
+              width: '30px', 
+              height: 'auto', 
+              position: 'relative',
+              top: '-50px',
+              size:'auto' }} />
           </a>
-        </li>
-      </ul>
-    </div>
-
+      </div>
+     
+<div>
       <button
-                  className="btn rounded-lg bg-white hover:bg-opacity-80 transition-all duration-300"
+                  className="container mx-auto h-full flex flex-col btn rounded-lg bg-white hover:bg-opacity-80 transition-all duration-300"
                   style={{
-                    width: '85px',
-                    height: '20px',
+                    width: '190px',
+                    height: '50px',
+                    position: 'relative',
+                    top: '0px',
                     fontSize: '16px',
                     fontFamily: 'Montserrat, sans-serif',
                     fontStyle: 'regular',
                     color: '#000000',
-                    position: 'bottom centre'
+                    
                   }}
                 >
                   RSVP
                 </button>
-
+                </div>
 
        
 
@@ -93,7 +98,7 @@ const MobileNav = () => {
         .navbar {
           position: fixed;
           top: 0;
-          right: ${isOpen ? '0' : '-100px'}; // Slide the menu in or out based on isOpen state
+          right: ${isOpen ? '0' : '-800px'}; // Slide the menu in or out based on isOpen state
           width: 80%;
           height: 100%;
           background-color: rgba(0, 0, 0, 0.9); /* Black background with 90% opacity */
