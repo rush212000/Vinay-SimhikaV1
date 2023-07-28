@@ -50,33 +50,37 @@ const MobileNav = () => {
       
       {/* Menu button */}
       <button className={`menu-btn ${isOpen ? 'active' : ''}`} onClick={toggleNavbar}>
-        ☰
+        {isOpen ? '✕' : '☰'}
       </button>
 
       <style jsx>{`
         .navbar {
           position: fixed;
           top: 0;
-          right: ${isOpen ? '0' : '-260px'}; // Slide the menu in or out based on isOpen state
-          width: 100%;
+          right: ${isOpen ? '0' : '-100px'}; // Slide the menu in or out based on isOpen state
+          width: 80%;
           height: 100%;
-          background-color: #E0E0E0;
-          color: #000;
+          background-color: rgba(0, 0, 0, 0.2); /* Black background with 20% opacity */
+          color: #fff; /* White font color */
           z-index: 999;
         }
 
         .menu-btn {
-          font-size: 50px;
+          font-size: 30px; /* Reduce the font size */
           background: none;
           border: none;
           cursor: pointer;
           position: fixed;
-          top: 20px;
-          right: 20px;
+          top: 0px;
+          right: 15px;
+          border-radius: 50%; /* Rounded corners */
+          padding: 8px; /* Reduce the padding */
         }
 
         .menu-btn.active {
-          right: 300px; /* Adjust this value to fit your menu width */
+          right: 20px;
+          top: 20px;
+          transform: rotate(90deg); /* Rotate the button to form a cross (X) */
         }
 
         .slide-enter {
@@ -101,8 +105,9 @@ const MobileNav = () => {
           padding: 20px;
           display: flex;
           flex-direction: column;
-          align-items: flex-start;
-          width: 260px; /* Width of the menu */
+          align-items: center; /* Center items horizontally */
+          justify-content: center; /* Center items vertically */
+          width: 250px; /* Width of the menu */
         }
 
         .menu.active {
@@ -110,13 +115,13 @@ const MobileNav = () => {
         }
 
         .menu a {
-          color: #333;
+          color: #fff; /* White font color */
           text-decoration: none;
           margin-bottom: 10px;
         }
 
         .menu a:hover {
-          color: #555;
+          color: #ccc; /* Light gray color on hover */
         }
       `}</style>
     </div>

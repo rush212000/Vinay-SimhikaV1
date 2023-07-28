@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Socials from './Socials';
 import Logo from '../img/header/SimVinsHisHeart2.png';
-import MobileNav from './MobileNav'; // Import the MobileNav component
+import MobileNav from './MobileNav';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,11 +34,11 @@ const Header = () => {
 
   return (
     <>
-    <style>
-    {`
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
-  `}
-</style>
+      <style>
+        {`
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+        `}
+      </style>
 
       {/* Styles (omitted for brevity) */}
       <header
@@ -61,19 +61,40 @@ const Header = () => {
             style={{ fontFamily: 'Montserrat, sans-serif' }}
           >
             {/* Use relative URLs in the "to" prop */}
-            <Link to={'/'} className="hover:underline md:underline-offset-4" style={{ marginLeft: '-165px' }} onClick={handleNavbarButtonClick}>
+            <Link
+              to={'/'}
+              className="hover:underline md:underline-offset-4"
+              style={{ marginLeft: '-165px' }}
+              onClick={handleNavbarButtonClick}
+            >
               Home
             </Link>
-            <Link to={'/pages/OurEvent'} className="hover:underline md:underline-offset-4" onClick={handleNavbarButtonClick}>
+            <Link
+              to={'/pages/OurEvent'}
+              className="hover:underline md:underline-offset-4"
+              onClick={handleNavbarButtonClick}
+            >
               Our Events
             </Link>
-            <Link to={'/pages/OurStory'} className="hover:underline md:underline-offset-4" onClick={handleNavbarButtonClick}>
+            <Link
+              to={'/pages/OurStory'}
+              className="hover:underline md:underline-offset-4"
+              onClick={handleNavbarButtonClick}
+            >
               Our Story
             </Link>
-            <Link to={'/pages/Photos'} className="hover:underline md:underline-offset-4" onClick={handleNavbarButtonClick}>
+            <Link
+              to={'/pages/Photos'}
+              className="hover:underline md:underline-offset-4"
+              onClick={handleNavbarButtonClick}
+            >
               Photos
             </Link>
-            <Link to={'/pages/FAQs'} className="hover:underline md:underline-offset-4" onClick={handleNavbarButtonClick}>
+            <Link
+              to={'/pages/FAQs'}
+              className="hover:underline md:underline-offset-4"
+              onClick={handleNavbarButtonClick}
+            >
               FAQs
             </Link>
           </nav>
@@ -111,7 +132,7 @@ const Header = () => {
         <Socials />
 
         {/* Render the MobileNav component */}
-        <MobileNav />
+        {isMobileView && <MobileNav />}
       </header>
     </>
   );
