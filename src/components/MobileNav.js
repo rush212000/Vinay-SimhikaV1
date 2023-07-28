@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { CSSTransition } from 'react-transition-group';
+import gramImage from '../img/MobileNav/gramv2.png';
+
+
 
 const MobileNav = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -52,6 +55,39 @@ const MobileNav = () => {
       <button className={`menu-btn ${isOpen ? 'active' : ''}`} onClick={toggleNavbar}>
         {isOpen ? '✕' : '☰'}
       </button>
+
+      <div className='hidden xl:flex ml-24'>
+      <ul className='absolute top-0 right-0'>
+        {/* Add "ml-auto" class to move to the right */}
+        <li>
+          <a href='https://www.instagram.com/' target='_blank' rel='noopener noreferrer'>
+            <img src={gramImage} alt='Instagram' style={{ width: 'auto', height: 'auto', position: 'auto',size:'auto' }} />
+          </a>
+        </li>
+      </ul>
+    </div>
+
+      <button
+                  className="btn rounded-lg bg-white hover:bg-opacity-80 transition-all duration-300"
+                  style={{
+                    width: '85px',
+                    height: '20px',
+                    fontSize: '16px',
+                    fontFamily: 'Montserrat, sans-serif',
+                    fontStyle: 'regular',
+                    color: '#000000',
+                    position: 'bottom centre'
+                  }}
+                >
+                  RSVP
+                </button>
+
+
+       
+
+
+
+
 
       <style jsx>{`
         .navbar {
