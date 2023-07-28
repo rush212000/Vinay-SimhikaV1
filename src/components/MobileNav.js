@@ -41,8 +41,8 @@ const MobileNav = () => {
       <CSSTransition in={isOpen} timeout={300} classNames="slide" unmountOnExit>
         <div className={`menu ${isOpen ? 'active' : ''}`}>
           <a href="/" onClick={closeNavbar}>Home</a>
-          <a href="/pages/OurEvent" onClick={closeNavbar}>OurEvent</a>
-          <a href="/pages/OurStory" onClick={closeNavbar}>OurStory</a>
+          <a href="/pages/OurEvent" onClick={closeNavbar}>Our Events</a>
+          <a href="/pages/OurStory" onClick={closeNavbar}>Our Story</a>
           <a href="/pages/Photos" onClick={closeNavbar}>Photos</a>
           <a href="/pages/FAQs" onClick={closeNavbar}>FAQs</a>
         </div>
@@ -60,8 +60,8 @@ const MobileNav = () => {
           right: ${isOpen ? '0' : '-100px'}; // Slide the menu in or out based on isOpen state
           width: 80%;
           height: 100%;
-          background-color: rgba(0, 0, 0, 0.2); /* Black background with 20% opacity */
-          color: #fff; /* White font color */
+          background-color: rgba(0, 0, 0, 0.9); /* Black background with 90% opacity */
+          color: #ffffff; /* White font color */
           z-index: 999;
         }
 
@@ -102,12 +102,12 @@ const MobileNav = () => {
         }
 
         .menu {
-          padding: 20px;
+          padding: 150px;
           display: flex;
           flex-direction: column;
           align-items: center; /* Center items horizontally */
           justify-content: center; /* Center items vertically */
-          width: 250px; /* Width of the menu */
+          width: 100vw; /* Width of the menu */
         }
 
         .menu.active {
@@ -115,9 +115,10 @@ const MobileNav = () => {
         }
 
         .menu a {
-          color: #fff; /* White font color */
+          font-size: 30px;
+          color: #ffffff; /* White font color */
           text-decoration: none;
-          margin-bottom: 10px;
+          margin-bottom: 30px;
         }
 
         .menu a:hover {
