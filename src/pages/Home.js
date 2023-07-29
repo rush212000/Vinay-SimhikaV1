@@ -172,14 +172,14 @@ const Home = () => {
       {/* New Page Section */}
       <section style={{ zIndex: '2' }}>
         <div
-          className="container mx-auto h-full flex flex-col"
+          className="min-[0px]:px-[6%] md:px-[0%] container mx-auto h-full flex flex-col"
           style={{
             fontFamily: 'shelby, sans-serif',
             fontStyle: 'regular',
             fontSize: '100px',
             color: 'black',
             fontWeight: 'normal',
-            padding: "0% 0%",
+            //padding: "0% 0%",
           }}
         >
           <h3
@@ -203,8 +203,9 @@ const Home = () => {
           </h3>
 
           <div
+          className='min-[0px]:text-[18px] md:text-[21px]'
             style={{
-              fontSize: '21px',
+              //fontSize: '21px',
               color: 'black',
               fontWeight: 'regular 400',
               fontFamily: 'cormorant infant',
@@ -235,8 +236,9 @@ const Home = () => {
           </div>
 
           <div
+          className='min-[0px]:text-[18px] md:text-[21px]'
             style={{
-              fontSize: '21px',
+              //fontSize: '21px',
               color: 'black',
               fontWeight: 'regular 400',
               fontFamily: 'cormorant infant',

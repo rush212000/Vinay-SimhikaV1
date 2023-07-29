@@ -155,7 +155,8 @@ const Photos = () => {
      
           Vinay to provide some text 
         </div>
-      <div className="gallery">
+      <div className="gallery"
+      style={{position: 'relative', top: -100}} >
         <ImageGallery onImageClick={openModal} />
       </div>
       <Modal selectedImage={selectedImage} onCloseModal={closeModal} />

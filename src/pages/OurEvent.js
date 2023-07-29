@@ -41,12 +41,13 @@ const OurEvent = () => {
         }}
       >
         <h1
+        className='min-[0px]:text-[65px] md:text-[100px]'
           style={{
             color: 'white',
             textAlign: 'center',
             fontFamily: 'shelby, sans-serif',
             fontStyle: 'normal',
-            fontSize: '100px',
+            //fontSize: '100px',
             position: 'relative',
             bottom: 10,
           }}
@@ -59,7 +60,7 @@ const OurEvent = () => {
       {/* Mehndi Night section */}
 
       <div
-      className='container mx-auto h-full flex flex-col'
+      className='min-[0px]:px-[6%] md:px-[0%] container mx-auto h-full flex flex-col'
         style={{
           background: '',
           display: 'flex',
@@ -68,15 +69,16 @@ const OurEvent = () => {
           alignItems: 'center',
           position: 'relative',
           top: 120,
-          padding: "0% 0%",
+          //padding: "0% 0%",
         }}
       >
         <h2
+        className='min-[0px]:text-[65px] md:text-[75px]'
           style={{
             textAlign: 'center',
             fontFamily: 'shelby, sans-serif',
             fontStyle: 'normal',
-            fontSize: '75px',
+            //fontSize: '75px',
             color: '#000000',
           }}
         >
@@ -97,12 +99,13 @@ const OurEvent = () => {
 
         {/* Mehndi images */}
         <div 
+        className='min-[0px]:text-[18px] md:text-[20px]'
         style={{ marginTop: '20px', color: 'black',
               fontWeight: 'regular 400',
               fontFamily: 'cormorant infant',
               fontStyle: 'regular',
               textAlign: 'center',
-              fontSize: '20px'
+              //fontSize: '20px'
     }}>
 
           {/* Add more img elements here as needed */}
@@ -126,11 +129,12 @@ const OurEvent = () => {
 <br/>
 <br/>
         <h3
+        className='min-[0px]:text-[65px] md:text-[75px]'
         style={{
             textAlign: 'center',
             fontFamily: 'shelby, sans-serif',
             fontStyle: 'normal',
-            fontSize: '75px',
+            //fontSize: '75px',
             color: '#000000',
           }}
         >
@@ -149,12 +153,14 @@ const OurEvent = () => {
         />
 
         {/* Mehndi images */}
-        <div style={{ marginTop: '20px', color: 'black',
+        <div
+        className='min-[0px]:text-[18px] md:text-[20px]' 
+        style={{ marginTop: '20px', color: 'black',
               fontWeight: 'regular 400',
               fontFamily: 'cormorant infant',
               fontStyle: 'regular',
               textAlign: 'center',
-              fontSize: '20px'
+              //fontSize: '20px'
     }}>
 
           {/* Add more img elements here as needed */}
@@ -179,11 +185,12 @@ const OurEvent = () => {
         <br/>
         <br/>
         <h3
+        className='min-[0px]:text-[65px] md:text-[75px]'
         style={{
             textAlign: 'center',
             fontFamily: 'shelby, sans-serif',
             fontStyle: 'normal',
-            fontSize: '75px',
+            //fontSize: '75px',
             color: '#000000',
           }}
         >
@@ -201,12 +208,14 @@ const OurEvent = () => {
         />
 
         {/* Mehndi images */}
-        <div style={{ marginTop: '20px', color: 'black',
+        <div 
+        className='min-[0px]:text-[18px] md:text-[20px]'
+        style={{ marginTop: '20px', color: 'black',
               fontWeight: 'regular 400',
               fontFamily: 'cormorant infant',
               fontStyle: 'regular',
               textAlign: 'center',
-              fontSize: '20px'
+              //fontSize: '20px'
     }}>
 
           {/* Add more img elements here as needed */}
@@ -230,11 +239,12 @@ const OurEvent = () => {
           <br/>
           <br/>
         <h3
+        className='min-[0px]:text-[65px] md:text-[75px]'
         style={{
             textAlign: 'center',
             fontFamily: 'shelby, sans-serif',
             fontStyle: 'normal',
-            fontSize: '75px',
+            //fontSize: '75px',
             color: '#000000',
           }}
         >
@@ -252,12 +262,14 @@ const OurEvent = () => {
         />
 
         {/* Mehndi images */}
-        <div style={{ marginTop: '0px', color: 'black',
+        <div 
+        className='min-[0px]:text-[18px] md:text-[20px]'
+        style={{ marginTop: '0px', color: 'black',
               fontWeight: 'regular 400',
               fontFamily: 'cormorant infant',
               fontStyle: 'regular',
               textAlign: 'center',
-              fontSize: '20px'
+              //fontSize: '20px'
     }}>
 
           {/* Add more img elements here as needed */}
@@ -280,11 +292,12 @@ const OurEvent = () => {
           <br/>
           <br/>
         <h3
+        className='min-[0px]:text-[65px] md:text-[75px]'
         style={{
             textAlign: 'center',
             fontFamily: 'shelby, sans-serif',
             fontStyle: 'normal',
-            fontSize: '75px',
+            //fontSize: '75px',
             color: '#000000',
           }}
         >
@@ -302,12 +315,14 @@ const OurEvent = () => {
         />
 
         {/* Mehndi images */}
-        <div style={{ marginTop: '-30px', color: 'black',
+        <div 
+        className='min-[0px]:text-[18px] md:text-[20px]'
+        style={{ marginTop: '-30px', color: 'black',
               fontWeight: 'regular 400',
               fontFamily: 'cormorant infant',
               fontStyle: 'regular',
               textAlign: 'center',
-              fontSize: '20px'
+              //fontSize: '20px'
     }}>
 
         {/* Add more img elements here as needed */}

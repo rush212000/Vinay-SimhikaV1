@@ -30,12 +30,13 @@ const FAQs = () => {
         }}
       >
         <h1
+        className='min-[0px]:text-[55px] md:text-[100px]'
           style={{
             color: 'white',
             textAlign: 'center',
             fontFamily: 'shelby, sans-serif',
             fontStyle: 'normal',
-            fontSize: '100px',
+            //fontSize: '100px',
             position: 'relative',
             bottom: 10
           }}
@@ -58,12 +59,13 @@ const FAQs = () => {
         }}
       >
         <div 
+        className='min-[0px]:text-[18px] md:text-[20px]'
         style={{ marginTop: '20px', color: 'black',
               fontWeight: 'regular 400',
               fontFamily: 'cormorant infant',
               fontStyle: 'regular',
               textAlign: 'center',
-              fontSize: '20px'
+              //fontSize: '20px'
     }}>
 
           {/* Add more img elements here as needed */}

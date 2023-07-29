@@ -30,12 +30,13 @@ const OurStory = () => {
         }}
       >
         <h1
+        className='min-[0px]:text-[65px] md:text-[100px]'
           style={{
             color: 'white',
             textAlign: 'center',
             fontFamily: 'shelby, sans-serif',
             fontStyle: 'normal',
-            fontSize: '100px',
+            //fontSize: '100px',
             position: 'relative',
             bottom: 10
           }}
@@ -45,7 +46,7 @@ const OurStory = () => {
       </div>
 
         <div
-      className='container mx-auto h-full flex flex-col'
+      className='min-[0px]:px-[6%] md:px-[0%] container mx-auto h-full flex flex-col'
         style={{
           background: '',
           display: 'flex',
@@ -54,15 +55,16 @@ const OurStory = () => {
           alignItems: 'center',
           position: 'relative',
           top: 120,
-          padding: "0% 0%",
+          //padding: "0% 0%",
         }}
       >
         <h2
+        className='min-[0px]:text-[65px] md:text-[75px]'
           style={{
             textAlign: 'center',
             fontFamily: 'shelby, sans-serif',
             fontStyle: 'normal',
-            fontSize: '75px',
+            //fontSize: '75px',
             color: '#000000',
           }}
         >
@@ -71,12 +73,13 @@ const OurStory = () => {
            How We Met
         </h2>
         <div 
+        className='min-[0px]:text-[18px] md:text-[20px]'
         style={{ marginTop: '20px', color: 'black',
               fontWeight: 'regular 400',
               fontFamily: 'cormorant infant',
               fontStyle: 'regular',
               textAlign: 'center',
-              fontSize: '20px'
+              //fontSize: '20px'
     }}>
 
           {/* Add more img elements here as needed */}
@@ -94,24 +97,26 @@ const OurStory = () => {
         <br/>
 
         <h3
+        className='min-[0px]:text-[65px] md:text-[75px]'
         style={{
             textAlign: 'center',
             fontFamily: 'shelby, sans-serif',
             fontStyle: 'normal',
-            fontSize: '75px',
+            //fontSize: '75px',
             color: '#000000',
           }}
         >
         
         How We Actually Met
           </h3>
-<div 
+        <div 
+        className='min-[0px]:text-[18px] md:text-[20px]'
         style={{ marginTop: '20px', color: 'black',
               fontWeight: 'regular 400',
               fontFamily: 'cormorant infant',
               fontStyle: 'regular',
               textAlign: 'center',
-              fontSize: '20px'
+              //fontSize: '20px'
     }}>
 
           {/* Add more img elements here as needed */}
@@ -137,24 +142,26 @@ const OurStory = () => {
 
 
         <h3
+        className='min-[0px]:text-[65px] md:text-[75px]'
         style={{
             textAlign: 'center',
             fontFamily: 'shelby, sans-serif',
             fontStyle: 'normal',
-            fontSize: '75px',
+            //fontSize: '75px',
             color: '#000000',
           }}
         >
         
         Will You Be My Girlfriend?
           </h3>
-<div 
+        <div 
+        className='min-[0px]:text-[18px] md:text-[20px]'
         style={{ marginTop: '20px', color: 'black',
               fontWeight: 'regular 400',
               fontFamily: 'cormorant infant',
               fontStyle: 'regular',
               textAlign: 'center',
-              fontSize: '20px'
+              //fontSize: '20px'
     }}>
 
           {/* Add more img elements here as needed */}
@@ -179,24 +186,26 @@ const OurStory = () => {
 
 
         <h3
+        className='min-[0px]:text-[65px] md:text-[75px]'
         style={{
             textAlign: 'center',
             fontFamily: 'shelby, sans-serif',
             fontStyle: 'normal',
-            fontSize: '75px',
+            //fontSize: '75px',
             color: '#000000',
           }}
         >
         
         The Proposal
           </h3>
-<div 
+       <div 
+       className='min-[0px]:text-[18px] md:text-[20px]'
         style={{ marginTop: '20px', color: 'black',
               fontWeight: 'regular 400',
               fontFamily: 'cormorant infant',
               fontStyle: 'regular',
               textAlign: 'center',
-              fontSize: '20px'
+              //fontSize: '20px'
     }}>
 
           {/* Add more img elements here as needed */}
