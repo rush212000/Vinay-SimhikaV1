@@ -110,6 +110,13 @@ const Photos = () => {
           }
         `}
       </style>
+
+      <style>
+        {`
+          @import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,400;1,400;1,600&display=swap');
+        `}
+      </style>
+
       <nav style={navbarStyle}>
         {/* Add your Navbar content here */}
         {/* For example: */}
@@ -153,7 +160,7 @@ const Photos = () => {
               
     }}>
      
-          Vinay to provide some text 
+          A trip down memory lane...
         </div>
       <div className="gallery"
       style={{position: 'relative', top: -100}} >

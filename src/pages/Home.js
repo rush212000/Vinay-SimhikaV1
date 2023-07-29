@@ -185,7 +185,7 @@ const Home = () => {
           <h3
             className="text-center text-2xl mb-4"
             style={{
-              fontFamily: 'shelby, ragular',
+              fontFamily: 'shelby, regular',
               fontStyle: 'regular',
               fontSize: '115px',
               color: 'black',
@@ -203,7 +203,7 @@ const Home = () => {
           </h3>
 
           <div
-          className='min-[0px]:text-[18px] md:text-[21px]'
+          className='min-[0px]:text-[18px] md:text-[20px]'
             style={{
               //fontSize: '21px',
               color: 'black',
@@ -220,23 +220,23 @@ const Home = () => {
             <br />
             <br />
             We are (finally) getting married this April! Time is flying by so fast and preparations are in full swing.
-            We are so excited for our big day (or should we say big week?) and can't wait to share this special journey
+            We are so excited for our big day and can't wait to share this special journey
             with all our loved ones. Your presence and love on this day are very important to us, and we truly hope you
             can join in on the celebrations.
             <br />
             <br />
             This website contains all the information you will need to plan ahead. Please take some time to review our
-            event dates and details, travel information for out-of-town guests, as well as a little bit about us and
+            event dates and details, travel information for our out-of-town guests, as well as a little bit about us and
             our story so far.
             <br />
             <br />
-            This love story has been 7 years in the making, and now it's finally time for our "happily ever after"!
+            This love story has been 7 years in the making, and now it's finally time for our "happily ever after!"
             <br />
             <br />
           </div>
 
           <div
-          className='min-[0px]:text-[18px] md:text-[21px]'
+          className='min-[0px]:text-[18px] md:text-[20px]'
             style={{
               //fontSize: '21px',
               color: 'black',

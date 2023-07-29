@@ -117,7 +117,7 @@ const OurEvent = () => {
             Time Square Club, Bhuj
             <br />
             <br/>
-            We kick of the wedding shenanigans with the mehndi party where we invite you to adorn your hands with the traditional art of mehndi, or henna. Immerse yourself in the ambiance of uplifting music, the aromatic scent of mehndi and dance performances.
+            We kick off the wedding shenanigans with the mehndi party where we invite you to adorn your hands with the traditional art of mehndi, or henna. Immerse yourself in the ambiance of uplifting music, the aromatic scent of mehndi and dance performances.
             <br/>
             <br/>
             Dress code: Bright and vibrant outfits 
@@ -149,6 +149,8 @@ const OurEvent = () => {
             maxWidth: '150px',
             maxHeight: '100px', // Adjust the height accordingly
             marginTop: '-10px', // Add some spacing between the heading and the image
+            position: 'relative',
+            left: '-2px'
           }}
         />
 
@@ -204,6 +206,8 @@ const OurEvent = () => {
             maxWidth: '150px',
             maxHeight: '80px', // Adjust the height accordingly
             marginTop: '-10px', // Add some spacing between the heading and the image
+            position: 'relative',
+            left: '2px'
           }}
         />
 

@@ -110,7 +110,7 @@ const FAQs = () => {
           <br/>
           <p style={{fontSize: '30px'}}><span style={{fontWeight: 'bold'}}>What should I wear for the wedding events?</span></p>
           <br/>
-          Get your lehengas, sarees and kurta out! We’re going all out traditional. For the haldi ceremony, we recommend wearing something casual that you don’t mind getting wet or stained with haldi. 
+          Get your lehengas, sarees and kurta out! We’re going all out traditional. For the haldi ceremony, we recommend wearing something casual that you don’t mind getting wet or stained with turmeric. 
           <br/>
           <br/>
           <br/>
@@ -130,33 +130,30 @@ const FAQs = () => {
           <span style={{fontWeight: 'bold'}}>Here are some places you may like to visit:</span>
           <br/>
           <br/>
-          Shree Swaminarayan Mandir Bhuj
-          <br/>
-          Vande Mataram Memorial
-          <br/>
-          Smritivan Earthquake Memorial and Museum
-          <br/>
-          Aaina Mahal Palace
-          <br/>
-          Great Rann of Kutch
-          <br/>
-          Kadiya Dhro
-          <br/>
           Vijay Villas Palace
-          <br/>
-          Bhujia Hill 
           <br/>
           Mandvi Beach
           <br/>
+          Smritivan Earthquake Memorial and Museum
           <br/>
-
+          Vande Mataram Memorial
+          <br/>
+          Great Rann of Kutch
+          <br/>
+          Shree Swaminarayan Mandir Bhuj
+          <br/>
+          Kadiya Dhro
+          <br/>
+          Aaina Mahal Palace
+          <br/>
+          Bhujia Hill 
+          <br/>
+          <br/>
           <br/>
     
         </div>
 
-        <br/>
-        <br/>
-        <br/>
+        
   {/* Footer */}
   <footer className="footer mt-auto">
       <div className="container mx-auto py-4">

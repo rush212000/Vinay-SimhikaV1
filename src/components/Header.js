@@ -101,7 +101,7 @@ const Header = () => {
 
           {/* Render the RSVP button only in non-mobile view */}
           {!isMobileView && (
-            <div className="fixed top-5 right-20" style={{ zIndex: '1' }}>
+            <div className="fixed top-5.1 right-20" style={{ zIndex: '1' }}>
               <Link
                 to="/pages/RSVP"
                 style={{
