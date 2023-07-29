@@ -61,10 +61,10 @@ const MobileNav = () => {
             <img src={gramImage} alt='Instagram' 
             className="container mx-auto h-full flex flex-col"
             style={{ 
-              width: '30px', 
+              width: '25px', 
               height: 'auto', 
               position: 'relative',
-              top: '-50px',
+              top: '20px',
               size:'auto' }} />
           </a>
       </div>
@@ -76,7 +76,7 @@ const MobileNav = () => {
                     width: '190px',
                     height: '50px',
                     position: 'relative',
-                    top: '0px',
+                    top: '70px',
                     fontSize: '16px',
                     fontFamily: 'Montserrat, sans-serif',
                     fontStyle: 'regular',
@@ -101,7 +101,7 @@ const MobileNav = () => {
           right: ${isOpen ? '0' : '-800px'}; // Slide the menu in or out based on isOpen state
           width: 80%;
           height: 100%;
-          background-color: rgba(0, 0, 0, 0.9); /* Black background with 90% opacity */
+          background-color: rgba(0, 0, 0, 0.95); /* Black background with 90% opacity */
           color: #ffffff; /* White font color */
           z-index: 999;
         }
@@ -143,7 +143,7 @@ const MobileNav = () => {
         }
 
         .menu {
-          padding: 150px;
+          padding: 100px;
           display: flex;
           flex-direction: column;
           align-items: center; /* Center items horizontally */
