@@ -2,13 +2,21 @@ import React, { useState, useEffect, useRef} from 'react';
 import { Link } from 'react-router-dom';
 
 import VS1Image from '../img/home/V&S1.jpg';
+import VS1MImage from '../img/home/V&S1M.jpg';
 import VS2Image from '../img/home/V&S2.jpg';
+import VS2MImage from '../img/home/V&S2M.jpg';
 import VS3Image from '../img/home/V&S3.jpg';
+import VS3MImage from '../img/home/V&S3M.jpg';
 import VS4Image from '../img/home/V&S4.jpg';
+import VS4MImage from '../img/home/V&S4M.jpg';
 import VS5Image from '../img/home/V&S5.jpg';
+import VS5MImage from '../img/home/V&S5M.jpg';
 import VS6Image from '../img/home/V&S6.jpg';
+import VS6MImage from '../img/home/V&S6M.jpg';
 import VS7Image from '../img/home/V&S7.jpg';
+import VS7MImage from '../img/home/V&S7M.jpg';
 import VS8Image from '../img/home/V&S8Foot.jpg';
+import VS8MImage from '../img/home/V&S8M.jpg';
 import VSfoot from '../img/home/V&SFOOT.png';
 
 const Footer = () => {
@@ -30,13 +38,13 @@ const Footer = () => {
 const Home = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const imagePositions = [
-    { url: VS1Image, position: 'center' },
-    { url: VS2Image, position: 'bottom' },
-    { url: VS3Image, position: 'center' },
-    { url: VS4Image, position: 'bottom' },
-    { url: VS5Image, position: 'center' },
-    { url: VS6Image, position: 'center' },
-    { url: VS7Image, position: 'bottom' },
+    { url: window.innerWidth >= 650 ? VS1Image : VS1MImage, position: 'center'},
+    { url: window.innerWidth >= 650 ? VS2Image : VS2MImage, position: 'bottom' },
+    { url: window.innerWidth >= 650 ? VS3Image : VS3MImage, position: 'center' },
+    { url: window.innerWidth >= 650 ? VS4Image : VS4MImage, position: 'bottom' },
+    { url: window.innerWidth >= 650 ? VS5Image : VS5MImage, position: 'center' },
+    { url: window.innerWidth >= 650 ? VS6Image : VS6MImage, position: 'center' },
+    { url: window.innerWidth >= 650 ? VS7Image : VS7MImage, position: 'bottom' },
    
   ];
   const images = imagePositions.map((item) => item.url);
@@ -115,9 +123,9 @@ const Home = () => {
             <div className="container mx-auto flex flex-col h-full justify-center items-center">
               <div className="pt-8 pb-14 lg:pt-0 lg:pb-0 lg:w-auto z-10">
                 <h1
-                  className="h1 text-center text-2xl font-semibold mb-4"
+                  className="min-[0px]:text-[25px] md:text-[30px] h1 text-center text-2xl font-semibold mb-4"
                   style={{
-                    fontSize: '30px',
+                    //fontSize: '25px',
                     color: 'white',
                     fontWeight: 'normal',
                     fontFamily: 'cormorant infant',
@@ -127,11 +135,11 @@ const Home = () => {
                   We're getting married!
                 </h1>
                 <h2
-                  className="h2"
+                  className="min-[0px]:text-[75px] md:text-[105px] h2"
                   style={{
                     fontFamily: 'shelby, sans-serif',
                     fontStyle: 'normal',
-                    fontSize: '105px',
+                    //fontSize: '75px',
                     color: 'white',
                     fontWeight: '400',
                     textAlign: 'center',
@@ -142,9 +150,9 @@ const Home = () => {
                   Vinay & Simhika
                 </h2>
                 <p
-                  className="text-[15px] lg:text-[20px] font-primary mb-4 lg:mb-12 color: white"
+                  className="min-[0px]:text-[18px] md:text-[25px] font-primary mb-4 lg:mb-12 color: white"
                   style={{
-                    fontSize: '25px',
+                    //fontSize: '18px',
                     color: 'white',
                     fontWeight: 'normal',
                     fontFamily: 'cormorant infant',
@@ -253,7 +261,7 @@ const Home = () => {
         className="section"
         style={{
           padding: '0',
-          backgroundImage: `url(${VS8Image})`, // Add the gradient overlay
+          backgroundImage: `url(${window.innerWidth >= 650 ? VS8Image : VS8MImage})`, // Add the gradient overlay
           backgroundSize: 'cover',
           backgroundPosition: 'top center',
           backgroundRepeat: 'no-repeat',
@@ -262,35 +270,15 @@ const Home = () => {
         <div className="container mx-auto flex flex-col h-full justify-center items-center">
           {/* Content */}
           {/* Add your content here */}
-          <div className="flex flex-col items-center justify-center text-center">
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
+          <div className="min-[0px]:text-[60px] md:text-[75px] flex flex-col items-center justify-center text-center">
+            
             <h1
               style={{
-                fontSize: '75px',
+                //fontSize: '75px',
                 fontFamily: 'cormorant infant',
+                position: 'relative',
+                top: 270,
+                padding: '0% 0%'
               }}
             >
               We hope to see you there
@@ -310,6 +298,8 @@ const Home = () => {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
+                position: 'relative',
+                top: 200.
               }}
             >
               RSVP
