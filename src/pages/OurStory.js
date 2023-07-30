@@ -235,47 +235,43 @@ const OurStory = () => {
 
 
 
-
-
-
-
-
-
-
-        {/* New Section with Scroll */}
-        <div
+        <section
+          className="section  bg-center"
           style={{
-            height: '400px', // Adjust the height as needed
-            background: '#E0E0E0',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-            overflowY: 'auto', // Enable vertical scrolling for this section
-          }}
-
-        
-        >
-
-<section
-          className="section"
-          style={{
-            padding: '0',
             backgroundImage: `url(${ VSP })`, // Add the gradient overlay
-            height:'100vh',
-            backgroundSize: '90%',
-            backgroundPosition: 'centre',
+            backgroundSize: 'contain',
+            backgroundPosition: 'top',
             backgroundRepeat: 'no-repeat',
           }}
        
 >
 </section>
-        Footer
- 
-    
+
+
+
+
+
+
+
+        {/* Footer */}
+    <footer className="footer mt-auto">
+      <div className="container mx-auto py-4">
+        {/* Add your footer content here */}
+        <div className="flex justify-center items-center">
+          <img src={VSfoot} alt="Footer Image" className="w-20 h-20 mr-4" />
+          <p className="text-center text-gray-600">
+          
+          </p>
+
+     
         </div>
        
       </div>
+     
+    </footer>
+    
+        </div>
+       
     </>
   );
 };
