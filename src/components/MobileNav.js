@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import gramImage from '../img/MobileNav/gramv2.png';
-
+import { Link } from 'react-router-dom';
 
 
 const MobileNav = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [isRSVPClicked, setIsRSVPClicked] = useState(false);
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
@@ -34,6 +35,17 @@ const MobileNav = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+  useEffect(() => {
+    if (isRSVPClicked) {
+      closeNavbar();
+    }
+  }, [isRSVPClicked]);
+
+  if (!isMobile) {
+    return null;
+  }
+
 
   if (!isMobile) {
     return null;
@@ -70,25 +82,43 @@ const MobileNav = () => {
       </div>
      
 <div>
-      <button
-                  className="container mx-auto h-full flex flex-col btn rounded-lg bg-white hover:bg-opacity-80 transition-all duration-300"
-                  style={{
-                    width: '190px',
-                    height: '50px',
-                    position: 'relative',
-                    top: '70px',
-                    fontSize: '16px',
-                    fontFamily: 'Montserrat, sans-serif',
-                    fontStyle: 'regular',
-                    color: '#000000',
-                    
+      
+                 
+
+
+              
+            <div style={{ zIndex: '1' }}>
+              <Link
+                to="/pages/RSVP"
+                style={{
+                  color: 'black',
+                  textDecoration: 'none',
+                  position: 'relative',
+                }}
+              >
+                <button
+               
+              
+               className="container mx-auto h-full flex flex-col btn rounded-lg bg-white hover:bg-opacity-80 transition-all duration-300"
+               style={{
+                 width: '190px',
+                 height: '50px',
+                 position: 'relative',
+                 top: '70px',
+                 fontSize: '16px',
+                 fontFamily: 'Montserrat, sans-serif',
+                 fontStyle: 'regular',
+                 color: '#000000',
                   }}
+
+                  onClick={()=> setIsRSVPClicked(true)}
                 >
                   RSVP
                 </button>
-                </div>
-
-       
+              </Link>
+            </div>
+        
+        </div>
 
 
 
