@@ -1,6 +1,8 @@
 import React from 'react';
 import OurStoryP from '../img/OurStory/V&Sourstory.jpg';
-import VSfoot from '../img/OurStory/vsFoot.png'
+import VSfoot from '../img/OurStory/vsFoot.png';
+import VSP from '../img/OurStory/V&SP.jpg';
+
 const OurStory = () => {
   return (
     <>
@@ -252,26 +254,27 @@ const OurStory = () => {
             overflowY: 'auto', // Enable vertical scrolling for this section
           }}
 
-          
-       >
+        
+        >
 
-
-
-        {/* Footer */}
-    <footer className="footer mt-auto">
-      <div className="container mx-auto py-4">
-        {/* Add your footer content here */}
-        <div className="flex justify-center items-center">
-          <img src={VSfoot} alt="Footer Image" className="w-20 h-20 mr-4" />
-          <p className="text-center text-gray-600">
-            <span>© {new Date().getFullYear()}</span> <span className="ml-auto"></span>
-          </p>
+<section
+          className="section"
+          style={{
+            padding: '0',
+            backgroundImage: `url(${ VSP })`, // Add the gradient overlay
+            height:'100vh',
+            backgroundSize: '90%',
+            backgroundPosition: 'centre',
+            backgroundRepeat: 'no-repeat',
+          }}
+       
+>
+</section>
+        Footer
+ 
+    
         </div>
-      </div>
-     
-    </footer>
-        </div>
-
+       
       </div>
     </>
   );

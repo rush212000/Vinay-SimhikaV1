@@ -367,7 +367,7 @@ const OurEvent = () => {
         <div className="flex justify-center items-center">
           <img src={VSfoot} alt="Footer Image" className="w-20 h-20 mr-4" />
           <p className="text-center text-gray-600">
-            <span>© {new Date().getFullYear()}</span> <span className="ml-auto"></span>
+           
           </p>
         </div>
       </div>

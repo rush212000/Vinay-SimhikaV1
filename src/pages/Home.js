@@ -2,20 +2,21 @@ import React, { useState, useEffect, useRef} from 'react';
 import { Link } from 'react-router-dom';
 
 import VS1Image from '../img/home/V&S1.jpg';
-import VS1MImage from '../img/home/V&S1M.jpg';
 import VS2Image from '../img/home/V&S2.jpg';
-import VS2MImage from '../img/home/V&S2M.jpg';
 import VS3Image from '../img/home/V&S3.jpg';
-import VS3MImage from '../img/home/V&S3M.jpg';
 import VS4Image from '../img/home/V&S4.jpg';
-import VS4MImage from '../img/home/V&S4M.jpg';
 import VS5Image from '../img/home/V&S5.jpg';
-import VS5MImage from '../img/home/V&S5M.jpg';
 import VS6Image from '../img/home/V&S6.jpg';
-import VS6MImage from '../img/home/V&S6M.jpg';
 import VS7Image from '../img/home/V&S7.jpg';
-import VS7MImage from '../img/home/V&S7M.jpg';
 import VS8Image from '../img/home/V&S8Foot.jpg';
+
+import VS1MImage from '../img/home/V&S1M.jpg';
+import VS2MImage from '../img/home/V&S2M.jpg';
+import VS3MImage from '../img/home/V&S3M.jpg';
+import VS4MImage from '../img/home/V&S4M.jpg';
+import VS5MImage from '../img/home/V&S5M.jpg';
+import VS6MImage from '../img/home/V&S6M.jpg';
+import VS7MImage from '../img/home/V&S7M.jpg';
 import VS8MImage from '../img/home/V&S8M.jpg';
 import VSfoot from '../img/home/V&SFOOT.png';
 
@@ -27,7 +28,6 @@ const Footer = () => {
         <div className="flex justify-center items-center">
           <img src={VSfoot} alt="Footer Image" className="w-20 h-20 mr-4" />
           <p className="text-center text-gray-600">
-            <span>© {new Date().getFullYear()}</span> <span className="ml-auto"></span>
           </p>
         </div>
       </div>
@@ -301,7 +301,7 @@ const Home = () => {
                 alignItems: 'center',
                 justifyContent: 'center',
                 position: 'relative',
-                top: 200.
+                top: 200,
               }}
             >
               RSVP
