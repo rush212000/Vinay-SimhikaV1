@@ -1,5 +1,6 @@
 import React from 'react';
-import FAQsP from '../img/FAQs/V&SFAQs.jpg';
+import VSFAQImage from '../img/FAQs/V&SFAQs.jpg';
+import VSFAQMImage from '../img/FAQs/V&SFAQsM.jpg';
 import VSfoot from '../img/FAQs/vsFoot.png'
 const FAQs = () => {
   return (
@@ -17,7 +18,7 @@ const FAQs = () => {
 
       <div
         style={{
-          background: `url(${FAQsP})`,
+          background: `url(${window.innerWidth >= 650 ? VSFAQImage : VSFAQMImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'top center',
           backgroundRepeat: 'no-repeat',
