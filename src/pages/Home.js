@@ -140,7 +140,7 @@ const Home = () => {
               backgroundImage: `url(${imagePositions[currentImageIndex].url})`,
               backgroundSize: 'cover',
               backgroundRepeat: 'no-repeat',
-              transition: 'background-image 0.5s ease-in-out',
+              transition: 'background-image 0.8s ease-in-out',
             }}
             
 >
