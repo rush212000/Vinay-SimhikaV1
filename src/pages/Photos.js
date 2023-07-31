@@ -29,7 +29,6 @@ const Photos = () => {
     500: 1
   };
 
-
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -42,19 +41,15 @@ const Photos = () => {
     setIsModalOpen(false);
   };
 
-  const nextImage = () => {
+  const handleNextImage = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % photos.length);
   };
 
-  const prevImage = () => {
+  const handlePrevImage = () => {
     setCurrentImageIndex((prevIndex) =>
       prevIndex === 0 ? photos.length - 1 : prevIndex - 1
     );
   };
-
-
-
-
 
   return (
     <div>
@@ -80,11 +75,41 @@ const Photos = () => {
           .gallery-item img {
             width: 100%;
             display: block;
-            border-radius: 8px;
+            /* Remove the border-radius property to eliminate rounded edges */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          }
+          
+          /* Navbar styles */
+          .navbar {
+            background-color: black;
+            padding: 40px;
+          }
+
+          /* Modal styles */
+          .image-modal {
+            /* Add your modal styles here */
+          }
+          .modal-image-container {
+            /* Add your modal image container styles here */
+          }
+          .modal-image {
+            /* Add your modal image styles here */
+          }
+          .modal-close-button {
+            /* Add your modal close button styles here */
+          }
+          .modal-controls {
+            /* Add your modal controls styles here */
+          }
+          .modal-control-button {
+            /* Add your modal control button styles here */
           }
         `}
       </style>
+      {/* Black Navbar */}
+      <div className="navbar">
+        {/* Add your navbar content here if needed */}
+      </div>
       <br/>
       <br/>
       <h1
@@ -103,7 +128,7 @@ const Photos = () => {
       </h1>
 
       <div>
-        <Masonry
+      <Masonry
           breakpointCols={breakpointColumnsObj}
           className="my-masonry-grid"
           columnClassName="my-masonry-grid_column"
@@ -120,7 +145,7 @@ const Photos = () => {
       <Modal
         isOpen={isModalOpen}
         onRequestClose={closeModal}
-        contentLabel="Enlarged Image Modal"
+        className="image-modal"
         style={{
           overlay: {
             backgroundColor: 'rgba(0, 0, 0, 0.8)',
@@ -133,13 +158,23 @@ const Photos = () => {
             transform: 'translate(-50%, -50%)',
             background: 'none',
             border: 'none',
+            maxWidth: '600px', // Adjust the width as needed
           },
         }}
       >
-        <div>
-          <button onClick={prevImage}>&lt;</button>
-          <img src={photos[currentImageIndex]} alt={`VS${currentImageIndex + 1}`} />
-          <button onClick={nextImage}>&gt;</button>
+        <div className="modal-image-container">
+          <img src={photos[currentImageIndex]} alt={`VS${currentImageIndex + 1}`} className="modal-image" />
+          <button className="modal-close-button" onClick={closeModal}>
+            X
+          </button>
+          <div className="modal-controls">
+            <button className="modal-control-button" onClick={handlePrevImage}>
+              &lt;
+            </button>
+            <button className="modal-control-button" onClick={handleNextImage}>
+              &gt;
+            </button>
+          </div>
         </div>
       </Modal>
     </div>
