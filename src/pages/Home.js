@@ -48,6 +48,18 @@ const Home = () => {
    
   ];
   const images = imagePositions.map((item) => item.url);
+  const [countdown, setCountdown] = useState(calculateCountdown());
+
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCountdown(calculateCountdown());
+    }, 1000); // Update the countdown every second (1000ms)
+
+    return () => clearInterval(interval);
+  }, []);
+
+
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -59,7 +71,7 @@ const Home = () => {
 
 
 
-  const calculateCountdown = () => {
+  function calculateCountdown() {
     const targetDate = new Date('2024-04-04T00:00:00');
     const currentDate = new Date();
     const timeDifference = targetDate - currentDate;
@@ -95,6 +107,13 @@ const Home = () => {
         `}
       </style>
 
+     
+
+
+
+
+
+
       <style>
         {`
           @import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,400;1,400;1,600&display=swap');
@@ -114,6 +133,7 @@ const Home = () => {
               backgroundImage: `url(${imagePositions[currentImage].url})`,
               backgroundSize: 'cover',
               backgroundRepeat: 'no-repeat',
+              transition: 'background-image 1.0s ease-in-out',
             
             }}
 >
@@ -150,19 +170,19 @@ const Home = () => {
                   Vinay & Simhika
                 </h2>
                 <p
-                  className="min-[0px]:text-[18px] md:text-[25px] font-primary mb-4 lg:mb-12 color: white"
-                  style={{
-                    //fontSize: '18px',
-                    color: 'white',
-                    fontWeight: 'normal',
-                    fontFamily: 'cormorant infant',
-                    textAlign: 'center',
-                    position: 'relative',
-                    bottom: 25,
-                  }}
-                >
-                  {calculateCountdown()}
-                </p>
+        className="min-[0px]:text-[18px] md:text-[25px] font-primary mb-4 lg:mb-12 color: white"
+        style={{
+          //fontSize: '18px',
+          color: 'white',
+          fontWeight: 'normal',
+          fontFamily: 'cormorant infant',
+          textAlign: 'center',
+          position: 'relative',
+          bottom: 25,
+        }}
+      >
+        {countdown}
+      </p>
               </div>
             </div>
           </div>
@@ -267,6 +287,7 @@ const Home = () => {
           backgroundSize: 'cover',
           backgroundPosition: 'top center',
           backgroundRepeat: 'no-repeat',
+           
         }}
       >
         <div className="container mx-auto flex flex-col h-full justify-center items-center">
