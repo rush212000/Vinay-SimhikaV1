@@ -103,6 +103,13 @@ const Photos = () => {
         height: 150px; /* Adjust the height for larger view */
       }
     }
+    // Responsive styles for thumbnail images
+    @media (max-width: 767px) {
+      .thumbnail-container img {
+        max-height: calc(50vh - 100px); // Adjust the maximum height based on viewport height
+      }
+    }
+  
 
     /* Modal Styles */
     .image-modal {
@@ -116,7 +123,7 @@ const Photos = () => {
       position: relative;
     }
 
-    @import url('https://use.typekit.net/upl4fxr.css');
+  
     body {
       font-family: 'Open Sans', sans-serif;
     }
