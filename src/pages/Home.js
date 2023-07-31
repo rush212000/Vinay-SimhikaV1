@@ -38,13 +38,13 @@ const Footer = () => {
 const Home = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const imagePositions = [
-    { url: window.innerWidth >= 650 ? VS1Image : VS1MImage, position: 'bottom'},
-    { url: window.innerWidth >= 650 ? VS2Image : VS2MImage, position: 'bottom' },
-    { url: window.innerWidth >= 650 ? VS3Image : VS6MImage, position: 'bottom' },
-    { url: window.innerWidth >= 650 ? VS4Image : VS4MImage, position: 'bottom' },
-    { url: window.innerWidth >= 650 ? VS5Image : VS5MImage, position: 'bottom' },
-    { url: window.innerWidth >= 650 ? VS6Image : VS3MImage, position: 'bottom' },
-    { url: window.innerWidth >= 650 ? VS7Image : VS7MImage, position: 'bottom' },
+    { url: window.innerWidth >= 650 ? VS1Image : VS1MImage, position: 'center'},
+    { url: window.innerWidth >= 650 ? VS2Image : VS2MImage, position: 'center' },
+    { url: window.innerWidth >= 650 ? VS3Image : VS6MImage, position: 'center' },
+    { url: window.innerWidth >= 650 ? VS4Image : VS4MImage, position: 'center' },
+    { url: window.innerWidth >= 650 ? VS5Image : VS5MImage, position: 'center' },
+    { url: window.innerWidth >= 650 ? VS6Image : VS3MImage, position: 'center' },
+    { url: window.innerWidth >= 650 ? VS7Image : VS7MImage, position: 'center' },
    
   ];
  
