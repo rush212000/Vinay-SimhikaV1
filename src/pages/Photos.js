@@ -66,7 +66,7 @@ const Photos = () => {
 
     .thumbnail-container img {
       width: 100%;
-      height: auto;
+      height: autopx;
       max-height: 100px;
       cursor: pointer;
       object-fit: cover; /* Maintain aspect ratio */
@@ -130,7 +130,7 @@ const Photos = () => {
     .modal-image {
       width: 100%;
       height: auto;
-      max-height: 80vh;
+      max-height: 100vh;
       max-width: 90vw;
       object-fit: contain;
     }
@@ -161,17 +161,41 @@ const Photos = () => {
       background-color: rgba(0, 0, 0, 0.8);
       border: none;
       cursor: pointer;
+
     }
+
+
+
+
+
+    /* Navbar Styles */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: #000000; /* Black background */
+    z-index: 10; /* Set a high z-index to place the navbar above other elements */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   `;
 
   return (
-    <div className="image-gallery" style={{ backgroundColor: "#F6F6F6" }}>
-      <style>{styles}</style>
+
+    <div>
+    <style>{styles}</style>
+    <div className="navbar">
       <div style={{ backgroundColor: "black", height: "80px" }}></div>
-      <nav style={{ backgroundColor: "#000000", height: "80px" }}>
+      <nav style={{ backgroundColor: "black", height: "80px" }}>
         {/* Your navigation bar content */}
       </nav>
-
+    </div>
+    <div className="image-gallery">
+      <br/>
+      <br/>
       <br/>
       <h2
         className="min-[0px]:text-[65px] md:text-[75px]"
@@ -180,11 +204,12 @@ const Photos = () => {
           fontFamily: "shelby, sans-serif",
           fontStyle: "normal",
           color: "#000000",
+          marginTop: "20px", // Add margin to separate the heading from the images
         }}
       >
+
         Photos
       </h2>
-      <br />
       <div className="thumbnail-container">
         {images.map((image, index) => (
           <img
@@ -204,6 +229,10 @@ const Photos = () => {
           </button>
         </div>
       </div>
+
+      <br/>
+      <br/>
+      <br/>
 
       {/* Modal */}
       <Modal isOpen={modalIsOpen} onRequestClose={closeModal} className="image-modal">
@@ -236,6 +265,7 @@ const Photos = () => {
         </div>
       </footer>
     </div>
+  </div>
   );
 };
 
