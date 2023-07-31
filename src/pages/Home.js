@@ -286,58 +286,61 @@ const Home = () => {
           </div>
         </div>
       </section>
-
+      
       <section
-        className="section"
-        style={{
-          padding: '0',
-          backgroundImage: `url(${window.innerWidth >= 650 ? VS8Image : VS8MImage})`, // Add the gradient overlay
-          backgroundSize: 'cover',
-          backgroundPosition: 'top center',
-          backgroundRepeat: 'no-repeat',
-           
-        }}
-      >
-        <div className="container mx-auto flex flex-col h-full justify-center items-center">
-          {/* Content */}
-          {/* Add your content here */}
-          <div className="min-[0px]:text-[60px] md:text-[75px] flex flex-col items-center justify-center text-center">
-            
-            <h1
-              style={{
-                //fontSize: '75px',
-                fontFamily: 'cormorant infant',
-                position: 'relative',
-                top: 270,
-                padding: '0% 0%'
-              }}
-            >
-              We hope to see you there
-            </h1>
+      className="section"
+      style={{
+        padding: '0',
+        backgroundImage: `url(${window.innerWidth >= 650 ? VS8Image : VS8MImage})`, // Add the gradient overlay
+        backgroundSize: 'cover',
+        backgroundPosition: 'top center',
+        backgroundRepeat: 'no-repeat',
+        position: 'relative', // Set the section to a relative position
+      }}
+    >
+      <div className="container mx-auto flex flex-col h-full justify-center items-center">
+        {/* Content */}
+        {/* Add your content here */}
+        <div className="min-[0px]:text-[60px] md:text-[75px] flex flex-col items-center justify-center text-center">
+          <h1
+            style={{
+              fontFamily: 'cormorant infant',
+              position: 'absolute', // Set the h1 to an absolute position
+              top: '50%', // Adjust the top position as needed
+              left: '50%', // Center horizontally
+              transform: 'translate(-50%, -50%)', // Center both vertically and horizontally
+              padding: '0% 0%',
+            }}
+          >
+            We hope to see you there
+          </h1>
 
-            <br />
-            <Link
-              to="/pages/RSVP"
-              className="btn rounded-lg bg-white hover:bg-opacity-80 transition-all duration-300"
-              style={{
-                color: 'black',
-                width: '250px', // Adjust the width as desired
-                height: '50px', // Adjust the height as desired
-                fontSize: '20px', // Adjust the font size as desired
-                fontFamily: 'Montserrat, sans-serif', // Add the font-family here too
-                fontWeight: '600',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                position: 'relative',
-                top: 200,
-              }}
-            >
-              RSVP
-            </Link>
-          </div>
+          <br />
+
+          <Link
+            to="/pages/RSVP"
+            className="btn rounded-lg bg-white hover:bg-opacity-80 transition-all duration-300"
+            style={{
+              color: 'black',
+              width: '250px', // Adjust the width as desired
+              height: '50px', // Adjust the height as desired
+              fontSize: '20px', // Adjust the font size as desired
+              fontFamily: 'Montserrat, sans-serif', // Add the font-family here too
+              fontWeight: '600',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              position: 'absolute', // Set the button to an absolute position
+              bottom: '50px', // Adjust the bottom position as needed
+              left: '50%', // Center horizontally
+              transform: 'translateX(-50%)', // Center horizontally
+            }}
+          >
+            RSVP
+          </Link>
         </div>
-      </section>
+      </div>
+    </section>
       <Footer />
     </>
   );
