@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef} from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import VS1Image from '../img/home/V&S1.jpg';
@@ -36,7 +36,7 @@ const Footer = () => {
 };
 
 const Home = () => {
-  const [currentImage, setCurrentImage] = useState(0);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const imagePositions = [
     { url: window.innerWidth >= 650 ? VS1Image : VS1MImage, position: 'center'},
     { url: window.innerWidth >= 650 ? VS2Image : VS2MImage, position: 'bottom' },
@@ -47,8 +47,23 @@ const Home = () => {
     { url: window.innerWidth >= 650 ? VS7Image : VS7MImage, position: 'bottom' },
    
   ];
-  const images = imagePositions.map((item) => item.url);
+ 
   const [countdown, setCountdown] = useState(calculateCountdown());
+
+
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % imagePositions.length);
+    }, 1000); // Change image every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [imagePositions]);
+
+
+
+
+
 
 
   useEffect(() => {
@@ -61,13 +76,7 @@ const Home = () => {
 
 
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImage((prevImage) => (prevImage + 1) % images.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [images]);
+ 
 
 
 
@@ -123,19 +132,18 @@ const Home = () => {
       <nav className="navbar" style={{ zIndex: '2' }}>
         {/* Replace with your navbar component */}
       </nav>
-
       <section className="section" style={{ backgroundColor: '#E0E0E0' }}>
         <div className="mx-auto h-screen relative">
           <div
             className="flex flex-col justify-center h-full"
             style={{
-              backgroundPosition: imagePositions[currentImage].position,
-              backgroundImage: `url(${imagePositions[currentImage].url})`,
+              backgroundPosition: imagePositions[currentImageIndex].position,
+              backgroundImage: `url(${imagePositions[currentImageIndex].url})`,
               backgroundSize: 'cover',
               backgroundRepeat: 'no-repeat',
               transition: 'background-image 1.0s ease-in-out',
-            
             }}
+            
 >
           
 
