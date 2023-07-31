@@ -90,19 +90,51 @@ const Photos = () => {
             /* Add your modal styles here */
           }
           .modal-image-container {
-            /* Add your modal image container styles here */
+            position: relative;
+            display: flex;
+            align-items: center;
           }
           .modal-image {
             /* Add your modal image styles here */
           }
-          .modal-close-button {
-            /* Add your modal close button styles here */
+          .modal-control-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            font-size: 1.5rem;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            transition: background-color 0.3s;
           }
           .modal-controls {
             /* Add your modal controls styles here */
           }
           .modal-control-button {
             /* Add your modal control button styles here */
+          }
+          .modal-control-button.left {
+            left: 0;
+          }
+          .modal-control-button.right {
+            right: 0;
+          }
+          .modal-close-button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            font-size: 1.5rem;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+            transition: background-color 0.3s;
+          }
+          .modal-close-button:hover {
+            background-color: rgba(0, 0, 0, 0.7);
           }
         `}
       </style>
