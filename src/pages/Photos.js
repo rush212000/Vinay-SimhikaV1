@@ -45,6 +45,8 @@ const Photos = () => {
     700: 2,
     500: 1
   };
+  const [initialX, setInitialX] = useState(null);
+  const [movementX, setMovementX] = useState(0);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -67,6 +69,56 @@ const Photos = () => {
       prevIndex === 0 ? photos.length - 1 : prevIndex - 1
     );
   };
+ const handleSwipeMove = (e) => {
+    if (initialX !== null) {
+      const newX = e.clientX;
+      const diffX = newX - initialX;
+      setMovementX(diffX);
+    }
+  };
+
+  // Function to handle the swipe end
+  const handleSwipeEnd = () => {
+    if (movementX > 100) {
+      handlePrevImage();
+    } else if (movementX < -100) {
+      handleNextImage();
+    }
+    setInitialX(null);
+    setMovementX(0);
+  };
+
+  const handleTouchStart = (e) => {
+    setInitialX(e.touches[0].clientX);
+    setMovementX(0);
+  };
+
+  // Function to handle touch move
+  const handleTouchMove = (e) => {
+    if (initialX !== null) {
+      const newX = e.touches[0].clientX;
+      const diffX = newX - initialX;
+      setMovementX(diffX);
+    }
+  };
+
+  // Function to handle touch end
+  const handleTouchEnd = () => {
+    if (movementX > 100) {
+      handlePrevImage();
+    } else if (movementX < -100) {
+      handleNextImage();
+    }
+    setInitialX(null);
+    setMovementX(0);
+  };
+
+
+
+
+
+
+
 
   return (
     <div>
@@ -179,21 +231,28 @@ const Photos = () => {
       >
         Photos
       </h1>
-
-      <div>
+      <div
+      onMouseDown={(e) => setInitialX(e.clientX)}
+      onMouseMove={handleSwipeMove}
+      onMouseUp={handleSwipeEnd}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+      style={{ touchAction: 'pan-y' }} // Allow vertical scrolling on touch devices
+    >
       <Masonry
-          breakpointCols={breakpointColumnsObj}
-          className="my-masonry-grid"
-          columnClassName="my-masonry-grid_column"
-        >
-          {photos.map((photo, index) => (
-            <div key={index} className="gallery-item" onClick={() => openModal(index)}>
-              <img src={photo} alt={`VS${index + 1}`} />
-            </div>
-          ))}
-        </Masonry>
+        breakpointCols={breakpointColumnsObj}
+        className="my-masonry-grid"
+        columnClassName="my-masonry-grid_column"
+      >
+        {photos.map((photo, index) => (
+          <div key={index} className="gallery-item" onClick={() => openModal(index)}>
+            <img src={photo} alt={`VS${index + 1}`} />
+          </div>
+        ))}
+      </Masonry>
       </div>
-
+ 
       {/* Modal for image enlargement */}
       <Modal
         isOpen={isModalOpen}
@@ -230,8 +289,9 @@ const Photos = () => {
           </div>
         </div>
       </Modal>
-      <Footer />
-    </div>
+     <Footer/>
+    </div>  
+ 
     
   );
 };
