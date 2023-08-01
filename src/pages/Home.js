@@ -37,6 +37,8 @@ const Footer = () => {
 
 const Home = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [showNextImage, setShowNextImage] = useState(true); // State to control the transition
+
   const imagePositions = [
     { url: window.innerWidth >= 650 ? VS1Image : VS1MImage, position: 'center'},
     { url: window.innerWidth >= 650 ? VS2Image : VS2MImage, position: 'center' },
@@ -51,8 +53,13 @@ const Home = () => {
   const [countdown, setCountdown] = useState(calculateCountdown());
 
   const changeImage = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % imagePositions.length);
-    setTimeout(changeImage, 5000); // Change image every 5 seconds (5000ms)
+    // Hide the current image before showing the next image
+    setShowNextImage(false);
+    setTimeout(() => {
+      // Update the currentImageIndex and show the next image after a short delay (e.g., 500ms)
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % imagePositions.length);
+      setShowNextImage(true);
+    }, 500);
   };
 
   useEffect(() => {
@@ -61,7 +68,10 @@ const Home = () => {
     return () => {
       clearTimeout(imageTransition);
     };
-  }, []); // Empty dependency array, so this effect runs only once on mount
+  }, [currentImageIndex]); // Run the effect whenever the currentImageIndex changes
+
+  // The rest of your code remains unchanged
+
 
   useEffect(() => {
     const countdownInterval = setInterval(() => {
@@ -138,7 +148,8 @@ const Home = () => {
               backgroundImage: `url(${imagePositions[currentImageIndex].url})`,
               backgroundSize: 'cover',
               backgroundRepeat: 'no-repeat',
-              transition:'background-image 1s ease-in-out',
+              opacity: showNextImage ? 1 : 0, // Set opacity based on showNextImage state
+              transition: 'opacity 0.5s ease-in-out', // Add a smooth transition for opacity change
             }}           
 >         
             <div className="container mx-auto flex flex-col h-full justify-center items-center">
