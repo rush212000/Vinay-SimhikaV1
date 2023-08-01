@@ -100,6 +100,23 @@ const Home = () => {
       {/* Add the meta tag for responsive design */}
       <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+      
+      <style>
+     
+        {`
+          /* Add CSS transition for background image change */
+          .background-image {
+           
+            transition: opacity 1.0s ease-in-out;
+          }
+
+        
+        `}
+      </style>
+      
+      
+      
+      
       <style>
         {`
         @import url('https://use.typekit.net/upl4fxr.css');
@@ -109,6 +126,8 @@ const Home = () => {
           width: 100%;
           height: auto;
         }
+
+      
         `}
       </style>
 
@@ -130,7 +149,7 @@ const Home = () => {
               backgroundImage: `url(${imagePositions[currentImageIndex].url})`,
               backgroundSize: 'cover',
               backgroundRepeat: 'no-repeat',
-              transition: 'background-image 0.8s ease-in-out',
+            
             }}           
 >         
             <div className="container mx-auto flex flex-col h-full justify-center items-center">
