@@ -98,28 +98,32 @@ const Photos = () => {
             /* Add your modal image styles here */
           }
           .modal-control-button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            font-size: 1.5rem;
-            border: none;
-            cursor: pointer;
-            padding: 8px;
-            transition: background-color 0.3s;
+            /* Add your modal control button styles here */
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  transition: background-color 0.3s;
           }
           .modal-controls {
             /* Add your modal controls styles here */
+  position: absolute;
+  bottom: 10px; /* Adjust the vertical position as needed */
+  left: 0; /* Align the controls to the left side */
+  width: 100%; /* Make sure the controls span the entire width */
+  display: flex;
+  justify-content: space-between; /* Distribute the buttons to the left and right edges */
           }
-          .modal-control-button {
-            /* Add your modal control button styles here */
+          .modal-control-button:hover {
+            background-color: rgba(0, 0, 0, 0.7);
           }
           .modal-control-button.left {
-            left: 0;
+            right: 0; /* Move the left arrow to the right side */
           }
           .modal-control-button.right {
-            right: 0;
+            left: 0; /* Move the right arrow to the left side */
           }
           .modal-close-button {
             position: absolute;
