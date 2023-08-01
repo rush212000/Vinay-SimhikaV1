@@ -301,14 +301,23 @@ const Home = () => {
       <div className="container mx-auto flex flex-col h-full justify-center items-center">
         {/* Content */}
         {/* Add your content here */}
-        <div className="min-[0px]:text-[60px] md:text-[75px] flex flex-col items-center justify-center text-center">
+        <div className="min-[0px]:text-[60px] md:text-[75px] flex flex-col items-center justify-center text-center"
+        >
           <h1
+          className='min-[0px]:absolute
+          min-[0px]:bottom-[16%] 
+          min-[0px]:left-[100%]
+          min-[0px]:mx-[-50%] 
+          
+          md:absolute 
+          md:bottom-[230px]
+          md:left-[100%]'
             style={{
               fontFamily: 'cormorant infant',
-              position: 'absolute', // Set the h1 to an absolute position
-              top: '50%', // Adjust the top position as needed
-              left: '50%', // Center horizontally
-              transform: 'translate(-50%, -50%)', // Center both vertically and horizontally
+             // position: 'relative', // Set the h1 to an absolute position
+             // top: '90%', // Adjust the top position as needed
+             // left: '50%', // Center horizontally
+             transform: 'translateX(-50%)', // Center both vertically and horizontally
               padding: '0% 0%',
             }}
           >
@@ -319,7 +328,15 @@ const Home = () => {
 
           <Link
             to="/pages/RSVP"
-            className="btn rounded-lg bg-white hover:bg-opacity-80 transition-all duration-300"
+            className="btn rounded-lg bg-white hover:bg-opacity-80 transition-all duration-300 
+            min-[0px]:absolute 
+            min-[0px]:bottom-[65px] 
+            min-[0px]:left-[50%] 
+            
+            md:absolute 
+            md:bottom-[150px]
+            md:left-[50%]"
+
             style={{
               color: 'black',
               width: '250px', // Adjust the width as desired
@@ -330,9 +347,9 @@ const Home = () => {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              position: 'absolute', // Set the button to an absolute position
-              bottom: '50px', // Adjust the bottom position as needed
-              left: '50%', // Center horizontally
+              //position: 'absolute', // Set the button to an absolute position
+              //bottom: '65px', // Adjust the bottom position as needed
+              //left: '50%', // Center horizontally
               transform: 'translateX(-50%)', // Center horizontally
             }}
           >
