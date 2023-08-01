@@ -309,7 +309,7 @@ const Home = () => {
         >
           <h1
           className='min-[0px]:absolute
-          min-[0px]:bottom-[16%] 
+          min-[0px]:bottom-[18%] 
           min-[0px]:left-[100%]
           min-[0px]:mx-[-50%] 
           
@@ -334,7 +334,7 @@ const Home = () => {
             to="/pages/RSVP"
             className="btn rounded-lg bg-white hover:bg-opacity-80 transition-all duration-300 
             min-[0px]:absolute 
-            min-[0px]:bottom-[65px] 
+            min-[0px]:bottom-[80px] 
             min-[0px]:left-[50%] 
             
             md:absolute 
