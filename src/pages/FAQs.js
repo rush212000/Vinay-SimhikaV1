@@ -11,9 +11,9 @@ const FAQs = () => {
       `}
       </style>
       <style>
-        {`
-          @import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,400;1,400;1,600&display=swap');
-        `}
+      {`
+          @import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:wght@300;400;500;600&display=swap');
+          `}
       </style>
 
       <div
@@ -72,28 +72,28 @@ const FAQs = () => {
           {/* Add more img elements here as needed */}
           {/* Content */}
           
-          <p style={{fontSize: '30px'}}><span style={{fontWeight: 'bold'}}>What are the dates for the wedding events?</span></p>
+          <p style={{fontSize: '30px'}}><span style={{fontWeight: '500'}}>What are the dates for the wedding events?</span></p>
           <br/>
           The wedding events will be held from Tuesday 2nd April to Thursday 4th April 2024. Please refer to the ‘our events’ page for further details. 
           <br/>
           <br/>
           <br/>
           <br/>
-          <p style={{fontSize: '30px'}}><span style={{fontWeight: 'bold'}}>How can I RSVP and when is the deadline?</span></p>
+          <p style={{fontSize: '30px'}}><span style={{fontWeight: '500'}}>How can I RSVP and when is the deadline?</span></p>
           <br/>
           Kindly RSVP through our wedding website or by contacting either of us directly. We kindly request your response by 1st November 2023.
           <br/>
           <br/>
           <br/>
           <br/>
-          <p style={{fontSize: '30px'}}><span style={{fontWeight: 'bold'}}>I’ve missed the RSVP deadline; can I still attend?</span></p>
+          <p style={{fontSize: '30px'}}><span style={{fontWeight: '500'}}>I’ve missed the RSVP deadline; can I still attend?</span></p>
           <br/>
           Not to worry, you can still attend. RSVP through the website and pop Vinay or Simhika a message letting them know you’ve done so.
           <br/>
           <br/>
           <br/>
           <br/>
-          <p style={{fontSize: '30px'}}><span style={{fontWeight: 'bold'}}>I’m travelling from abroad, where is the best place to fly in to?</span></p>
+          <p style={{fontSize: '30px'}}><span style={{fontWeight: '500'}}>I’m travelling from abroad, where is the best place to fly in to?</span></p>
           <br/>
           We suggest landing in either Ahmedabad (Sardar Vallabhbhai Patel International Airport) or Rajkot Airport and hiring a car to travel to Bhuj. 
           Alternatively, you may be able to find limited flights to Bhuj or Kandla Airports. 
@@ -101,7 +101,7 @@ const FAQs = () => {
           <br/>
           <br/>
           <br/>
-          <p style={{fontSize: '30px'}}><span style={{fontWeight: 'bold'}}>How do I reserve a room at Time Square Club?</span></p>
+          <p style={{fontSize: '30px'}}><span style={{fontWeight: '500'}}>How do I reserve a room at Time Square Club?</span></p>
           <br/>
           For our international guests, we have blocked out rooms at the resort. Please contact Vinay or Simhika directly for more information. 
           Rooms will be allocated on a first come first served basis. 
@@ -109,26 +109,26 @@ const FAQs = () => {
           <br/>
           <br/>
           <br/>
-          <p style={{fontSize: '30px'}}><span style={{fontWeight: 'bold'}}>What should I wear for the wedding events?</span></p>
+          <p style={{fontSize: '30px'}}><span style={{fontWeight: '500'}}>What should I wear for the wedding events?</span></p>
           <br/>
           Get your lehengas, sarees and kurta out! We’re going all out traditional. For the haldi ceremony, we recommend wearing something casual that you don’t mind getting wet or stained with turmeric. 
           <br/>
           <br/>
           <br/>
           <br/>
-          <p style={{fontSize: '30px'}}><span style={{fontWeight: 'bold'}}>What will the weather be like this time of year?</span></p>
+          <p style={{fontSize: '30px'}}><span style={{fontWeight: '500'}}>What will the weather be like this time of year?</span></p>
           <br/>
           Be prepared for heat! We recommend packing plenty of sun protection as temperatures can surpass 40&#176;C. We aim to keep you as cool and comfortable as possible and have measures in place for this. 
           <br/>
           <br/>
           <br/>
           <br/>
-          <p style={{fontSize: '30px'}}><span style={{fontWeight: 'bold'}}>What sights and activities can I enjoy during my stay in Bhuj, Kutch?</span></p>
+          <p style={{fontSize: '30px'}}><span style={{fontWeight: '500'}}>What sights and activities can I enjoy during my stay in Bhuj, Kutch?</span></p>
           <br/>
           As the saying goes, ‘Kutch nahi dekha to kuch nahi dekha’ translating to ‘if you haven’t seen Kutch, you haven’t seen anything.’
           <br/>
           <br/>
-          <span style={{fontWeight: 'bold'}}>Here are some places you may like to visit:</span>
+          <span style={{fontWeight: '500'}}>Here are some places you may like to visit:</span>
           <br/>
           <br/>
           Vijay Villas Palace

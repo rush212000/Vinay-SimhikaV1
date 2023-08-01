@@ -14,7 +14,7 @@ const Header = () => {
     };
 
     const handleResize = () => {
-      setIsMobileView(window.innerWidth <= 768); // Adjust the breakpoint to your desired value for mobile view
+      setIsMobileView(window.innerWidth <= 1191); // Adjust the breakpoint to your desired value for mobile view
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -100,7 +100,7 @@ const Header = () => {
           </nav>
 
           {/* Render the RSVP button only in non-mobile view */}
-          {!isMobileView && (
+          {!isMobileView && <MobileNav />}
             <div className="fixed top-5.1 right-20" style={{ zIndex: '1' }}>
               <Link
                 to="/pages/RSVP"
@@ -111,7 +111,7 @@ const Header = () => {
                 }}
               >
                 <button
-                  className="btn rounded-lg bg-white hover:bg-opacity-80 transition-all duration-300"
+                  className="min-[0px]:invisible min-[1192px]:visible btn rounded-lg bg-white hover:bg-opacity-80 transition-all duration-300"
                   style={{
                     width: '85px',
                     height: '20px',
@@ -125,7 +125,7 @@ const Header = () => {
                 </button>
               </Link>
             </div>
-          )}
+          
         </div>
 
         {/* Socials */}

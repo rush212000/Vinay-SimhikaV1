@@ -18,7 +18,7 @@ const MobileNav = () => {
   };
 
   const isMobileView = () => {
-    return window.innerWidth <= 768;
+    return window.innerWidth <= 1191;
   };
 
   useEffect(() => {
@@ -76,7 +76,7 @@ const MobileNav = () => {
               width: '25px', 
               height: 'auto', 
               position: 'relative',
-              top: '20px',
+              top: '-20px',
               size:'auto' }} />
           </a>
       </div>
@@ -104,7 +104,7 @@ const MobileNav = () => {
                  width: '190px',
                  height: '50px',
                  position: 'relative',
-                 top: '70px',
+                 bottom: '-30px',
                  fontSize: '16px',
                  fontFamily: 'Montserrat, sans-serif',
                  fontStyle: 'regular',
