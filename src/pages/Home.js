@@ -50,33 +50,29 @@ const Home = () => {
  
   const [countdown, setCountdown] = useState(calculateCountdown());
 
-
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % imagePositions.length);
-    }, 3500); // Change image every 1.5 seconds (1500ms)
-
-    return () => clearInterval(interval);
-  }, [imagePositions]);
-
-
-
-
-
-
+  const changeImage = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % imagePositions.length);
+    setTimeout(changeImage, 5000); // Change image every 5 seconds (5000ms)
+  };
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    const imageTransition = setTimeout(changeImage, 5000);
+
+    return () => {
+      clearTimeout(imageTransition);
+    };
+  }, []); // Empty dependency array, so this effect runs only once on mount
+
+  useEffect(() => {
+    const countdownInterval = setInterval(() => {
       setCountdown(calculateCountdown());
     }, 1000); // Update the countdown every second (1000ms)
 
-    return () => clearInterval(interval);
-  }, []);
+    return () => {
+      clearInterval(countdownInterval);
+    };
+  }, []); // Empty dependency array, so this effect runs only once on mount
 
-
-
- 
 
 
 
@@ -116,13 +112,6 @@ const Home = () => {
         `}
       </style>
 
-     
-
-
-
-
-
-
       <style>
         {`
           @import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,400;1,400;1,600&display=swap');
@@ -142,12 +131,8 @@ const Home = () => {
               backgroundSize: 'cover',
               backgroundRepeat: 'no-repeat',
               transition: 'background-image 0.8s ease-in-out',
-            }}
-            
->
-          
-
-          
+            }}           
+>         
             <div className="container mx-auto flex flex-col h-full justify-center items-center">
               <div className="pt-8 pb-14 lg:pt-0 lg:pb-0 lg:w-auto z-10">
                 <h1
