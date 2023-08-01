@@ -15,7 +15,24 @@ import VS10 from "../img/Photos/V&S10.jpg";
 import VS11 from "../img/Photos/V&S11.jpg";
 import VS12 from "../img/Photos/V&S12.jpg";
 import VS13 from "../img/Photos/V&S13.jpg";
+import VSfoot from "../img/Photos/vsFoot.png"
 
+
+
+const Footer = () => {
+  return (
+    <footer className="footer mt-auto">
+      <div className="container mx-auto py-4">
+        {/* Add your footer content here */}
+        <div className="flex justify-center items-center">
+          <img src={VSfoot} alt="Footer Image" className="w-20 h-20 mr-4" />
+          <p className="text-center text-gray-600">
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+};
 const photos = [
   VS1, VS2, VS3, VS4, VS5, VS6,
   VS7, VS8, VS9, VS10, VS11, VS12, VS13
@@ -213,7 +230,9 @@ const Photos = () => {
           </div>
         </div>
       </Modal>
+      <Footer />
     </div>
+    
   );
 };
 
