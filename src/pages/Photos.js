@@ -126,6 +126,8 @@ const Photos = () => {
         {`
           @import url('https://use.typekit.net/upl4fxr.css');
 
+          @import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,400;1,400;1,600&display=swap');
+
           .my-masonry-grid {
             display: flex;
             margin-left: -30px; /* gutter size offset */
@@ -231,6 +233,20 @@ const Photos = () => {
       >
         Photos
       </h1>
+      <div 
+        className='min-[0px]:text-[18px] md:text-[20px]'
+        style={{ marginTop: '20px', color: 'black',
+              fontWeight: 'regular 400',
+              fontFamily: 'cormorant infant',
+              fontStyle: 'regular',
+              textAlign: 'center',
+              //fontSize: '20px'
+    }}>
+        A trip down memory lane...
+  
+    
+        </div>
+        <br/>
       <div
       onMouseDown={(e) => setInitialX(e.clientX)}
       onMouseMove={handleSwipeMove}
