@@ -356,8 +356,6 @@ const OurEvent = () => {
 <br/>
 <br/>
 <br/>
-<br/>
-<br/>
 
 
     {/* Footer */}

@@ -150,7 +150,7 @@ const FAQs = () => {
           Bhujia Hill 
           <br/>
           <br/>
-          <br/>
+          
     
         </div>
 

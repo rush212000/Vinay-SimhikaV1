@@ -1,7 +1,8 @@
 import React from 'react';
 import OurStoryP from '../img/OurStory/V&Sourstory.jpg';
 import VSfoot from '../img/OurStory/vsFoot.png';
-import VSP from '../img/OurStory/V&SP.jpg';
+import VSOS1 from '../img/OurStory/V&SOS1.jpg';
+import VSOS2 from '../img/OurStory/V&SOS2.jpg';
 
 const OurStory = () => {
   return (
@@ -109,8 +110,24 @@ const OurStory = () => {
 
         <br/>
         <br/>
-        <br/>
 
+        <section
+          className="section bg-center min-[0px]:max-h-[300px] md:max-h-[450px] lg:max-h-[650px]"
+          style={{
+            backgroundImage: `url(${ VSOS2 })`, // Add the gradient overlay
+            backgroundSize: 'contain',
+            backgroundPosition: 'top',
+            backgroundRepeat: 'no-repeat',
+            //maxWidth: 'screen',
+            //maxHeight: 'auto', // Adjust the height accordingly
+            //marginbottom: '-10px', 
+          }}
+       
+>
+</section>
+        
+        <br/>
+        <br/>
         <h3
         className='min-[0px]:text-[65px] md:text-[75px]'
         style={{
@@ -225,7 +242,6 @@ const OurStory = () => {
         
         <br/>
         <br/>
-        <br/>
 
 
 
@@ -236,12 +252,15 @@ const OurStory = () => {
 
 
         <section
-          className="section  bg-center"
+          className="section  bg-center min-[0px]:max-h-[300px] md:max-h-[450px] lg:max-h-[650px]"
           style={{
-            backgroundImage: `url(${ VSP })`, // Add the gradient overlay
+            backgroundImage: `url(${ VSOS1 })`, // Add the gradient overlay
             backgroundSize: 'contain',
             backgroundPosition: 'top',
             backgroundRepeat: 'no-repeat',
+            //maxWidth: 'screen',
+            //maxHeight: 'auto', // Adjust the height accordingly
+            //marginbottom: '-10px', 
           }}
        
 >
