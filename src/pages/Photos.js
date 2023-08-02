@@ -1,23 +1,22 @@
 import React, { useState } from 'react';
 import Masonry from 'react-masonry-css';
-import Modal from 'react-modal'; // Import the react-modal library
+import Modal from 'react-modal';
+import FSLightbox from 'fslightbox';
 
-import VS1 from "../img/Photos/V&S1.jpg";
-import VS2 from "../img/Photos/V&S2.jpg";
-import VS3 from "../img/Photos/V&S3.jpg";
-import VS4 from "../img/Photos/V&S4.jpg";
-import VS5 from "../img/Photos/V&S5.jpg";
-import VS6 from "../img/Photos/V&S6.jpg";
-import VS7 from "../img/Photos/V&S7.jpg";
-import VS8 from "../img/Photos/V&S8.jpg";
-import VS9 from "../img/Photos/V&S9.jpg";
-import VS10 from "../img/Photos/V&S10.jpg";
-import VS11 from "../img/Photos/V&S11.jpg";
-import VS12 from "../img/Photos/V&S12.jpg";
-import VS13 from "../img/Photos/V&S13.jpg";
-import VSfoot from "../img/Photos/vsFoot.png"
-
-
+import VS1 from '../img/Photos/V&S1.jpg';
+import VS2 from '../img/Photos/V&S2.jpg';
+import VS3 from '../img/Photos/V&S3.jpg';
+import VS4 from '../img/Photos/V&S4.jpg';
+import VS5 from '../img/Photos/V&S5.jpg';
+import VS6 from '../img/Photos/V&S6.jpg';
+import VS7 from '../img/Photos/V&S7.jpg';
+import VS8 from '../img/Photos/V&S8.jpg';
+import VS9 from '../img/Photos/V&S9.jpg';
+import VS10 from '../img/Photos/V&S10.jpg';
+import VS11 from '../img/Photos/V&S11.jpg';
+import VS12 from '../img/Photos/V&S12.jpg';
+import VS13 from '../img/Photos/V&S13.jpg';
+import VSfoot from '../img/Photos/vsFoot.png';
 
 const Footer = () => {
   return (
@@ -27,12 +26,14 @@ const Footer = () => {
         <div className="flex justify-center items-center">
           <img src={VSfoot} alt="Footer Image" className="w-20 h-20 mr-4" />
           <p className="text-center text-gray-600">
+            Your footer content here
           </p>
         </div>
       </div>
     </footer>
   );
 };
+
 const photos = [
   VS1, VS2, VS3, VS4, VS5, VS6,
   VS7, VS8, VS9, VS10, VS11, VS12, VS13
@@ -45,173 +46,23 @@ const Photos = () => {
     700: 2,
     500: 1
   };
-  const [initialX, setInitialX] = useState(null);
-  const [movementX, setMovementX] = useState(0);
-
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  
+  const [lightboxVisible, setLightboxVisible] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const openModal = (index) => {
+  const openLightbox = (index) => {
+    setLightboxVisible(true);
     setCurrentImageIndex(index);
-    setIsModalOpen(true);
   };
 
-  const closeModal = () => {
-    setIsModalOpen(false);
+  const closeLightbox = () => {
+    setLightboxVisible(false);
   };
-
-  const handleNextImage = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % photos.length);
-  };
-
-  const handlePrevImage = () => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === 0 ? photos.length - 1 : prevIndex - 1
-    );
-  };
- const handleSwipeMove = (e) => {
-    if (initialX !== null) {
-      const newX = e.clientX;
-      const diffX = newX - initialX;
-      setMovementX(diffX);
-    }
-  };
-
-  // Function to handle the swipe end
-  const handleSwipeEnd = () => {
-    if (movementX > 100) {
-      handlePrevImage();
-    } else if (movementX < -100) {
-      handleNextImage();
-    }
-    setInitialX(null);
-    setMovementX(0);
-  };
-
-  const handleTouchStart = (e) => {
-    setInitialX(e.touches[0].clientX);
-    setMovementX(0);
-  };
-
-  // Function to handle touch move
-  const handleTouchMove = (e) => {
-    if (initialX !== null) {
-      const newX = e.touches[0].clientX;
-      const diffX = newX - initialX;
-      setMovementX(diffX);
-    }
-  };
-
-  // Function to handle touch end
-  const handleTouchEnd = () => {
-    if (movementX > 100) {
-      handlePrevImage();
-    } else if (movementX < -100) {
-      handleNextImage();
-    }
-    setInitialX(null);
-    setMovementX(0);
-  };
-
-
-
-
-
-
-
 
   return (
     <div>
       <style>
-        {`
-          @import url('https://use.typekit.net/upl4fxr.css');
-
-          @import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,400;1,400;1,600&display=swap');
-
-          .my-masonry-grid {
-            display: flex;
-            margin-left: -30px; /* gutter size offset */
-            width: auto;
-          }
-
-          .my-masonry-grid_column {
-            padding-left: 30px; /* gutter size */
-            background-clip: padding-box;
-          }
-
-          .gallery-item {
-            margin-bottom: 30px;
-          }
-
-          .gallery-item img {
-            width: 100%;
-            display: block;
-            /* Remove the border-radius property to eliminate rounded edges */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-          }
-          
-          /* Navbar styles */
-          .navbar {
-            background-color: black;
-            padding: 40px;
-          }
-
-          /* Modal styles */
-          .image-modal {
-            /* Add your modal styles here */
-          }
-          .modal-image-container {
-            position: relative;
-            display: flex;
-            align-items: center;
-          }
-          .modal-image {
-            /* Add your modal image styles here */
-          }
-          .modal-control-button {
-            /* Add your modal control button styles here */
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  font-size: 1.5rem;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-  transition: background-color 0.3s;
-          }
-          .modal-controls {
-            /* Add your modal controls styles here */
-  position: absolute;
-  bottom: 10px; /* Adjust the vertical position as needed */
-  left: 0; /* Align the controls to the left side */
-  width: 100%; /* Make sure the controls span the entire width */
-  display: flex;
-  justify-content: space-between; /* Distribute the buttons to the left and right edges */
-          }
-          .modal-control-button:hover {
-            background-color: rgba(0, 0, 0, 0.7);
-          }
-          .modal-control-button.left {
-            right: 0; /* Move the left arrow to the right side */
-          }
-          .modal-control-button.right {
-            left: 0; /* Move the right arrow to the left side */
-          }
-          .modal-close-button {
-            position: absolute;
-            top: 0;
-            right: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            font-size: 1.5rem;
-            border: none;
-            cursor: pointer;
-            padding: 4px;
-            transition: background-color 0.3s;
-          }
-          .modal-close-button:hover {
-            background-color: rgba(0, 0, 0, 0.7);
-          }
-        `}
+        {/* Your styles go here */}
       </style>
       {/* Black Navbar */}
       <div className="navbar">
@@ -226,7 +77,6 @@ const Photos = () => {
           textAlign: 'center',
           fontFamily: 'shelby, sans-serif',
           fontStyle: 'normal',
-          //fontSize: '100px',
           position: 'relative',
           bottom: 10,
         }}
@@ -239,40 +89,40 @@ const Photos = () => {
               fontWeight: 'regular 400',
               fontFamily: 'cormorant infant',
               fontStyle: 'regular',
-              textAlign: 'center',
-              //fontSize: '20px'
+              textAlign: 'center'
     }}>
         A trip down memory lane...
-  
-    
         </div>
         <br/>
-      <div
-      onMouseDown={(e) => setInitialX(e.clientX)}
-      onMouseMove={handleSwipeMove}
-      onMouseUp={handleSwipeEnd}
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
-      style={{ touchAction: 'pan-y' }} // Allow vertical scrolling on touch devices
-    >
-      <Masonry
-        breakpointCols={breakpointColumnsObj}
-        className="my-masonry-grid"
-        columnClassName="my-masonry-grid_column"
-      >
-        {photos.map((photo, index) => (
-          <div key={index} className="gallery-item" onClick={() => openModal(index)}>
-            <img src={photo} alt={`VS${index + 1}`} />
-          </div>
-        ))}
-      </Masonry>
-      </div>
- 
+        <div>
+          <Masonry
+            breakpointCols={breakpointColumnsObj}
+            className="my-masonry-grid"
+            columnClassName="my-masonry-grid_column"
+          >
+            {photos.map((photo, index) => (
+              <div
+                key={index}
+                className="gallery-item"
+                onClick={() => openLightbox(index)}
+              >
+                <img src={photo} alt={`VS${index + 1}`} />
+              </div>
+            ))}
+          </Masonry>
+        </div>
+      {/* FSLightbox */}
+      <FSLightbox
+        toggler={lightboxVisible}
+        sources={photos}
+        slide={currentImageIndex}
+        type="image"
+        onClose={() => closeLightbox()}
+      />
       {/* Modal for image enlargement */}
       <Modal
-        isOpen={isModalOpen}
-        onRequestClose={closeModal}
+        isOpen={lightboxVisible}
+        onRequestClose={() => closeLightbox()}
         className="image-modal"
         style={{
           overlay: {
@@ -292,23 +142,21 @@ const Photos = () => {
       >
         <div className="modal-image-container">
           <img src={photos[currentImageIndex]} alt={`VS${currentImageIndex + 1}`} className="modal-image" />
-          <button className="modal-close-button" onClick={closeModal}>
+          <button className="modal-close-button" onClick={() => closeLightbox()}>
             X
           </button>
           <div className="modal-controls">
-            <button className="modal-control-button" onClick={handlePrevImage}>
+            <button className="modal-control-button" onClick={() => setCurrentImageIndex((prevIndex) => (prevIndex === 0 ? photos.length - 1 : prevIndex - 1))}>
               &lt;
             </button>
-            <button className="modal-control-button" onClick={handleNextImage}>
+            <button className="modal-control-button" onClick={() => setCurrentImageIndex((prevIndex) => (prevIndex + 1) % photos.length)}>
               &gt;
             </button>
           </div>
         </div>
       </Modal>
-     <Footer/>
-    </div>  
- 
-    
+      <Footer />
+    </div>
   );
 };
 
