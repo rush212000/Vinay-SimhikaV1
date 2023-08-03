@@ -36,11 +36,7 @@ const Footer = () => {
   );
 };
 
-<style>
-        {`
-        @import url('https://use.typekit.net/upl4fxr.css');
-        `}
-      </style>
+
 
 const photos = [
   VS1, VS2, VS3, VS4, VS5, VS6,
