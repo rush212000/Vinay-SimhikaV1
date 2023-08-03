@@ -3,6 +3,8 @@ import Masonry from 'react-masonry-css';
 import Modal from 'react-modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleChevronLeft, faCircleChevronRight, faCircleXmark } from '@fortawesome/free-solid-svg-icons';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './Photos.css'; // Import the styles.css file
 
 import VS1 from "../img/Photos/V&S1.jpg";
@@ -47,7 +49,7 @@ const Photos = () => {
     500: 1
   };
 
-  // State variables for modal and swipe support
+  // State variables for carousel
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -118,23 +120,44 @@ const Photos = () => {
             border: 'none',
             maxWidth: '90vw', // Adjust the width as needed (90% of viewport width)
             maxHeight: '90vh', // Adjust the height as needed (90% of viewport height)
+            width: 'auto', // Allow the image to determine its width
+            height: 'auto', // Allow the image to determine its height
           },
         }}
       >
-        <div className="modal-image-container fullScreenImage">
-          <img src={photos[currentImageIndex]} alt={`VS${currentImageIndex + 1}`} className="modal-image" />
-          <button className="modal-close-button btnClose" onClick={closeModal}>
-            <FontAwesomeIcon icon={faCircleXmark} />
+        <Carousel
+          showThumbs={true}
+          showStatus={true}
+          showArrows={true}
+          showIndicators={false}
+          selectedItem={currentImageIndex}
+          onChange={(index) => setCurrentImageIndex(index)}
+          onClickItem={closeModal}
+          useKeyboardArrows={true}
+          infiniteLoop={true}
+          stopOnHover={false}
+          swipeable={true}
+          emulateTouch={true}
+          centerMode={true}
+          centerSlidePercentage={100}
+        >
+          {photos.map((photo, index) => (
+            <div key={index} className="carousel-item">
+              <img src={photo} alt={`VS${index + 1}`} />
+            </div>
+          ))}
+        </Carousel>
+        <div className="modal-controls">
+          <button className="modal-control-button btnPrev" onClick={handlePrevImage}>
+            <FontAwesomeIcon icon={faCircleChevronLeft} />
           </button>
-          <div className="modal-controls">
-            <button className="modal-control-button btnPrev" onClick={handlePrevImage}>
-              <FontAwesomeIcon icon={faCircleChevronLeft} />
-            </button>
-            <button className="modal-control-button btnNext" onClick={handleNextImage}>
-              <FontAwesomeIcon icon={faCircleChevronRight} />
-            </button>
-          </div>
+          <button className="modal-control-button btnNext" onClick={handleNextImage}>
+            <FontAwesomeIcon icon={faCircleChevronRight} />
+          </button>
         </div>
+        <button className="modal-close-button btnClose" onClick={closeModal}>
+          <FontAwesomeIcon icon={faCircleXmark} />
+        </button>
       </Modal>
       <Footer />
     </div>

@@ -1,24 +1,22 @@
-/* Photos.css */
 .galleryWrap {
     column-count: 4;
-    column-gap: 10px; /* Reduce the gap between columns */
+    column-gap: 5px;
   }
   
   .gallery-item {
-
     width: 100%;
-    margin-bottom: 10px; /* Add some margin between images */
+    margin-bottom: 10px;
     text-align: center;
     cursor: pointer;
+    overflow: hidden;
   }
   
   .gallery-item img {
     width: 100%;
-    height: auto;
-    max-height: 300px; /* Adjust this value to set the maximum height of the thumbnails */
+    height: 100%;
     object-fit: cover;
     border-radius: 8px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Adding a slight shadow effect */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   }
   
   .gallery-item:hover {
@@ -29,12 +27,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh;
+    height: 100vh;
   }
   
   .image-modal .modal-image {
     max-width: 100%;
     max-height: 100%;
+    object-fit: contain;
     border-radius: 8px;
   }
   
@@ -60,5 +59,134 @@
   
   .image-modal .modal-control-button:hover {
     color: #f1f1f1;
+  }
+  
+  /* Custom styles for the carousel */
+  .carousel-root {
+    max-width: 100%;
+    position: relative;
+  }
+  
+  .carousel .carousel-slider {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .carousel .slider-wrapper {
+    transition: transform 0.5s ease;
+    display: flex;
+    align-items: center;
+  }
+  
+  .carousel .slider-wrapper.axis-horizontal .slider {
+    flex-direction: row;
+  }
+  
+  .carousel .slider-wrapper.axis-horizontal .slider .slide {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+  
+  .carousel .slider-wrapper.axis-vertical {
+    flex-direction: column;
+  }
+  
+  .carousel .slider-wrapper.axis-vertical .slider {
+    flex-direction: column;
+    max-height: 100%;
+  }
+  
+  .carousel .slider-wrapper.axis-vertical .slider .slide {
+    flex: 1 0 auto;
+    height: 100%;
+  }
+  
+  .carousel .slider {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    transition: transform 0.5s ease;
+  }
+  
+  .carousel .slider.animated {
+    transition: all 0.5s;
+  }
+  
+  .carousel .slide {
+    min-width: 100%;
+    margin: 0;
+    position: relative;
+    text-align: center;
+    background: #000;
+  }
+  
+  .carousel .carousel-status {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    font-size: 0.8em;
+    color: #fff;
+  }
+  
+  .carousel .control-arrow {
+    font-size: 2em;
+    color: white;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    outline: none;
+    z-index: 1;
+  }
+  
+  .carousel .thumbs-wrapper {
+    margin: 20px 0;
+    overflow: hidden;
+    overflow-y: auto;
+  }
+  
+  .carousel .thumbs {
+    width: 9999px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .carousel .thumb {
+    position: relative;
+    flex: 0 0 80px;
+    width: 80px;
+    margin: 4px;
+    cursor: pointer;
+  }
+  
+  .carousel .thumb.selected .thumb-inner {
+    opacity: 1;
+  }
+  
+  .carousel .thumb .thumb-inner {
+    transition: all 0.5s;
+    opacity: 0.7;
+  }
+  
+  .carousel .thumb img {
+    width: 100%;
+    display: block;
+  }
+  
+  .carousel.carousel-slider {
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  
+  .carousel.carousel-slider .control-arrow {
+    top: 50%;
+    margin-top: -13px;
+    padding: 4px 8px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
   }
   
