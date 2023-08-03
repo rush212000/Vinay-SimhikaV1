@@ -36,6 +36,12 @@ const Footer = () => {
   );
 };
 
+<style>
+        {`
+        @import url('https://use.typekit.net/upl4fxr.css');
+        `}
+      </style>
+
 const photos = [
   VS1, VS2, VS3, VS4, VS5, VS6,
   VS7, VS8, VS9, VS10, VS11, VS12, VS13
@@ -80,10 +86,10 @@ const Photos = () => {
       </div>
       <br />
       <br />
-      <h1 className="min-w-[0px] text-[65px] md:text-[100px]" style={{ color: 'Black', textAlign: 'center', fontFamily: 'shelby, sans-serif', fontStyle: 'normal', position: 'relative', bottom: 10 }}>
+      <h1 className="min-w-[0px] text-[65px] md:text-[100px]" style={{ color: 'Black', textAlign: 'center', fontFamily: 'shelby, sans-serif', fontStyle: 'normal', position: 'relative', bottom: -40 }}>
         Photos
       </h1>
-      <div className="min-[0px]:text-[18px] md:text-[20px]" style={{ marginTop: '20px', color: 'black', fontWeight: 'regular 400', fontFamily: 'cormorant infant', fontStyle: 'regular', textAlign: 'center' }}>
+      <div className="min-[0px]:text-[18px] md:text-[20px]" style={{ marginTop: '10px', color: 'black', fontWeight: 'regular 400', fontFamily: 'cormorant infant', fontStyle: 'regular', textAlign: 'center' }}>
         A trip down memory lane...
       </div>
       <br />
