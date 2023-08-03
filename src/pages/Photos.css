@@ -3,7 +3,7 @@
 
 .galleryWrap {
     column-count: 4;
-    column-gap: 5px;
+    column-gap: 10px;
   }
   
   .gallery-item {

@@ -45,9 +45,9 @@ const photos = [
 
 const Photos = () => {
   const breakpointColumnsObj = {
-    default: 4,
-    1100: 3,
-    700: 2,
+    default: 1,
+    1100: 2,
+    700: 1,
     500: 1
   };
 
@@ -89,19 +89,22 @@ const Photos = () => {
         A trip down memory lane...
       </div>
       <br />
-      <div className="galleryWrap" style={{ columnCount: 4, columnGap: 'auto' }}>
-      <Masonry
-          breakpointCols={breakpointColumnsObj}
-          className="my-masonry-grid"
-          columnClassName="my-masonry-grid_column"
-        >
-          {photos.map((photo, index) => (
-            <div key={index} className="gallery-item" onClick={() => openModal(index)}>
-              <img src={photo} alt={`VS${index + 1}`} className="responsive-image" />
-            </div>
-          ))}
-        </Masonry>
+      <div className="galleryWrap" style={{ columnCount: 3}}>
+        
+  <Masonry
+    breakpointCols={breakpointColumnsObj}
+    className="my-masonry-grid"
+    columnClassName="my-masonry-grid_column"
+  >
+    {photos.map((photo, index) => (
+      <div key={index} className="gallery-item" onClick={() => openModal(index)}>
+        <img src={photo} alt={`VS${index + 1}`} className="responsive-image" />
       </div>
+    ))}
+  </Masonry>
+</div>
+
+      
 
   {/* Modal for image enlargement */}
   <Modal
