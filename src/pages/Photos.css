@@ -190,3 +190,80 @@
     border-radius: 50%;
   }
   
+  /* For mobile view */
+  @media (max-width: 767px) {
+    .galleryWrap {
+      column-count: 1;
+    }
+  
+    .image-modal .modal-image-container {
+      height: 80vh;
+    }
+  
+    .image-modal .modal-image {
+      max-height: 100%;
+      max-width: 100%;
+    }
+  
+    .image-modal .modal-controls {
+      display: none;
+    }
+  
+    .image-modal .modal-close-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 1.5rem;
+      color: white;
+      background-color: transparent;
+      border: none;
+      outline: none;
+      cursor: pointer;
+    }
+  
+    .carousel .slider-wrapper {
+      justify-content: center;
+    }
+  
+    .carousel .slide {
+      flex-shrink: 0;
+    }
+  }
+  
+  /* For tablet and desktop view */
+  @media (min-width: 768px) {
+    .galleryWrap {
+      column-count: 2;
+    }
+  
+    .image-modal .modal-image-container {
+      height: 80vh;
+    }
+  
+    .image-modal .modal-image {
+      max-height: 100%;
+      max-width: 100%;
+    }
+  
+    .image-modal .modal-controls {
+      display: flex;
+      justify-content: space-between;
+    }
+  
+    .image-modal .modal-control-button {
+      font-size: 2rem;
+    }
+  
+    .image-modal .modal-close-button {
+      display: none;
+    }
+  
+    .carousel .slider-wrapper {
+      justify-content: flex-start;
+    }
+  
+    .carousel .slide {
+      flex-shrink: 0;
+    }
+  }
+  

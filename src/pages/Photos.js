@@ -87,22 +87,22 @@ const Photos = () => {
         A trip down memory lane...
       </div>
       <br />
-      <div className="galleryWrap" style={{ columnCount: 4, columnGap: '1em' }}>
-        <Masonry
+      <div className="galleryWrap" style={{ columnCount: 4, columnGap: 'auto' }}>
+      <Masonry
           breakpointCols={breakpointColumnsObj}
           className="my-masonry-grid"
           columnClassName="my-masonry-grid_column"
         >
           {photos.map((photo, index) => (
             <div key={index} className="gallery-item" onClick={() => openModal(index)}>
-              <img src={photo} alt={`VS${index + 1}`} />
+              <img src={photo} alt={`VS${index + 1}`} className="responsive-image" />
             </div>
           ))}
         </Masonry>
       </div>
 
-      {/* Modal for image enlargement */}
-      <Modal
+  {/* Modal for image enlargement */}
+  <Modal
         isOpen={isModalOpen}
         onRequestClose={closeModal}
         className="image-modal sliderWrap" // Added sliderWrap class
@@ -119,7 +119,7 @@ const Photos = () => {
             background: 'none',
             border: 'none',
             maxWidth: '90vw', // Adjust the width as needed (90% of viewport width)
-            maxHeight: '90vh', // Adjust the height as needed (90% of viewport height)
+            maxHeight: '1000vh', // Adjust the height as needed (80% of viewport height)
             width: 'auto', // Allow the image to determine its width
             height: 'auto', // Allow the image to determine its height
           },
@@ -141,9 +141,14 @@ const Photos = () => {
           centerMode={true}
           centerSlidePercentage={100}
         >
-          {photos.map((photo, index) => (
+        {photos.map((photo, index) => (
             <div key={index} className="carousel-item">
-              <img src={photo} alt={`VS${index + 1}`} />
+              <img
+                src={photo}
+                alt={`VS${index + 1}`}
+                className="responsive-image"
+                style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+              />
             </div>
           ))}
         </Carousel>
