@@ -96,69 +96,94 @@ const Photos = () => {
       </div>
 
       {/* Modal for image enlargement */}
-      <Modal
-        isOpen={isModalOpen}
-        onRequestClose={closeModal}
-        className="image-modal sliderWrap"
-        style={{
-          overlay: {
-            backgroundColor: 'rgba(0, 0, 0, 0.8)',
-            zIndex: 9999,
-          },
-          content: {
+     
+<Modal
+  isOpen={isModalOpen}
+  onRequestClose={closeModal}
+  className="image-modal sliderWrap"
+  style={{
+    overlay: {
+      backgroundColor: 'rgba(0, 0, 0, 0.8)',
+      zIndex: 9999,
+    },
+    content: {
+      position: 'absolute',
+      top: '0',
+      left: '0',
+      right: '0',
+      bottom: '0',
+      background: 'none',
+      border: 'none',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      padding: '0',
+    },
+  }}
+>
+  <button className="modal-close-button btnClose" onClick={closeModal}>
+    <FontAwesomeIcon icon={faCircleXmark} />
+  </button>
+
+  <Carousel
+    showThumbs={false} // Hide the thumbnail navigation
+    selectedItem={currentImageIndex} // Show the current image
+    showStatus={false} // Hide the status indicator (current slide / total slides)
+    showArrows={false} // Hide the default arrows as we will create our custom navigation
+    swipeable={false} // Disable swipe to prevent accidental slide changes
+    emulateTouch={false} // Disable touch emulation for the same reason
+    showIndicators={false} // Hide the indicators at the bottom
+    renderArrowPrev={(onClickHandler, hasPrev, label) =>
+      hasPrev && (
+        <button
+          type="button"
+          onClick={onClickHandler}
+          title={label}
+          style={{
             position: 'absolute',
             top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            background: 'none',
-            border: 'none',
-            maxWidth: '90%',
-            maxHeight: '90%',
-            width: 'auto',
-            height: 'auto',
-          },
-        }}
-      >
-        <Carousel
-          showThumbs={true}
-          showStatus={true}
-          showArrows={false}
-          showIndicators={false}
-          selectedItem={currentImageIndex}
-          onChange={(index) => setCurrentImageIndex(index)}
-          onClickItem={closeModal}
-          useKeyboardArrows={true}
-          infiniteLoop={true}
-          stopOnHover={false}
-          swipeable={true}
-          emulateTouch={true}
-          centerMode={true}
-          centerSlidePercentage={100}
-          style={{ maxHeight: '70%', width: '100%' }}
+            left: 0,
+            zIndex: 1,
+            transform: 'translateY(-50%)',
+          }}
         >
-          {photos.map((photo, index) => (
-            <div key={index} className="carousel-item">
-              <img
-                src={photo}
-                alt={`VS${index + 1}`}
-                className="responsive-image"
-                style={{ objectFit: 'contain', height: '100%' }}
-              />
-            </div>
-          ))}
-        </Carousel>
-        <div className="modal-controls">
-          <button className="modal-control-button btnPrev" onClick={handlePrevImage}>
-            <FontAwesomeIcon icon={faCircleChevronLeft} />
-          </button>
-          <button className="modal-control-button btnNext" onClick={handleNextImage}>
-            <FontAwesomeIcon icon={faCircleChevronRight} />
-          </button>
-        </div>
-        <button className="modal-close-button btnClose" onClick={closeModal}>
-          <FontAwesomeIcon icon={faCircleXmark} />
+          <FontAwesomeIcon icon={faCircleChevronLeft} />
         </button>
-      </Modal>
+      )
+    }
+    renderArrowNext={(onClickHandler, hasNext, label) =>
+      hasNext && (
+        <button
+          type="button"
+          onClick={onClickHandler}
+          title={label}
+          style={{
+            position: 'absolute',
+            top: '50%',
+            right: 0,
+            zIndex: 1,
+            transform: 'translateY(-50%)',
+          }}
+        >
+          <FontAwesomeIcon icon={faCircleChevronRight} />
+        </button>
+      )
+    }
+  >
+    {photos.map((photo, index) => (
+      <div key={index} className="carousel-item">
+        <img
+          src={photo}
+          alt={`VS${index + 1}`}
+          className="responsive-image"
+          style={{ width: '40%', height: 'auto' }}
+        />
+      </div>
+    ))}
+  </Carousel>
+</Modal>
+
 
       <Footer />
     </div>

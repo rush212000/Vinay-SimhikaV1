@@ -4,43 +4,43 @@
 .galleryWrap {
     column-count: 4;
     column-gap: 10px;
-  }
-  
-  .gallery-item {
+}
+
+.gallery-item {
     width: 100%;
     margin-bottom: 10px;
     text-align: center;
     cursor: pointer;
     overflow: hidden;
-  }
-  
-  .gallery-item img {
+}
+
+.gallery-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 8px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  }
-  
-  .gallery-item:hover {
+}
+
+.gallery-item:hover {
     transform: scale(1.05);
-  }
-  
-  .image-modal .modal-image-container {
+}
+
+.image-modal .modal-image-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-  }
-  
-  .image-modal .modal-image {
+}
+
+.image-modal .modal-image {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
     border-radius: 8px;
-  }
-  
-  .image-modal .modal-controls {
+}
+
+.image-modal .modal-controls {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -48,9 +48,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  
-  .image-modal .modal-control-button {
+}
+
+.image-modal .modal-control-button {
     background-color: transparent;
     border: none;
     outline: none;
@@ -58,84 +58,85 @@
     color: white;
     cursor: pointer;
     padding: 0.5rem;
-  }
-  
-  .image-modal .modal-control-button:hover {
+}
+
+.image-modal .modal-control-button:hover {
     color: #f1f1f1;
-  }
-  /* Custom styles for the carousel */
+}
+
+/* Custom styles for the carousel */
 .carousel-root {
     position: relative;
-    width: 100%; /* Ensure the carousel takes up the full width of its container */
-    max-width: 100%; /* Ensure the carousel doesn't exceed the container's width */
-  }
-  
-  .carousel .carousel-slider {
+    width: 100%;
+    max-width: 100%;
+}
+
+.carousel .carousel-slider {
     position: relative;
     overflow: hidden;
-  }
-  
-  .carousel .slider-wrapper {
+}
+
+.carousel .slider-wrapper {
     transition: transform 0.5s ease;
     display: flex;
     align-items: center;
-    width: 100%; /* Ensure the slider takes up the full width of its container */
-    max-width: 100%; /* Ensure the slider doesn't exceed the container's width */
-  }
-  
-  .carousel .slider-wrapper.axis-horizontal .slider {
+    width: 100%;
+    max-width: 100%;
+}
+
+.carousel .slider-wrapper.axis-horizontal .slider {
     flex-direction: row;
-  }
-  
-  .carousel .slider-wrapper.axis-horizontal .slider .slide {
+}
+
+.carousel .slider-wrapper.axis-horizontal .slider .slide {
     flex: 0 0 auto;
     width: 100%;
-  }
-  
-  .carousel .slider-wrapper.axis-vertical {
+}
+
+.carousel .slider-wrapper.axis-vertical {
     flex-direction: column;
-  }
-  
-  .carousel .slider-wrapper.axis-vertical .slider {
+}
+
+.carousel .slider-wrapper.axis-vertical .slider {
     flex-direction: column;
     max-height: 100%;
-  }
-  
-  .carousel .slider-wrapper.axis-vertical .slider .slide {
+}
+
+.carousel .slider-wrapper.axis-vertical .slider .slide {
     flex: 1 0 auto;
     height: 100%;
-  }
-  
-  .carousel .slider {
+}
+
+.carousel .slider {
     margin: 0;
     padding: 0;
     display: flex;
     align-items: center;
     transition: transform 0.5s ease;
-    width: 100%; /* Ensure the slider takes up the full width of its container */
-  }
-  
-  .carousel .slider.animated {
+    width: 100%;
+}
+
+.carousel .slider.animated {
     transition: all 0.5s;
-  }
-  
-  .carousel .slide {
+}
+
+.carousel .slide {
     min-width: 100%;
     margin: 0;
     position: relative;
     text-align: center;
     background: #000;
-  }
-  
-  .carousel .carousel-status {
+}
+
+.carousel .carousel-status {
     position: absolute;
     right: 10px;
     bottom: 10px;
     font-size: 0.8em;
     color: #fff;
-  }
-  
-  .carousel .control-arrow {
+}
+
+.carousel .control-arrow {
     font-size: 2em;
     color: white;
     border: none;
@@ -143,133 +144,129 @@
     cursor: pointer;
     outline: none;
     z-index: 1;
-  }
-  
-  .carousel .thumbs-wrapper {
+}
+
+.carousel .thumbs-wrapper {
     margin: 20px 0;
     overflow: hidden;
     overflow-y: auto;
-  }
-  
-  .carousel .thumbs {
+}
+
+.carousel .thumbs {
     width: 9999px;
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     flex-wrap: wrap;
-  }
-  
-  .carousel .thumb {
+}
+
+.carousel .thumb {
     position: relative;
     flex: 0 0 80px;
     width: 80px;
     margin: 4px;
     cursor: pointer;
-  }
-  
-  .carousel .thumb.selected .thumb-inner {
+}
+
+.carousel .thumb.selected .thumb-inner {
     opacity: 1;
-  }
-  
-  .carousel .thumb .thumb-inner {
+}
+
+.carousel .thumb .thumb-inner {
     transition: all 0.5s;
     opacity: 0.7;
-  }
-  
-  .carousel .thumb img {
+}
+
+.carousel .thumb img {
     width: 100%;
     display: block;
-  }
-  
-  .carousel.carousel-slider {
+}
+
+.carousel.carousel-slider {
     position: relative;
     margin: 0 auto;
     overflow: hidden;
-  }
-  
-  .carousel.carousel-slider .control-arrow {
+}
+
+.carousel.carousel-slider .control-arrow {
     top: 50%;
     margin-top: -13px;
     padding: 4px 8px;
     background: rgba(0, 0, 0, 0.4);
     border-radius: 50%;
-  }
-  
-  
-  /* For mobile view */
+}
+
 /* For mobile view */
 @media (max-width: 767px) {
-    /* Add your mobile view styles here */
-  }
-  
-    .image-modal .modal-image-container {
-      height: 80vh;
+    .image-modal.modal-image-container {
+        height: 80vh;
+        /* Other properties */
     }
-  
-    .image-modal .modal-image {
-      max-height: 100%;
-      max-width: 100%;
+
+    .image-modal.modal-image {
+        max-height: 100%;
+        max-width: 100%;
     }
-  
+
     .image-modal .modal-controls {
-      display: none;
+        display: none;
     }
-  
+
     .image-modal .modal-close-button {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      font-size: 1.5rem;
-      color: white;
-      background-color: transparent;
-      border: none;
-      outline: none;
-      cursor: pointer;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 1.5rem;
+        color: white;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
     }
-  
+
     .carousel .slider-wrapper {
-      justify-content: center;
+        justify-content: center;
     }
-  
+
     .carousel .slide {
-      flex-shrink: 0;
+        flex-shrink: 0;
     }
-  
-  
-  /* For tablet and desktop view */
+}
+
+/* For tablet and desktop view */
 @media (min-width: 768px) {
     .galleryWrap {
-      column-count: 2;
+        column-count: 2;
     }
-  
+
     .image-modal .modal-image-container {
-      height: 80vh;
+        height: 80vh;
     }
-  
+
     .image-modal .modal-image {
-      max-height: 100%;
-      max-width: 100%;
+        max-height: 100%;
+        max-width: 100%;
     }
-  
+
     .image-modal .modal-controls {
-      display: flex;
-      justify-content: space-between;
+        display: flex;
+        justify-content: space-between;
     }
-  
+
     .image-modal .modal-control-button {
-      font-size: 2rem;
+        font-size: 2rem;
     }
-  
+
     .image-modal .modal-close-button {
-      display: none;
+        display: none;
     }
-  
+
     .carousel .slider-wrapper {
-      justify-content: flex-start;
+        justify-content: flex-start;
     }
-  
+
     .carousel .slide {
-      flex-shrink: 0;
+        flex-shrink: 0;
     }
-  }
+}
