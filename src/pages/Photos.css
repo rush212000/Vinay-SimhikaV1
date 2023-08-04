@@ -63,11 +63,11 @@
   .image-modal .modal-control-button:hover {
     color: #f1f1f1;
   }
-  
   /* Custom styles for the carousel */
-  .carousel-root {
-    max-width: 100%;
+.carousel-root {
     position: relative;
+    width: 100%; /* Ensure the carousel takes up the full width of its container */
+    max-width: 100%; /* Ensure the carousel doesn't exceed the container's width */
   }
   
   .carousel .carousel-slider {
@@ -79,6 +79,8 @@
     transition: transform 0.5s ease;
     display: flex;
     align-items: center;
+    width: 100%; /* Ensure the slider takes up the full width of its container */
+    max-width: 100%; /* Ensure the slider doesn't exceed the container's width */
   }
   
   .carousel .slider-wrapper.axis-horizontal .slider {
@@ -110,6 +112,7 @@
     display: flex;
     align-items: center;
     transition: transform 0.5s ease;
+    width: 100%; /* Ensure the slider takes up the full width of its container */
   }
   
   .carousel .slider.animated {
@@ -193,11 +196,12 @@
     border-radius: 50%;
   }
   
+  
   /* For mobile view */
-  @media (max-width: 767px) {
-    .galleryWrap {
-      column-count: 1;
-    }
+/* For mobile view */
+@media (max-width: 767px) {
+    /* Add your mobile view styles here */
+  }
   
     .image-modal .modal-image-container {
       height: 80vh;
@@ -231,10 +235,10 @@
     .carousel .slide {
       flex-shrink: 0;
     }
-  }
+  
   
   /* For tablet and desktop view */
-  @media (min-width: 768px) {
+@media (min-width: 768px) {
     .galleryWrap {
       column-count: 2;
     }
@@ -269,4 +273,3 @@
       flex-shrink: 0;
     }
   }
-  

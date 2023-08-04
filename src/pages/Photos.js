@@ -36,8 +36,6 @@ const Footer = () => {
   );
 };
 
-
-
 const photos = [
   VS1, VS2, VS3, VS4, VS5, VS6,
   VS7, VS8, VS9, VS10, VS11, VS12, VS13
@@ -76,12 +74,6 @@ const Photos = () => {
 
   return (
     <div>
-      {/* Black Navbar */}
-      <div className="navbar">
-        {/* Add your navbar content here if needed */}
-      </div>
-      <br />
-      <br />
       <h1 className="min-w-[0px] text-[65px] md:text-[100px]" style={{ color: 'Black', textAlign: 'center', fontFamily: 'shelby, sans-serif', fontStyle: 'normal', position: 'relative', bottom: -40 }}>
         Photos
       </h1>
@@ -89,28 +81,25 @@ const Photos = () => {
         A trip down memory lane...
       </div>
       <br />
-      <div className="galleryWrap" style={{ columnCount: 3}}>
-        
-  <Masonry
-    breakpointCols={breakpointColumnsObj}
-    className="my-masonry-grid"
-    columnClassName="my-masonry-grid_column"
-  >
-    {photos.map((photo, index) => (
-      <div key={index} className="gallery-item" onClick={() => openModal(index)}>
-        <img src={photo} alt={`VS${index + 1}`} className="responsive-image" />
+      <div className="galleryWrap" style={{ columnCount: 3 }}>
+        <Masonry
+          breakpointCols={breakpointColumnsObj}
+          className="my-masonry-grid"
+          columnClassName="my-masonry-grid_column"
+        >
+          {photos.map((photo, index) => (
+            <div key={index} className="gallery-item" onClick={() => openModal(index)}>
+              <img src={photo} alt={`VS${index + 1}`} className="responsive-image" />
+            </div>
+          ))}
+        </Masonry>
       </div>
-    ))}
-  </Masonry>
-</div>
 
-      
-
-  {/* Modal for image enlargement */}
-  <Modal
+      {/* Modal for image enlargement */}
+      <Modal
         isOpen={isModalOpen}
         onRequestClose={closeModal}
-        className="image-modal sliderWrap" // Added sliderWrap class
+        className="image-modal sliderWrap"
         style={{
           overlay: {
             backgroundColor: 'rgba(0, 0, 0, 0.8)',
@@ -123,17 +112,17 @@ const Photos = () => {
             transform: 'translate(-50%, -50%)',
             background: 'none',
             border: 'none',
-            maxWidth: '90vw', // Adjust the width as needed (90% of viewport width)
-            maxHeight: '1000vh', // Adjust the height as needed (80% of viewport height)
-            width: 'auto', // Allow the image to determine its width
-            height: 'auto', // Allow the image to determine its height
+            maxWidth: '90%',
+            maxHeight: '90%',
+            width: 'auto',
+            height: 'auto',
           },
         }}
       >
         <Carousel
           showThumbs={true}
           showStatus={true}
-          showArrows={true}
+          showArrows={false}
           showIndicators={false}
           selectedItem={currentImageIndex}
           onChange={(index) => setCurrentImageIndex(index)}
@@ -145,14 +134,15 @@ const Photos = () => {
           emulateTouch={true}
           centerMode={true}
           centerSlidePercentage={100}
+          style={{ maxHeight: '70%', width: '100%' }}
         >
-        {photos.map((photo, index) => (
+          {photos.map((photo, index) => (
             <div key={index} className="carousel-item">
               <img
                 src={photo}
                 alt={`VS${index + 1}`}
                 className="responsive-image"
-                style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+                style={{ objectFit: 'contain', height: '100%' }}
               />
             </div>
           ))}
@@ -169,6 +159,7 @@ const Photos = () => {
           <FontAwesomeIcon icon={faCircleXmark} />
         </button>
       </Modal>
+
       <Footer />
     </div>
   );
