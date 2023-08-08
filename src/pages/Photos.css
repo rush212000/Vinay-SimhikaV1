@@ -67,58 +67,6 @@
   z-index: 1000;
 }
 
-/* Styling for the slideshow navigation */
-.slideshow-image {
-  width: auto;
-  height: auto;
-  max-width: 90vw;
-  max-height: 90vh; /* Limit the height of the slideshow image */
-  display: block;
-  margin: 0 auto;
-}
-
-.slideshow-nav {
-  margin-top: 0px;
-  display: flex;
-  justify-content: center;
-}
-
-.slideshow-nav-btn-right {
-  position: absolute;
-  top: 50%;
-  right: 0%;
-  background-color: #333333;
-  color: #fefefe;
-  padding: 8px 12px;
-  border: none;
-  cursor: pointer;
-  margin: 0 0px;
-  border-radius: 6px;
-}
-
-.slideshow-nav-btn-right:hover {
-  color: #ffffff;
-  background-color: rgba(51, 51, 51, 0.7);;
-}
-
-.slideshow-nav-btn-left {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  background-color: #333333;
-  color: #fefefe;
-  padding: 8px 12px;
-  border: none;
-  cursor: pointer;
-  margin: 0 0px;
-  border-radius: 6px;
-}
-
-.slideshow-nav-btn-left:hover {
-  color: #ffffff;
-  background-color: rgba(51, 51, 51, 0.7);;
-}
-
 /* Styling for the close button */
 .modal_close {
   position: absolute;
@@ -153,14 +101,51 @@
     margin: 12px;
   }
   .masonry-grid-column {
-    width: calc(33.33% - 0px); /* Adjust column width and spacing */
+    width: calc(33.33% - 0px);
     padding: 2.5px;
   }
   
-  /* Styling for each photo item */
   .photo-item {
     margin-bottom: 5px;
     cursor: pointer;
     overflow: hidden;
   }
+}
+
+/* Slideshow navigation buttons */
+.slideshow-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
+.slideshow-nav-btn {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.slideshow-nav-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Left slideshow navigation button */
+.slideshow-nav-btn-left {
+  margin-right: 10px;
+}
+
+/* Right slideshow navigation button */
+.slideshow-nav-btn-right {
+  margin-left: 10px;
 }
