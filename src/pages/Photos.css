@@ -78,30 +78,51 @@
 }
 
 .slideshow-nav {
-  margin-top: 10px;
+  margin-top: 0px;
   display: flex;
   justify-content: center;
 }
 
-.slideshow-nav-btn {
+.slideshow-nav-btn-right {
+  position: absolute;
+  top: 50%;
+  right: 0%;
   background-color: #333333;
   color: #fefefe;
   padding: 8px 12px;
   border: none;
   cursor: pointer;
-  margin: 0 20px;
+  margin: 0 0px;
   border-radius: 6px;
 }
 
-.slideshow-nav-btn:hover {
-  color: #d3bca7;
-  background-color: rgba(51, 51, 51, 0.0);;
+.slideshow-nav-btn-right:hover {
+  color: #ffffff;
+  background-color: rgba(51, 51, 51, 0.7);;
+}
+
+.slideshow-nav-btn-left {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  background-color: #333333;
+  color: #fefefe;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  margin: 0 0px;
+  border-radius: 6px;
+}
+
+.slideshow-nav-btn-left:hover {
+  color: #ffffff;
+  background-color: rgba(51, 51, 51, 0.7);;
 }
 
 /* Styling for the close button */
 .modal_close {
   position: absolute;
-  top: 0px;
+  top: -15px;
   right: 0px;
   font-size: 30px;
   cursor: pointer;

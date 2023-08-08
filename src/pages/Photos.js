@@ -146,7 +146,7 @@ function Photos() {
                 />
                 <div className="slideshow-nav">
                   <button
-                    className="slideshow-nav-btn"
+                    className="slideshow-nav-btn-left"
                     onClick={() => {
                       if (current === 0) {
                         setCurrent(images.length - 1);
@@ -158,7 +158,7 @@ function Photos() {
                     &larr;
                   </button>
                   <button
-                    className="slideshow-nav-btn"
+                    className="slideshow-nav-btn-right"
                     onClick={() => {
                       if (current === images.length - 1) {
                         setCurrent(0);
@@ -171,7 +171,7 @@ function Photos() {
                   </button>
                 </div>
                 <div className="modal_close" onClick={closeSlideshow}>
-                  &times;
+                  &#10005;
                 </div>
               </>
             )}
