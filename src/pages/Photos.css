@@ -1,281 +1,131 @@
+/* Photos.css */
 /* Import fonts */
 @import url('https://use.typekit.net/upl4fxr.css');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,400;1,400;1,600&display=swap');
 
-/* Gallery Item Styles */
-.galleryWrap {
-  column-count: 4;
-  column-gap: 10px;
+/* Container for the entire component */
+.photos-container {
+  margin: 20px;
 }
 
-.gallery-item {
-  width: 100%;
-  margin-bottom: 10px;
-  text-align: center;
+/* Styling for the Masonry grid */
+.masonry-grid {
+  display: flex;
+  margin-left: -20px; /* Adjust as needed */
+  width: auto;
+}
+
+/* Styling for individual columns in the Masonry grid */
+.masonry-grid-column {
+  padding-left: 20px; /* Adjust as needed */
+  background-clip: padding-box;
+}
+
+/* Styling for each photo item */
+.photo-item {
+  margin-bottom: 20px;
   cursor: pointer;
   overflow: hidden;
 }
 
-.gallery-item img {
+/* Styling for the images in the grid */
+.photo-image {
   width: 100%;
-  max-height: 100%;
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: transparent;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
 }
 
-.gallery-item:hover {
+.photo-item:hover .photo-image {
   transform: scale(1.05);
 }
 
-/* Modal Styles */
-.image-modal .modal-image-container {
+/* Styling for the modal */
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 90%;
+  max-height: 90%;
+  overflow: auto;
+  text-align: center;
+  max-width: 100%; 
+
+}
+
+/* Styling for the modal overlay */
+.modal_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: transparent;
+  z-index: 1000;
 }
 
-.image-modal .modal-image {
+/* Styling for the slideshow navigation */
+
+
+
+
+.slideshow-image {
+  width: auto;
+  height: auto;
   max-width: 100%;
-  max-height: 100vh;
-  object-fit: contain;
-  border-radius: 8px;
+  max-height: 80vh; /* Limit the height of the slideshow image */
+  display: block;
+  margin: 0 auto;
 }
-
-.image-modal .modal-controls {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 100%;
+.slideshow-nav {
+  margin-top: 10px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
 }
 
-.image-modal .modal-control-button {
-  background-color: transparent;
+.slideshow-nav-btn {
+  background-color: #333;
+  color: #fefefe;
+  padding: 8px 16px;
   border: none;
-  outline: none;
-  font-size: 1.5rem;
-  color: white;
   cursor: pointer;
-  padding: 0.5rem;
+  margin: 0 5px;
+  border-radius: 4px;
 }
 
-.image-modal .modal-control-button:hover {
-  color: #f1f1f1;
-}
-
-/* Custom styles for the carousel */
-.carousel-root {
-    background-color: transparent;
+/* Styling for the close button */
+.modal_close {
   position: absolute;
-  width: 80%;
-  max-width: auto;
+  top: 15px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color:black;
 }
 
-.carousel .carousel-slider {
-    background-color: transparent;
-  position: relative;
-  overflow: hidden;
+.modal_close:hover {
+  color: #e74c3c;
+  size: 100px;
 }
 
-.carousel .slider-wrapper {
-    background-color: transparent;
-    transition: transform 0.5s ease;
-    display: cover;
-    align-items: center;
-    width: 100%;
-    max-width: 100%;
+.carousel-modal-container .carousel .slider-wrapper {
+  max-width: 80%; /* Adjust the maximum width as needed */
+  margin: 0 auto;
 }
 
-.carousel .slider-wrapper.axis-horizontal .slider {
-    flex-direction: row;
+.carousel-modal-container .carousel .slider {
+  max-height: 80vh; /* Adjust the maximum height as needed */
 }
 
-.carousel .slider-wrapper.axis-horizontal .slider .slide {
-    flex: 0 0 auto;
-    width: 100%;
-}
-
-.carousel .slider-wrapper.axis-vertical {
-    flex-direction: column;
-}
-
-.carousel .slider-wrapper.axis-vertical .slider {
-    flex-direction: column;
-    max-height: 100%;
-}
-
-.carousel .slider-wrapper.axis-vertical .slider .slide {
-    flex: 1 0 auto;
-    height: 100%;
-}
-
-.carousel .slider {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    transition: transform 0.5s ease;
-    width: 100%;
-}
-
-.carousel .slider.animated {
-    transition: all 0.5s;
-}
-
-.carousel .slide {
-    min-width: 100%;
-    margin: 0;
-    position: relative;
-    text-align: center;
-    background: #000;
-}
-
-.carousel .carousel-status {
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
-    font-size: 0.8em;
-    color: #fff;
-}
-
-.carousel .control-arrow {
-    font-size: 2em;
-    color: white;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    outline: none;
-    z-index: 1;
-}
-
-.carousel .thumbs-wrapper {
-    margin: 20px 0;
-    overflow: hidden;
-    overflow-y: auto;
-}
-
-.carousel .thumbs {
-    width: 9999px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.carousel .thumb {
-    position: relative;
-    flex: 0 0 80px;
-    width: 80px;
-    margin: 4px;
-    cursor: pointer;
-}
-
-.carousel .thumb.selected .thumb-inner {
-    opacity: 1;
-}
-
-.carousel .thumb .thumb-inner {
-    transition: all 0.5s;
-    opacity: 0.7;
-}
-
-.carousel .thumb img {
-    width: 100%;
-    display: block;
-}
-
-.carousel.carousel-slider {
-    position: relative;
-    margin: 0 auto;
-    overflow: hidden;
-}
-
-.carousel.carousel-slider .control-arrow {
-    top: 50%;
-    margin-top: -13px;
-    padding: 8px 8px;
-    background: rgba(0, 0, 0, 0.4);
-    border-radius: 70%;
-}
-
-/* For mobile view */
-@media (max-width: 767px) {
-    .image-modal.modal-image-container {
-      height: 80vh;
-    }
-  
-    .image-modal .modal-image {
-      max-height: 70vh; /* Adjusted height */
-      max-width: 90%; /* Adjusted width */
-    }
-
-    .image-modal .modal-controls {
-        display: none;
-    }
-
-    .image-modal .modal-close-button {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        font-size: 1.5rem;
-        color: white;
-        background-color: transparent;
-        border: none;
-        outline: none;
-        cursor: pointer;
-    }
-
-    .carousel .slider-wrapper {
-        justify-content: center;
-    }
-
-    .carousel .slide {
-        flex-shrink: 0;
-    }
-}
-
-/* For tablet and desktop view */
-@media (min-width: 768px) {
-    .galleryWrap {
-      column-count: 2;
-    }
-  
-    .image-modal .modal-image-container {
-      height: 80vh;
-    }
-  
-    .image-modal .modal-image {
-      max-height: 70vh; /* Adjusted height */
-      max-width: 60%; /* Adjusted width */
-    }
-    .image-modal .modal-controls {
-        display: flex;
-        justify-content: space-between;
-        
-    }
-    .image-modal .modal-left-control,
-    .image-modal .modal-right-control {
-        order: unset; /* Reset order for larger screens */
-    }
-    .image-modal .modal-control-button {
-        font-size: 2rem;
-    }
-
-    .image-modal .modal-close-button {
-        display: none;
-    }
-
-    .carousel .slider-wrapper {
-        justify-content: flex-start;
-    }
-
-    .carousel .slide {
-        flex-shrink: 0;
-    }
+.carousel-modal-container .carousel .slider img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
