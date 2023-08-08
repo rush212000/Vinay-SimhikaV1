@@ -107,8 +107,8 @@ function Photos() {
             breakpointCols={{
               default: imagesPerRow,
               1100: 3,
-              700: 2,
-              500: 1,
+              700: 3,
+              500: 3,
             }}
             className="masonry-grid"
             columnClassName="masonry-grid-column"
@@ -155,7 +155,7 @@ function Photos() {
                       }
                     }}
                   >
-                    Previous
+                    &larr;
                   </button>
                   <button
                     className="slideshow-nav-btn"
@@ -167,7 +167,7 @@ function Photos() {
                       }
                     }}
                   >
-                    Next
+                    &rarr;
                   </button>
                 </div>
                 <div className="modal_close" onClick={closeSlideshow}>
