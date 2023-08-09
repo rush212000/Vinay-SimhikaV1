@@ -188,6 +188,7 @@ function Photos() {
                     className="slideshow-image"
                     src={images[current].src}
                     alt={`Image ${current}`}
+                    loading="lazy" // Add lazy loading attribute
                   />
                   <div className="slideshow-nav">
                     <button
