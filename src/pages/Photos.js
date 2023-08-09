@@ -27,6 +27,7 @@ function Photos() {
 
     loadImage();
   }, []);
+
   useEffect(() => {
     if (isModalOpen) {
       document.body.style.overflow = "hidden"; // Disable scroll overflow
@@ -34,6 +35,7 @@ function Photos() {
       document.body.style.overflow = "visible"; // Re-enable scroll overflow
     }
   }, [isModalOpen]);
+
   const openSlideshow = (index) => {
     setCurrent(index);
     setIsModalOpen(true);
@@ -46,10 +48,10 @@ function Photos() {
 
   const handleSwipe = (delta) => {
     if (Math.abs(delta) > 50) {
-      if (delta > 0 && current !== 0) {
-        setCurrent(current - 1);
-      } else if (delta < 0 && current !== images.length - 1) {
-        setCurrent(current + 1);
+      if (delta > 0) {
+        setCurrent((current + images.length - 1) % images.length);
+      } else if (delta < 0) {
+        setCurrent((current + 1) % images.length);
       }
     }
   };
@@ -80,25 +82,23 @@ function Photos() {
     const touchDiff = touchCurrentX - touchStartX;
 
     if (Math.abs(touchDiff) > 50) {
-      if (touchDiff > 0 && current !== 0) {
-        setCurrent(current - 1);
-      } else if (touchDiff < 0 && current !== images.length - 1) {
-        setCurrent(current + 1);
+      if (touchDiff > 0) {
+        setCurrent((current + images.length - 1) % images.length);
+      } else if (touchDiff < 0) {
+        setCurrent((current + 1) % images.length);
       }
     }
   };
 
   const handleKeyDown = (e) => {
     if (isModalOpen && (e.key === "ArrowLeft" || e.key === "ArrowRight")) {
-      if (e.key === "ArrowLeft" && current !== 0) {
-        setCurrent(current - 1);
-      } else if (e.key === "ArrowRight" && current !== images.length - 1) {
-        setCurrent(current + 1);
+      if (e.key === "ArrowLeft") {
+        setCurrent((current + images.length - 1) % images.length);
+      } else if (e.key === "ArrowRight") {
+        setCurrent((current + 1) % images.length);
       }
     }
   };
-
-  const imagesPerRow = 4;
 
   useEffect(() => {
     document.addEventListener("keydown", handleKeyDown);
@@ -107,6 +107,8 @@ function Photos() {
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, [current, isModalOpen]);
+
+  const imagesPerRow = 4;
 
   return (
     <div style={{ backgroundColor: "#E0E0E0" }}>
@@ -165,6 +167,7 @@ function Photos() {
                   className="photo-image"
                   src={image.src}
                   alt={`Image ${index}`}
+                  loading="lazy"
                 />
               </div>
             ))}
@@ -179,7 +182,7 @@ function Photos() {
             {current !== null && (
               <div
                 onTouchStart={handleTouchStart}
-                onTouchMove={handleModalSwipe} // Use handleModalSwipe here
+                onTouchMove={handleModalSwipe}
                 onTouchEnd={handleTouchEnd}
                 onWheel={handleCursorSwipe}
               >
@@ -188,30 +191,20 @@ function Photos() {
                     className="slideshow-image"
                     src={images[current].src}
                     alt={`Image ${current}`}
-                    loading="lazy" // Add lazy loading attribute
+                    loading="lazy"
                   />
                   <div className="slideshow-nav">
                     <button
                       className="slideshow-nav-btn-left"
-                      onClick={() => {
-                        if (current === 0) {
-                          setCurrent(images.length - 1);
-                        } else {
-                          setCurrent(current - 1);
-                        }
-                      }}
+                      onClick={() =>
+                        setCurrent((current + images.length - 1) % images.length)
+                      }
                     >
                       &larr;
                     </button>
                     <button
                       className="slideshow-nav-btn-right"
-                      onClick={() => {
-                        if (current === images.length - 1) {
-                          setCurrent(0);
-                        } else {
-                          setCurrent(current + 1);
-                        }
-                      }}
+                      onClick={() => setCurrent((current + 1) % images.length)}
                     >
                       &rarr;
                     </button>
