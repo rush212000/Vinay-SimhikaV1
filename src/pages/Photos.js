@@ -69,6 +69,19 @@ function Photos() {
     handleSwipe(cursorDiff);
   };
 
+  const handleModalSwipe = (e) => {
+    const touchCurrentX = e.touches[0].clientX;
+    const touchDiff = touchCurrentX - touchStartX;
+
+    if (Math.abs(touchDiff) > 50) {
+      if (touchDiff > 0 && current !== 0) {
+        setCurrent(current - 1);
+      } else if (touchDiff < 0 && current !== images.length - 1) {
+        setCurrent(current + 1);
+      }
+    }
+  };
+
   const handleKeyDown = (e) => {
     if (isModalOpen && (e.key === "ArrowLeft" || e.key === "ArrowRight")) {
       if (e.key === "ArrowLeft" && current !== 0) {
@@ -138,7 +151,7 @@ function Photos() {
                 className="photo-item"
                 onClick={() => openSlideshow(index)}
                 onTouchStart={handleTouchStart}
-                onTouchMove={handleTouchMove} // Use onTouchMove here
+                onTouchMove={handleTouchMove}
                 onTouchEnd={handleTouchEnd}
                 onWheel={handleCursorSwipe}
               >
@@ -158,42 +171,49 @@ function Photos() {
             overlayClassName="modal_overlay"
           >
             {current !== null && (
-              <>
-                <img
-                  className="slideshow-image"
-                  src={images[current].src}
-                  alt={`Image ${current}`}
-                />
-                <div className="slideshow-nav">
-                  <button
-                    className="slideshow-nav-btn-left"
-                    onClick={() => {
-                      if (current === 0) {
-                        setCurrent(images.length - 1);
-                      } else {
-                        setCurrent(current - 1);
-                      }
-                    }}
-                  >
-                    &larr;
-                  </button>
-                  <button
-                    className="slideshow-nav-btn-right"
-                    onClick={() => {
-                      if (current === images.length - 1) {
-                        setCurrent(0);
-                      } else {
-                        setCurrent(current + 1);
-                      }
-                    }}
-                  >
-                    &rarr;
-                  </button>
-                </div>
-                <div className="modal_close" onClick={closeSlideshow}>
-                  &#10005;
-                </div>
-              </>
+              <div
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleModalSwipe} // Use handleModalSwipe here
+                onTouchEnd={handleTouchEnd}
+                onWheel={handleCursorSwipe}
+              >
+                <>
+                  <img
+                    className="slideshow-image"
+                    src={images[current].src}
+                    alt={`Image ${current}`}
+                  />
+                  <div className="slideshow-nav">
+                    <button
+                      className="slideshow-nav-btn-left"
+                      onClick={() => {
+                        if (current === 0) {
+                          setCurrent(images.length - 1);
+                        } else {
+                          setCurrent(current - 1);
+                        }
+                      }}
+                    >
+                      &larr;
+                    </button>
+                    <button
+                      className="slideshow-nav-btn-right"
+                      onClick={() => {
+                        if (current === images.length - 1) {
+                          setCurrent(0);
+                        } else {
+                          setCurrent(current + 1);
+                        }
+                      }}
+                    >
+                      &rarr;
+                    </button>
+                  </div>
+                  <div className="modal_close" onClick={closeSlideshow}>
+                    &#10005;
+                  </div>
+                </>
+              </div>
             )}
           </Modal>
         </div>
