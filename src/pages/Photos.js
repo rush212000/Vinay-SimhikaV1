@@ -8,6 +8,7 @@ function Photos() {
   const [images, setImages] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [touchStartX, setTouchStartX] = useState(null);
+  const [swipeInProgress, setSwipeInProgress] = useState(false); // Add this line
 
   useEffect(() => {
     const loadImage = async () => {
@@ -70,7 +71,9 @@ function Photos() {
 
   const handleTouchEnd = () => {
     setTouchStartX(null);
+    setSwipeInProgress(false); // Reset the swipeInProgress flag
   };
+  
 
   const handleCursorSwipe = (e) => {
     const cursorDiff = e.deltaX;
@@ -80,15 +83,23 @@ function Photos() {
   const handleModalSwipe = (e) => {
     const touchCurrentX = e.touches[0].clientX;
     const touchDiff = touchCurrentX - touchStartX;
-
+  
     if (Math.abs(touchDiff) > 50) {
       if (touchDiff > 0) {
-        setCurrent((current + images.length - 1) % images.length);
+        if (!swipeInProgress) {
+          setCurrent((current + images.length - 1) % images.length);
+          setSwipeInProgress(true);
+        }
       } else if (touchDiff < 0) {
-        setCurrent((current + 1) % images.length);
+        if (!swipeInProgress) {
+          setCurrent((current + 1) % images.length);
+          setSwipeInProgress(true);
+        }
       }
     }
   };
+  
+  
 
   const handleKeyDown = (e) => {
     if (isModalOpen && (e.key === "ArrowLeft" || e.key === "ArrowRight")) {
