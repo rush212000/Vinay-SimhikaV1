@@ -7,8 +7,7 @@ function Photos() {
   const [current, setCurrent] = useState(null);
   const [images, setImages] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [touchStartX, setTouchStartX] = useState(null);
-
+  const [touchStartX, setTouchStartX] = useState(null); // Define touchStartX state
   useEffect(() => {
     const loadImage = async () => {
       const imageArray = [];
@@ -37,6 +36,7 @@ function Photos() {
     setCurrent(null);
     setIsModalOpen(false);
   };
+
   const handleSwipe = (delta) => {
     if (Math.abs(delta) > 50) {
       if (delta > 0 && current !== 0) {
@@ -68,7 +68,26 @@ function Photos() {
     handleSwipe(cursorDiff);
   };
 
+  const handleKeyDown = (e) => {
+    if (isModalOpen && (e.key === "ArrowLeft" || e.key === "ArrowRight")) {
+      if (e.key === "ArrowLeft" && current !== 0) {
+        setCurrent(current - 1);
+      } else if (e.key === "ArrowRight" && current !== images.length - 1) {
+        setCurrent(current + 1);
+      }
+    }
+  };
+
   const imagesPerRow = 4;
+
+  useEffect(() => {
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [current, isModalOpen]);
+
 
   return (
     <div style={{ backgroundColor: '#E0E0E0' }}>
