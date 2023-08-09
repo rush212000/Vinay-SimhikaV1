@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
 import Masonry from "react-masonry-css";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./Photos.css";
 
 function Photos() {
@@ -41,27 +37,41 @@ function Photos() {
     setCurrent(null);
     setIsModalOpen(false);
   };
-
-  const handleCursorSwipe = (delta) => {
-    if (delta > 50 && current !== 0) {
-      setCurrent(current - 1);
-    } else if (delta < -50 && current !== images.length - 1) {
-      setCurrent(current + 1);
+  const handleSwipe = (delta) => {
+    if (Math.abs(delta) > 50) {
+      if (delta > 0 && current !== 0) {
+        setCurrent(current - 1);
+      } else if (delta < 0 && current !== images.length - 1) {
+        setCurrent(current + 1);
+      }
     }
+  };
+
+  const handleTouchStart = (e) => {
+    setTouchStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    if (touchStartX !== null) {
+      const touchCurrentX = e.touches[0].clientX;
+      const touchDiff = touchCurrentX - touchStartX;
+      handleSwipe(touchDiff);
+    }
+  };
+
+  const handleTouchEnd = () => {
+    setTouchStartX(null);
+  };
+
+  const handleCursorSwipe = (e) => {
+    const cursorDiff = e.deltaX;
+    handleSwipe(cursorDiff);
   };
 
   const imagesPerRow = 4;
 
-  const slideshowImageStyle = {
-    maxHeight: "80vh", // Set the desired maximum height for slideshow images
-    width: "auto", // Maintain aspect ratio
-    display: "block",
-    margin: "0 auto",
-    objectFit: "contain",
-  };
-
   return (
-    <div style={{ backgroundColor: '#F6F6F6' }}>
+    <div style={{ backgroundColor: '#E0E0E0' }}>
       <div style={{ backgroundColor: 'black', height: '80px' }}></div>
       <nav>{/* Your navigation bar content */}</nav>
       <div>
@@ -83,9 +93,9 @@ function Photos() {
           style={{
             marginTop: '10px',
             color: 'black',
-            fontWeight: '400',
+            fontWeight: 'regular 400',
             fontFamily: 'cormorant infant',
-            fontStyle: 'normal',
+            fontStyle: 'regular',
             textAlign: 'center',
           }}
         >
@@ -108,6 +118,9 @@ function Photos() {
                 key={index}
                 className="photo-item"
                 onClick={() => openSlideshow(index)}
+                onTouchStart={handleTouchStart}
+                onTouchEnd={handleTouchEnd}
+                onWheel={handleCursorSwipe}
               >
                 <img
                   className="photo-image"
@@ -117,37 +130,54 @@ function Photos() {
               </div>
             ))}
           </Masonry>
+          <Modal
+            isOpen={isModalOpen}
+            onRequestClose={closeSlideshow}
+            contentLabel="Image Slideshow"
+            className="modal"
+            overlayClassName="modal_overlay"
+          >
+            {current !== null && (
+              <>
+                <img
+                  className="slideshow-image"
+                  src={images[current].src}
+                  alt={`Image ${current}`}
+                />
+                <div className="slideshow-nav">
+                  <button
+                    className="slideshow-nav-btn-left"
+                    onClick={() => {
+                      if (current === 0) {
+                        setCurrent(images.length - 1);
+                      } else {
+                        setCurrent(current - 1);
+                      }
+                    }}
+                  >
+                    &larr;
+                  </button>
+                  <button
+                    className="slideshow-nav-btn-right"
+                    onClick={() => {
+                      if (current === images.length - 1) {
+                        setCurrent(0);
+                      } else {
+                        setCurrent(current + 1);
+                      }
+                    }}
+                  >
+                    &rarr;
+                  </button>
+                </div>
+                <div className="modal_close" onClick={closeSlideshow}>
+                  &#10005;
+                </div>
+              </>
+            )}
+          </Modal>
         </div>
       </div>
-      <Modal
-        isOpen={isModalOpen}
-        onRequestClose={closeSlideshow}
-        contentLabel="Image Slideshow"
-        className="modal"
-        overlayClassName="modal_overlay"
-      >
-        {current !== null && (
-          <Carousel
-            showThumbs={false}
-            showStatus={false}
-            swipeable={true}
-            emulateTouch={false}
-            infiniteLoop={false}
-            selectedItem={current}
-            onChange={(newIndex) => setCurrent(newIndex)}
-          >
-            {images.map((image, index) => (
-              <div key={index}>
-                <img
-                  src={image.src}
-                  alt={`Image ${index}`}
-                  style={slideshowImageStyle}
-                />
-              </div>
-            ))}
-          </Carousel>
-        )}
-      </Modal>
     </div>
   );
 }
