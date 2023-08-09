@@ -27,7 +27,13 @@ function Photos() {
 
     loadImage();
   }, []);
-
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = "hidden"; // Disable scroll overflow
+    } else {
+      document.body.style.overflow = "visible"; // Re-enable scroll overflow
+    }
+  }, [isModalOpen]);
   const openSlideshow = (index) => {
     setCurrent(index);
     setIsModalOpen(true);
