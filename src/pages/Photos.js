@@ -7,7 +7,8 @@ function Photos() {
   const [current, setCurrent] = useState(null);
   const [images, setImages] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [touchStartX, setTouchStartX] = useState(null); // Define touchStartX state
+  const [touchStartX, setTouchStartX] = useState(null);
+
   useEffect(() => {
     const loadImage = async () => {
       const imageArray = [];
@@ -88,20 +89,19 @@ function Photos() {
     };
   }, [current, isModalOpen]);
 
-
   return (
-    <div style={{ backgroundColor: '#E0E0E0' }}>
-      <div style={{ backgroundColor: 'black', height: '80px' }}></div>
+    <div style={{ backgroundColor: "#E0E0E0" }}>
+      <div style={{ backgroundColor: "black", height: "80px" }}></div>
       <nav>{/* Your navigation bar content */}</nav>
       <div>
         <h1
           className="min-w-[0px] text-[65px] md:text-[100px]"
           style={{
-            color: 'Black',
-            textAlign: 'center',
-            fontFamily: 'shelby, sans-serif',
-            fontStyle: 'normal',
-            position: 'relative',
+            color: "Black",
+            textAlign: "center",
+            fontFamily: "shelby, sans-serif",
+            fontStyle: "normal",
+            position: "relative",
             bottom: -40,
           }}
         >
@@ -110,12 +110,12 @@ function Photos() {
         <div
           className="min-[0px]:text-[18px] md:text-[20px]"
           style={{
-            marginTop: '10px',
-            color: 'black',
-            fontWeight: 'regular 400',
-            fontFamily: 'cormorant infant',
-            fontStyle: 'regular',
-            textAlign: 'center',
+            marginTop: "10px",
+            color: "black",
+            fontWeight: "regular 400",
+            fontFamily: "cormorant infant",
+            fontStyle: "regular",
+            textAlign: "center",
           }}
         >
           A trip down memory lane...
@@ -138,6 +138,7 @@ function Photos() {
                 className="photo-item"
                 onClick={() => openSlideshow(index)}
                 onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove} // Use onTouchMove here
                 onTouchEnd={handleTouchEnd}
                 onWheel={handleCursorSwipe}
               >
