@@ -8,7 +8,7 @@ function Photos() {
   const [images, setImages] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [touchStartX, setTouchStartX] = useState(null);
-  const [swipeInProgress, setSwipeInProgress] = useState(false); // Add this line
+  const [swipeInProgress, setSwipeInProgress] = useState(false);
 
   useEffect(() => {
     const loadImage = async () => {
@@ -31,9 +31,9 @@ function Photos() {
 
   useEffect(() => {
     if (isModalOpen) {
-      document.body.style.overflow = "hidden"; // Disable scroll overflow
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "visible"; // Re-enable scroll overflow
+      document.body.style.overflow = "visible";
     }
   }, [isModalOpen]);
 
@@ -71,9 +71,8 @@ function Photos() {
 
   const handleTouchEnd = () => {
     setTouchStartX(null);
-    setSwipeInProgress(false); // Reset the swipeInProgress flag
+    setSwipeInProgress(false);
   };
-  
 
   const handleCursorSwipe = (e) => {
     const cursorDiff = e.deltaX;
@@ -83,7 +82,7 @@ function Photos() {
   const handleModalSwipe = (e) => {
     const touchCurrentX = e.touches[0].clientX;
     const touchDiff = touchCurrentX - touchStartX;
-  
+
     if (Math.abs(touchDiff) > 50) {
       if (touchDiff > 0) {
         if (!swipeInProgress) {
@@ -98,8 +97,6 @@ function Photos() {
       }
     }
   };
-  
-  
 
   const handleKeyDown = (e) => {
     if (isModalOpen && (e.key === "ArrowLeft" || e.key === "ArrowRight")) {
@@ -119,7 +116,17 @@ function Photos() {
     };
   }, [current, isModalOpen]);
 
-  const imagesPerRow = 4;
+  const imagesPerColumn = 17;
+  const totalColumns = Math.ceil(images.length / imagesPerColumn);
+
+  const columnBreakpoints = {
+    default: totalColumns,
+    1100: totalColumns,
+    700: totalColumns,
+    500: totalColumns,
+  };
+
+  const columnClassName = "masonry-grid-column";
 
   return (
     <div style={{ backgroundColor: "#E0E0E0" }}>
@@ -155,14 +162,9 @@ function Photos() {
         <br />
         <div className="photos-container">
           <Masonry
-            breakpointCols={{
-              default: imagesPerRow,
-              1100: 3,
-              700: 3,
-              500: 3,
-            }}
+            breakpointCols={columnBreakpoints}
             className="masonry-grid"
-            columnClassName="masonry-grid-column"
+            columnClassName={columnClassName}
           >
             {images.map((image, index) => (
               <div
