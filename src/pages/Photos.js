@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
 import Masonry from "react-masonry-css";
 import "./Photos.css";
+import VSfoot from '../img/Photos/vsFoot.png';
+
 
 function Photos() {
   const [current, setCurrent] = useState(null);
@@ -128,6 +130,24 @@ function Photos() {
 
   const columnClassName = "masonry-grid-column";
 
+
+
+  const Footer = () => {
+    return (
+      <footer className="footer mt-auto">
+        <div className="container mx-auto py-4">
+          {/* Add your footer content here */}
+          <div className="flex justify-center items-center">
+            <img src={VSfoot} alt="Footer Image" className="w-20 h-20 mr-4" />
+            <p className="text-center text-gray-600">
+              
+            </p>
+          </div>
+        </div>
+      </footer>
+    );
+  };
+
   return (
     <div style={{ backgroundColor: "#E0E0E0" }}>
       <div style={{ backgroundColor: "black", height: "80px" }}></div>
@@ -229,6 +249,7 @@ function Photos() {
               </div>
             )}
           </Modal>
+          <Footer />
         </div>
       </div>
     </div>
