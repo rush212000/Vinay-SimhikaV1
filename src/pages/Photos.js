@@ -118,6 +118,20 @@ function Photos() {
     };
   }, [current, isModalOpen]);
 
+  const imagesPerColumn = 17;
+  const totalColumns = Math.ceil(images.length / imagesPerColumn);
+
+  const columnBreakpoints = {
+    default: totalColumns,
+    1100: totalColumns,
+    700: totalColumns,
+    500: totalColumns,
+  };
+
+  const columnClassName = "masonry-grid-column";
+
+
+
   const Footer = () => {
     return (
       <footer className="footer mt-auto">
@@ -133,8 +147,6 @@ function Photos() {
       </footer>
     );
   };
-
-  const imagesPerRow = 4;
 
   return (
     <div style={{ backgroundColor: "#E0E0E0" }}>
@@ -170,14 +182,9 @@ function Photos() {
         <br />
         <div className="photos-container">
           <Masonry
-            breakpointCols={{
-              default: imagesPerRow,
-              1100: 3,
-              700: 3,
-              500: 3,
-            }}
+            breakpointCols={columnBreakpoints}
             className="masonry-grid"
-            columnClassName="masonry-grid-column"
+            columnClassName={columnClassName}
           >
             {images.map((image, index) => (
               <div
