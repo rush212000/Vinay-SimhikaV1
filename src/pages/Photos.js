@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
 import Masonry from "react-masonry-css";
 import "./Photos.css";
@@ -12,31 +12,24 @@ function Photos() {
   const [touchStartX, setTouchStartX] = useState(null);
   const [swipeInProgress, setSwipeInProgress] = useState(false);
 
-  // Use IntersectionObserver for lazy loading
-  const imageRefs = useRef([]);
- useEffect(() => {
-  // Add an IntersectionObserver for other components/content
-  const otherObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        // Load the content that's lazily loaded
-        // For example, you can fetch more images here
-        // or set a state to render some additional content
-        otherObserver.unobserve(entry.target);
+  useEffect(() => {
+    const loadImage = async () => {
+      const imageArray = [];
+      for (let i = 1; i <= 68; i++) {
+        try {
+          const module = await import(`../img/Photos/V&SGallery-${i}.jpg`);
+          imageArray.push({
+            src: module.default,
+          });
+        } catch (error) {
+          console.error("Error loading image:", error);
+        }
       }
-    });
-  });
+      setImages(imageArray);
+    };
 
-  // Observe other elements you want to lazily load
-  // For example, you can wrap components or content
-  // that you want to load lazily in a <div> with a ref
-  // and then observe that ref using the observer
-  otherObserver.observe(/* ref of the element you want to observe */);
-
-  return () => {
-    otherObserver.disconnect();
-  };
-}, []); 
+    loadImage();
+  }, []);
 
   useEffect(() => {
     if (isModalOpen) {
