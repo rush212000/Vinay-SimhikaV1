@@ -147,13 +147,13 @@ function Photos() {
   }, [current, isModalOpen]);
 
   const imagesPerColumn = "";
-  const totalColumns = 3;
+  const totalColumns = "";
 
   const columnBreakpoints = {
-    default: totalColumns,
-    1100: totalColumns,
-    700: totalColumns,
-    500: totalColumns,
+    default: 5,
+    1100: 5,
+    700: 4,
+    500: 3,
   };
 
   const columnClassName = "masonry-grid-column";
