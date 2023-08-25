@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
 import Masonry from "react-masonry-css";
+import { LazyLoadImage } from "react-lazy-load-image-component"; // Use this package for lazy loading
+import "react-lazy-load-image-component/src/effects/opacity.css"; // Import a fade-in effect
+import "react-lazy-load-image-component/src/effects/blur.css"; // Import a blur effect
 import "./Photos.css";
 import VSfoot from '../img/Photos/vsFoot.png';
 
@@ -118,8 +121,8 @@ function Photos() {
     };
   }, [current, isModalOpen]);
 
-  const imagesPerColumn = 17;
-  const totalColumns = Math.ceil(images.length / imagesPerColumn);
+  const imagesPerColumn = "";
+  const totalColumns = 3;
 
   const columnBreakpoints = {
     default: totalColumns,
@@ -196,12 +199,12 @@ function Photos() {
                 onTouchEnd={handleTouchEnd}
                 onWheel={handleCursorSwipe}
               >
-                <img
-                  className="photo-image"
-                  src={image.src}
-                  alt={`Image ${index}`}
-                  loading="lazy"
-                />
+                <LazyLoadImage
+                className="photo-image"
+                src={image.src}
+                alt={`Image ${index}`}
+                effect="blur" // Apply a blur effect during loading
+              />
               </div>
             ))}
           </Masonry>
