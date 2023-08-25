@@ -14,11 +14,17 @@ function Photos() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [touchStartX, setTouchStartX] = useState(null);
   const [swipeInProgress, setSwipeInProgress] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const imagesPerPage = 20; // Adjust this based on your
 
   useEffect(() => {
-    const loadImage = async () => {
+    // Load images for the current page
+    const loadImages = async () => {
+      const startIndex = (currentPage - 1) * imagesPerPage;
+      const endIndex = startIndex + imagesPerPage;
+
       const imageArray = [];
-      for (let i = 1; i <= 68; i++) {
+      for (let i = startIndex + 1; i <= endIndex; i++) {
         try {
           const module = await import(`../img/Photos/V&SGallery-${i}.jpg`);
           imageArray.push({
@@ -28,11 +34,30 @@ function Photos() {
           console.error("Error loading image:", error);
         }
       }
-      setImages(imageArray);
+      setImages((prevImages) => [...prevImages, ...imageArray]);
     };
 
-    loadImage();
+    loadImages();
+  }, [currentPage]);
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+
+      if (scrollY + windowHeight >= documentHeight - 100) {
+        setCurrentPage((prevPage) => prevPage + 1);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
+
 
   useEffect(() => {
     if (isModalOpen) {
