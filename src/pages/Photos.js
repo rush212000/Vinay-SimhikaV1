@@ -15,29 +15,7 @@ function Photos() {
   const [touchStartX, setTouchStartX] = useState(null);
   const [swipeInProgress, setSwipeInProgress] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const imagesPerPage = 155; // Adjust this based on your
-  const [modalImages, setModalImages] = useState([]);
-  const totalNumberOfImages = 310; // Replace this with the actual total number of images
-
-useEffect(() => {
-  // Load all images for the modal
-  const loadModalImages = async () => {
-    const modalImageArray = [];
-    for (let i = 1; i <= totalNumberOfImages; i++) {
-      try {
-        const module = await import(`../img/Photos/V&SGallery-${i}.jpg`);
-        modalImageArray.push({
-          src: module.default,
-        });
-      } catch (error) {
-        console.error("Error loading image:", error);
-      }
-    }
-    setModalImages(modalImageArray);
-  };
-
-  loadModalImages();
-}, []);
+  const imagesPerPage = 20; // Adjust this based on your
 
   useEffect(() => {
     // Load images for the current page
@@ -132,23 +110,23 @@ useEffect(() => {
   };
 
   const handleModalSwipe = (e) => {
-  const touchCurrentX = e.touches[0].clientX;
-  const touchDiff = touchCurrentX - touchStartX;
+    const touchCurrentX = e.touches[0].clientX;
+    const touchDiff = touchCurrentX - touchStartX;
 
-  if (Math.abs(touchDiff) > 50) {
-    if (touchDiff > 0) {
-      if (!swipeInProgress) {
-        setCurrent((current + modalImages.length - 1) % modalImages.length);
-        setSwipeInProgress(true);
-      }
-    } else if (touchDiff < 0) {
-      if (!swipeInProgress) {
-        setCurrent((current + 1) % modalImages.length);
-        setSwipeInProgress(true);
+    if (Math.abs(touchDiff) > 50) {
+      if (touchDiff > 0) {
+        if (!swipeInProgress) {
+          setCurrent((current + images.length - 1) % images.length);
+          setSwipeInProgress(true);
+        }
+      } else if (touchDiff < 0) {
+        if (!swipeInProgress) {
+          setCurrent((current + 1) % images.length);
+          setSwipeInProgress(true);
+        }
       }
     }
-  }
-};
+  };
 
   const handleKeyDown = (e) => {
     if (isModalOpen && (e.key === "ArrowLeft" || e.key === "ArrowRight")) {
@@ -270,24 +248,24 @@ useEffect(() => {
                 onWheel={handleCursorSwipe}
               >
                 <>
-                <img
-                  className="slideshow-image"
-                  src={modalImages[current]?.src}
-                  alt={`Image ${current}`}
-                  loading="lazy"
+                  <img
+                    className="slideshow-image"
+                    src={images[current].src}
+                    alt={`Image ${current}`}
+                    loading="lazy"
                   />
                   <div className="slideshow-nav">
                     <button
                       className="slideshow-nav-btn-left"
                       onClick={() =>
-                        setCurrent((current + images.length - 1) % modalImages.length)
+                        setCurrent((current + images.length - 1) % images.length)
                       }
                     >
                       &larr;
                     </button>
                     <button
                       className="slideshow-nav-btn-right"
-                      onClick={() => setCurrent((current + 1) % modalImages.length)}
+                      onClick={() => setCurrent((current + 1) % images.length)}
                     >
                       &rarr;
                     </button>
