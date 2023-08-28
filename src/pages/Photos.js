@@ -16,7 +16,29 @@ function Photos() {
   const [swipeInProgress, setSwipeInProgress] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const imagesPerPage = 20; // Adjust this based on your
+  const [modalImages, setModalImages] = useState([]);
+  const totalNumberOfImages = 310; // Replace this with the actual total number of images
 
+  useEffect(() => {
+    // Load all images for the modal
+    const loadModalImages = async () => {
+      const modalImageArray = [];
+      for (let i = 1; i <= totalNumberOfImages; i++) {
+        try {
+          const module = await import(`../img/Photos/V&SGallery-${i}.jpg`);
+          modalImageArray.push({
+            src: module.default,
+          });
+        } catch (error) {
+          console.error("Error loading image:", error);
+        }
+      }
+      setModalImages(modalImageArray);
+    };
+  
+    loadModalImages();
+  }, []);
+  
   useEffect(() => {
     // Load images for the current page
     const loadImages = async () => {
@@ -34,7 +56,14 @@ function Photos() {
           console.error("Error loading image:", error);
         }
       }
-      setImages((prevImages) => [...prevImages, ...imageArray]);
+
+      // Filter out already loaded images before adding new ones
+      setImages((prevImages) => {
+        const newImages = imageArray.filter((newImage) => {
+          return !prevImages.some((prevImage) => prevImage.src === newImage.src);
+        });
+        return [...prevImages, ...newImages];
+      });
     };
 
     loadImages();
@@ -116,12 +145,12 @@ function Photos() {
     if (Math.abs(touchDiff) > 50) {
       if (touchDiff > 0) {
         if (!swipeInProgress) {
-          setCurrent((current + images.length - 1) % images.length);
+          setCurrent((current + modalImages.length - 1) % modalImages.length);
           setSwipeInProgress(true);
         }
       } else if (touchDiff < 0) {
         if (!swipeInProgress) {
-          setCurrent((current + 1) % images.length);
+          setCurrent((current + 1) % modalImages.length);
           setSwipeInProgress(true);
         }
       }
@@ -250,7 +279,7 @@ function Photos() {
                 <>
                   <img
                     className="slideshow-image"
-                    src={images[current].src}
+                    src={modalImages[current]?.src}
                     alt={`Image ${current}`}
                     loading="lazy"
                   />
@@ -258,15 +287,15 @@ function Photos() {
                     <button
                       className="slideshow-nav-btn-left"
                       onClick={() =>
-                        setCurrent((current + images.length - 1) % images.length)
+                        setCurrent((current + modalImages.length - 1) % modalImages.length)
                       }
                     >
                       &larr;
                     </button>
                     <button
                       className="slideshow-nav-btn-right"
-                      onClick={() => setCurrent((current + 1) % images.length)}
-                    >
+                      onClick={() => setCurrent((current + 1) % modalImages.length)}
+                      >
                       &rarr;
                     </button>
                   </div>
