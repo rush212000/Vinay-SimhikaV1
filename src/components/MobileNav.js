@@ -76,7 +76,7 @@ const MobileNav = () => {
               width: '25px', 
               height: 'auto', 
               position: 'relative',
-              top: '-20px',
+              top: '-60px',
               size:'auto' }} />
           </a>
       </div>
@@ -105,7 +105,7 @@ const MobileNav = () => {
                  width: '190px',
                  height: '50px',
                  position: 'relative',
-                 bottom: '-30px',
+                 bottom: '20px',
                  fontSize: '16px',
                  fontFamily: 'Montserrat, sans-serif',
                  fontStyle: 'regular',
@@ -187,10 +187,10 @@ const MobileNav = () => {
         }
 
         .menu a {
-          font-size: 30px;
+          font-size: 25px;
           color: #ffffff; /* White font color */
           text-decoration: none;
-          margin-bottom: 30px;
+          margin-bottom: 20px;
         }
 
         .menu a:hover {
