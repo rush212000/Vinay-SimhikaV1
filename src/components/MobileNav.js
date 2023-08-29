@@ -69,7 +69,7 @@ const MobileNav = () => {
       </button>
 
       <div className={`icon-fade-in ${isOpen ? 'fade-in' : 'fade-out'}`}>
-          <a href='https://www.instagram.com/' target='_blank' rel='noopener noreferrer'>
+          <a href='https://www.instagram.com/simvinshisheart/' target='_blank' rel='noopener noreferrer'>
             <img src={gramImage} alt='Instagram' 
             className="container mx-auto h-full flex flex-col"
             style={{ 
