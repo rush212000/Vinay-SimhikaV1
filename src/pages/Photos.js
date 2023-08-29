@@ -48,7 +48,7 @@ function Photos() {
       const imageArray = [];
       for (let i = startIndex + 1; i <= endIndex; i++) {
         try {
-          const module = await import(`../img/Photos/V&SGallery-${i}.jpg`);
+          const module = await import(`../img/PhotosThumbnail/V&SGalleryT-${i}.jpg`);
           imageArray.push({
             src: module.default,
           });
