@@ -47,7 +47,7 @@ const Header = () => {
         }`}
         style={{ fontFamily: 'Montserrat, sans-serif' }}
       >
-        <div className="flex flex-col lg:flex-row lg:items-center w-full justify-between uppercase">
+        <div className="flex flex-col lg:flex-row lg:items-center w-full justify-between">
           {/* Logo Section */}
           <Link to={'/'} className="max-w-24">
             <img src={Logo} alt="Logo" className="max-h-9" />
@@ -67,35 +67,35 @@ const Header = () => {
               style={{ marginLeft: '-165px' }}
               onClick={handleNavbarButtonClick}
             >
-              Home
+              HOME
             </Link>
             <Link
               to={'/pages/OurEvent'}
               className="hover:underline md:underline-offset-4"
               onClick={handleNavbarButtonClick}
             >
-              Our Events
+              OUR EVENTS
             </Link>
             <Link
               to={'/pages/OurStory'}
               className="hover:underline md:underline-offset-4"
               onClick={handleNavbarButtonClick}
             >
-              Our Story
+              OUR STORY
             </Link>
             <Link
               to={'/pages/Photos'}
               className="hover:underline md:underline-offset-4"
               onClick={handleNavbarButtonClick}
             >
-              Photos
+              PHOTOS
             </Link>
             <Link
               to={'/pages/FAQs'}
               className="hover:underline md:underline-offset-4"
               onClick={handleNavbarButtonClick}
             >
-              FAQs
+              FAQS
             </Link>
           </nav>
 
