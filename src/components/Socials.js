@@ -9,7 +9,7 @@ const Socials = () => {
       <ul className='absolute top-7 right-30' style={{ marginLeft: '-175px' }}>
         {/* Add "ml-auto" class to move to the right */}
         <li>
-          <a href='https://www.instagram.com/' target='_blank' rel='noopener noreferrer'>
+          <a href='https://www.instagram.com/simvinshisheart/' target='_blank' rel='noopener noreferrer'>
             <img src={gramImage} alt='Instagram' style={{ width: '25px', height: 'auto' }} />
           </a>
         </li>
