@@ -68,7 +68,7 @@ const MobileNav = () => {
         {isOpen ? '✕' : '☰'}
       </button>
 
-      <div>
+      <div className={`icon-fade-in ${isOpen ? 'fade-in' : 'fade-out'}`}>
           <a href='https://www.instagram.com/' target='_blank' rel='noopener noreferrer'>
             <img src={gramImage} alt='Instagram' 
             className="container mx-auto h-full flex flex-col"
@@ -87,7 +87,8 @@ const MobileNav = () => {
 
 
               
-            <div style={{ zIndex: '1' }}>
+            <div className={`icon-fade-in ${isOpen ? 'fade-in' : 'fade-out'}`}
+              style={{ zIndex: '1' }}>
               <Link
                 to="/pages/RSVP"
                 style={{
@@ -195,6 +196,20 @@ const MobileNav = () => {
         .menu a:hover {
           color: #ccc; /* Light gray color on hover */
         }
+
+        .fade-in {
+          opacity: 1;
+          transition: opacity 500ms ease-in-out;
+        }
+      
+        .fade-out {
+          opacity: 0;
+          transition: opacity 500ms ease-in-out;
+        }
+        
+        .icon-fade-in.fade-out {
+          opacity: 0;
+        }        
       `}</style>
     </div>
   );
