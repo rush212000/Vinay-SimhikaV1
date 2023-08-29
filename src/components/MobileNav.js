@@ -53,7 +53,7 @@ const MobileNav = () => {
 
   return (
     <div className="navbar">
-      <CSSTransition in={isOpen} timeout={300} classNames="slide" unmountOnExit>
+      <CSSTransition in={isOpen} timeout={300} classNames="fade" unmountOnExit >
         <div className={`menu ${isOpen ? 'active' : ''}`}>
           <a href="/" onClick={closeNavbar}>Home</a>
           <a href="/pages/OurEvent" onClick={closeNavbar}>Our Events</a>
@@ -121,10 +121,6 @@ const MobileNav = () => {
         
         </div>
 
-
-
-
-
       <style jsx>{`
         .navbar {
           position: fixed;
@@ -132,9 +128,10 @@ const MobileNav = () => {
           right: ${isOpen ? '0' : '-800px'}; // Slide the menu in or out based on isOpen state
           width: 80%;
           height: 100%;
-          background-color: rgba(0, 0, 0, 0.95); /* Black background with 90% opacity */
+          background-color: rgba(0, 0, 0, ${isOpen ? '0.95' : '0'}); /* Black background with 90% opacity */
           color: #ffffff; /* White font color */
           z-index: 999;
+          transition: background-color 140ms ease-in-out;
         }
 
         .menu-btn {
@@ -199,17 +196,35 @@ const MobileNav = () => {
 
         .fade-in {
           opacity: 1;
-          transition: opacity 500ms ease-in-out;
+          transition: opacity 400ms ease-in-out;
         }
       
         .fade-out {
           opacity: 0;
-          transition: opacity 500ms ease-in-out;
+          transition: opacity 400ms ease-in-out;
         }
         
         .icon-fade-in.fade-out {
           opacity: 0;
         }        
+        
+        .fade-enter {
+          opacity: 0;
+        }
+      
+        .fade-enter-active {
+          opacity: 1;
+          transition: opacity 400ms ease-in-out;
+        }
+      
+        .fade-exit {
+          opacity: 1;
+        }
+      
+        .fade-exit-active {
+          opacity: 0;
+          transition: opacity 300ms ease-in-out;
+        }
       `}</style>
     </div>
   );

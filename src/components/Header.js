@@ -111,7 +111,7 @@ const Header = () => {
                 }}
               >
                 <button
-                  className="min-[0px]:invisible min-[1192px]:visible btn rounded-lg bg-white hover:bg-opacity-80 transition-all duration-300"
+                  className="min-[0px]:hidden min-[1192px]:block btn rounded-lg bg-white hover:bg-opacity-80 transition-all duration-300"
                   style={{
                     width: '85px',
                     height: '20px',
