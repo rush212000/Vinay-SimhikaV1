@@ -102,8 +102,8 @@ const MobileNav = () => {
               
                className="container mx-auto h-full flex flex-col btn rounded-lg bg-white hover:bg-opacity-80 transition-all duration-300"
                style={{
-                 width: '190px',
-                 height: '50px',
+                 width: '145px',
+                 height: '45px',
                  position: 'relative',
                  bottom: '20px',
                  fontSize: '16px',
@@ -184,7 +184,7 @@ const MobileNav = () => {
         }
 
         .menu a {
-          font-size: 25px;
+          font-size: 27px;
           color: #ffffff; /* White font color */
           text-decoration: none;
           margin-bottom: 20px;
