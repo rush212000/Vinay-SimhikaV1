@@ -53,7 +53,7 @@ const MobileNav = () => {
 
   return (
     <div className="navbar">
-      <CSSTransition in={isOpen} timeout={300} classNames="fade" unmountOnExit >
+      <CSSTransition in={isOpen} timeout={500} classNames="fade" unmountOnExit >
         <div className={`menu ${isOpen ? 'active' : ''}`}>
           <a href="/" onClick={closeNavbar}>Home</a>
           <a href="/pages/OurEvent" onClick={closeNavbar}>Our Events</a>
@@ -131,7 +131,7 @@ const MobileNav = () => {
           background-color: rgba(0, 0, 0, ${isOpen ? '0.95' : '0'}); /* Black background with 90% opacity */
           color: #ffffff; /* White font color */
           z-index: 999;
-          transition: background-color 140ms ease-in-out;
+          transition: background-color 200ms ease-in-out;
         }
 
         .menu-btn {
@@ -195,35 +195,42 @@ const MobileNav = () => {
         }
 
         .fade-in {
+          transform: translateY(0px);
           opacity: 1;
-          transition: opacity 400ms ease-in-out;
+          transition: opacity 500ms ease-in-out, transform 500ms ease-in-out;;
         }
       
         .fade-out {
+          transform: translateY(20px);
           opacity: 0;
-          transition: opacity 400ms ease-in-out;
+          transition: opacity 500ms ease-in-out, transform 500ms ease-in-out;;
         }
         
         .icon-fade-in.fade-out {
+          transform: translateY(20px);
           opacity: 0;
         }        
         
         .fade-enter {
+          transform: translateY(20px);
           opacity: 0;
         }
       
         .fade-enter-active {
+          transform: translateY(0px);
           opacity: 1;
-          transition: opacity 400ms ease-in-out;
+          transition: opacity 500ms ease-in-out, transform 500ms ease-in-out;
         }
       
         .fade-exit {
+          transform: translateY(0px);
           opacity: 1;
         }
       
         .fade-exit-active {
+          transform: translateY(20px);
           opacity: 0;
-          transition: opacity 300ms ease-in-out;
+          transition: opacity 500ms ease-in-out, transform 500ms ease-in-out;
         }
       `}</style>
     </div>
