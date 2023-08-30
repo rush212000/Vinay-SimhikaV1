@@ -119,6 +119,9 @@ const Header = () => {
                     fontFamily: 'Montserrat, sans-serif',
                     fontStyle: 'regular',
                     color: '#000000',
+                    textAlign: 'center', // Center-align the text horizontally
+                    display: 'flex', // Use flex display to center vertically
+                    justifyContent: 'center',
                   }}
                 >
                   RSVP
