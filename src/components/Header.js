@@ -111,7 +111,7 @@ const Header = () => {
                 }}
               >
                 <button
-                  className="min-[0px]:hidden min-[1192px]:block btn rounded-lg bg-white hover:bg-opacity-80 transition-all duration-300"
+                  className="max-[1191px]:hidden btn rounded-lg bg-white hover:bg-opacity-80 transition-all duration-300"
                   style={{
                     width: '85px',
                     height: '20px',
@@ -119,9 +119,6 @@ const Header = () => {
                     fontFamily: 'Montserrat, sans-serif',
                     fontStyle: 'regular',
                     color: '#000000',
-                    textAlign: 'center', // Center-align the text horizontally
-                    display: 'flex', // Use flex display to center vertically
-                    justifyContent: 'center',
                   }}
                 >
                   RSVP
