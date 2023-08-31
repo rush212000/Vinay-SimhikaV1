@@ -15,9 +15,9 @@ function Photos() {
   const [touchStartX, setTouchStartX] = useState(null);
   const [swipeInProgress, setSwipeInProgress] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const imagesPerPage = 310; // Adjust this based on your
+  const imagesPerPage = 278; // Adjust this based on your
   const [modalImages, setModalImages] = useState([]);
-  const totalNumberOfImages = 310; // Replace this with the actual total number of images
+  const totalNumberOfImages = 278; // Replace this with the actual total number of images
 
   useEffect(() => {
     // Load all images for the modal
