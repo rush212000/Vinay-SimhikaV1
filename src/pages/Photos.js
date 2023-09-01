@@ -7,6 +7,9 @@ import "react-lazy-load-image-component/src/effects/blur.css"; // Import a blur 
 import "./Photos.css";
 import VSfoot from '../img/Photos/vsFoot.png';
 import { imageArray } from "./PhotosImports";
+import { PhotoSwipeGallery } from "react-photoswipe";
+import 'react-photoswipe/lib/photoswipe.css';
+import 'react-photoswipe/dist/photoswipe.css';
 
 
 function Photos() {
@@ -18,12 +21,36 @@ function Photos() {
   const [currentPage, setCurrentPage] = useState(1);
   
   useEffect(() => {
-    // Create an array of photo objects for your gallery
-    const photoArray = imageArray.map((image) => ({
-      src: image,
-    }));
+    // Get the dimensions of the screen
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
+  
+    // Create an array of photo objects for your gallery with screen dimensions
+    const photoArray = imageArray.map((image) => {
+      const img = new Image();
+      img.src = image;
+  
+      // Calculate the new width and height while maintaining the aspect ratio
+      let newWidth, newHeight;
+      if (img.width / img.height > screenWidth / screenHeight) {
+        newWidth = screenWidth;
+        newHeight = (screenWidth * img.height) / img.width;
+      } else {
+        newHeight = screenHeight;
+        newWidth = (screenHeight * img.width) / img.height;
+      }
+  
+      return {
+        src: image,
+        w: newWidth,
+        h: newHeight,
+      };
+    });
+  
     setImages(photoArray);
   }, []);
+  
+  
   
   useEffect(() => {
     const handleScroll = () => {
@@ -219,50 +246,20 @@ function Photos() {
               </div>
             ))}
           </Masonry>
-          <Modal
-            isOpen={isModalOpen}
-            onRequestClose={closeSlideshow}
-            contentLabel="Image Slideshow"
-            className="modal"
-            overlayClassName="modal_overlay"
-          >
-            {current !== null && (
-              <div
-                onTouchStart={handleTouchStart}
-                onTouchMove={handleModalSwipe}
-                onTouchEnd={handleTouchEnd}
-                onWheel={handleCursorSwipe}
-              >
-                <>
-                  <img
-                    className="slideshow-image"
-                    src={images[current]?.src}
-                    alt={`Image ${current}`}
-                    loading="lazy"
-                  />
-                  <div className="slideshow-nav">
-                    <button
-                      className="slideshow-nav-btn-left"
-                      onClick={() =>
-                        setCurrent((current + images.length - 1) % images.length)
-                      }
-                    >
-                      &larr;
-                    </button>
-                    <button
-                      className="slideshow-nav-btn-right"
-                      onClick={() => setCurrent((current + 1) % images.length)}
-                      >
-                      &rarr;
-                    </button>
-                  </div>
-                  <div className="modal_close" onClick={closeSlideshow}>
-                    &#10005;
-                  </div>
-                </>
-              </div>
-            )}
-          </Modal>
+          {current !== null && (
+            <PhotoSwipeGallery
+              isOpen={isModalOpen}
+              items={images}
+              options={{
+                index: current,
+                bgOpacity: 0.98,
+                closeOnScroll: false,
+                shareEl: false,
+                preloaderEl: 2,
+              }}
+              onClose={closeSlideshow}
+            />
+          )}
           <Footer />
         </div>
       </div>
