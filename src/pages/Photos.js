@@ -21,35 +21,48 @@ function Photos() {
   const [currentPage, setCurrentPage] = useState(1);
   
   useEffect(() => {
-    // Get the dimensions of the screen
-    const screenWidth = window.innerWidth;
-    const screenHeight = window.innerHeight;
-  
     // Create an array of photo objects for your gallery with screen dimensions
     const photoArray = imageArray.map((image) => {
-      const img = new Image();
-      img.src = image;
+      return new Promise((resolve) => {
+        const img = new Image();
+        img.src = image;
+        img.onload = () => {
+          const screenWidth = window.innerWidth;
+          const screenHeight = window.innerHeight;
+          const aspectRatio = img.width / img.height;
   
-      // Calculate the new width and height while maintaining the aspect ratio
-      let newWidth, newHeight;
+          let dimensions;
   
-      if (img.width / img.height > screenWidth / screenHeight) {
-        newWidth = screenWidth;
-        newHeight = (newWidth * img.height) / img.width;
-      } else {
-        newHeight = screenHeight;
-        newWidth = (newHeight * img.width) / img.height;
-      }
+          if (aspectRatio >= 1) {
+            // Landscape image
+            const maxWidth = screenWidth * 1; // Adjust the factor as needed
+            const width = Math.min(img.width, maxWidth);
+            const height = width / aspectRatio;
   
-      return {
-        src: image,
-        w: newWidth,
-        h: newHeight,
-      };
+            dimensions = { w: width, h: height };
+          } else {
+            // Portrait image
+            const maxHeight = screenHeight * 0.9; // Adjust the factor as needed
+            const height = Math.min(img.height, maxHeight);
+            const width = height * aspectRatio;
+  
+            dimensions = { w: width, h: height };
+          }
+  
+          resolve({
+            src: image,
+            ...dimensions,
+          });
+        };
+      });
     });
   
-    setImages(photoArray);
+    Promise.all(photoArray).then((resolvedImages) => {
+      setImages(resolvedImages);
+    });
   }, []);
+  
+  
   
   
   
