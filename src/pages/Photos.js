@@ -270,7 +270,7 @@ function Photos() {
                 bgOpacity: 0.98,
                 closeOnScroll: false,
                 shareEl: false,
-                preloaderEl: 2,
+                //preloaderEl: 3,
               }}
               onClose={closeSlideshow}
             />
