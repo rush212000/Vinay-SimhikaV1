@@ -6,6 +6,7 @@ import "react-lazy-load-image-component/src/effects/opacity.css"; // Import a fa
 import "react-lazy-load-image-component/src/effects/blur.css"; // Import a blur effect
 import "./Photos.css";
 import VSfoot from '../img/Photos/vsFoot.png';
+import { imageArray } from "./PhotosImports";
 
 
 function Photos() {
@@ -15,59 +16,14 @@ function Photos() {
   const [touchStartX, setTouchStartX] = useState(null);
   const [swipeInProgress, setSwipeInProgress] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const imagesPerPage = 278; // Adjust this based on your
-  const [modalImages, setModalImages] = useState([]);
-  const totalNumberOfImages = 278; // Replace this with the actual total number of images
-
-  useEffect(() => {
-    // Load all images for the modal
-    const loadModalImages = async () => {
-      const modalImageArray = [];
-      for (let i = 1; i <= totalNumberOfImages; i++) {
-        try {
-          const module = await import(`../img/Photos/V&SGallery-${i}.jpg`);
-          modalImageArray.push({
-            src: module.default,
-          });
-        } catch (error) {
-          console.error("Error loading image:", error);
-        }
-      }
-      setModalImages(modalImageArray);
-    };
   
-    loadModalImages();
+  useEffect(() => {
+    // Create an array of photo objects for your gallery
+    const photoArray = imageArray.map((image) => ({
+      src: image,
+    }));
+    setImages(photoArray);
   }, []);
-  
-  useEffect(() => {
-    // Load images for the current page
-    const loadImages = async () => {
-      const startIndex = (currentPage - 1) * imagesPerPage;
-      const endIndex = startIndex + imagesPerPage;
-
-      const imageArray = [];
-      for (let i = startIndex + 1; i <= endIndex; i++) {
-        try {
-          const module = await import(`../img/PhotosThumbnail/V&SGalleryT-${i}.jpg`);
-          imageArray.push({
-            src: module.default,
-          });
-        } catch (error) {
-          console.error("Error loading image:", error);
-        }
-      }
-
-      // Filter out already loaded images before adding new ones
-      setImages((prevImages) => {
-        const newImages = imageArray.filter((newImage) => {
-          return !prevImages.some((prevImage) => prevImage.src === newImage.src);
-        });
-        return [...prevImages, ...newImages];
-      });
-    };
-
-    loadImages();
-  }, [currentPage]);
   
   useEffect(() => {
     const handleScroll = () => {
@@ -145,12 +101,12 @@ function Photos() {
     if (Math.abs(touchDiff) > 50) {
       if (touchDiff > 0) {
         if (!swipeInProgress) {
-          setCurrent((current + modalImages.length - 1) % modalImages.length);
+          setCurrent((current + images.length - 1) % images.length);
           setSwipeInProgress(true);
         }
       } else if (touchDiff < 0) {
         if (!swipeInProgress) {
-          setCurrent((current + 1) % modalImages.length);
+          setCurrent((current + 1) % images.length);
           setSwipeInProgress(true);
         }
       }
@@ -257,7 +213,8 @@ function Photos() {
                 className="photo-image"
                 src={image.src}
                 alt={`Image ${index}`}
-                effect="blur" // Apply a blur effect during loading
+                effect="opacity" // Apply a blur effect during loading
+                loading="lazy" // Enable lazy loading
               />
               </div>
             ))}
@@ -279,7 +236,7 @@ function Photos() {
                 <>
                   <img
                     className="slideshow-image"
-                    src={modalImages[current]?.src}
+                    src={images[current]?.src}
                     alt={`Image ${current}`}
                     loading="lazy"
                   />
@@ -287,14 +244,14 @@ function Photos() {
                     <button
                       className="slideshow-nav-btn-left"
                       onClick={() =>
-                        setCurrent((current + modalImages.length - 1) % modalImages.length)
+                        setCurrent((current + images.length - 1) % images.length)
                       }
                     >
                       &larr;
                     </button>
                     <button
                       className="slideshow-nav-btn-right"
-                      onClick={() => setCurrent((current + 1) % modalImages.length)}
+                      onClick={() => setCurrent((current + 1) % images.length)}
                       >
                       &rarr;
                     </button>
