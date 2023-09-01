@@ -135,9 +135,9 @@ function Photos() {
   const totalColumns = "";
 
   const columnBreakpoints = {
-    default: 5,
-    1100: 5,
-    700: 4,
+    default: 3,
+    1100: 3,
+    700: 3,
     500: 3,
   };
 
@@ -213,7 +213,7 @@ function Photos() {
                 className="photo-image"
                 src={image.src}
                 alt={`Image ${index}`}
-                effect="opacity" // Apply a blur effect during loading
+                effect="blur" // Apply a blur effect during loading
                 loading="lazy" // Enable lazy loading
               />
               </div>

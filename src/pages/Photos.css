@@ -163,7 +163,7 @@
   
   /* Styling for each photo item */
   .photo-item {
-    margin-bottom: 5px;
+    margin-bottom: 0px;
     cursor: pointer;
     overflow: hidden;
   }
