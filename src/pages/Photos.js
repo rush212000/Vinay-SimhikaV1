@@ -7,9 +7,6 @@ import "react-lazy-load-image-component/src/effects/blur.css"; // Import a blur 
 import "./Photos.css";
 import VSfoot from '../img/Photos/vsFoot.png';
 import { imageArray } from "./PhotosImports";
-import { PhotoSwipeGallery } from "react-photoswipe";
-import 'react-photoswipe/lib/photoswipe.css';
-import 'react-photoswipe/dist/photoswipe.css';
 
 
 function Photos() {
@@ -21,51 +18,12 @@ function Photos() {
   const [currentPage, setCurrentPage] = useState(1);
   
   useEffect(() => {
-    // Create an array of photo objects for your gallery with screen dimensions
-    const photoArray = imageArray.map((image) => {
-      return new Promise((resolve) => {
-        const img = new Image();
-        img.src = image;
-        img.onload = () => {
-          const screenWidth = window.innerWidth;
-          const screenHeight = window.innerHeight;
-          const aspectRatio = img.width / img.height;
-  
-          let dimensions;
-  
-          if (aspectRatio >= 1) {
-            // Landscape image
-            const maxWidth = screenWidth * 1; // Adjust the factor as needed
-            const width = Math.min(img.width, maxWidth);
-            const height = width / aspectRatio;
-  
-            dimensions = { w: width, h: height };
-          } else {
-            // Portrait image
-            const maxHeight = screenHeight * 0.9; // Adjust the factor as needed
-            const height = Math.min(img.height, maxHeight);
-            const width = height * aspectRatio;
-  
-            dimensions = { w: width, h: height };
-          }
-  
-          resolve({
-            src: image,
-            ...dimensions,
-          });
-        };
-      });
-    });
-  
-    Promise.all(photoArray).then((resolvedImages) => {
-      setImages(resolvedImages);
-    });
+    // Create an array of photo objects for your gallery
+    const photoArray = imageArray.map((image) => ({
+      src: image,
+    }));
+    setImages(photoArray);
   }, []);
-  
-  
-  
-  
-  
   
   useEffect(() => {
     const handleScroll = () => {
@@ -261,20 +219,50 @@ function Photos() {
               </div>
             ))}
           </Masonry>
-          {current !== null && (
-            <PhotoSwipeGallery
-              isOpen={isModalOpen}
-              items={images}
-              options={{
-                index: current,
-                bgOpacity: 0.98,
-                closeOnScroll: false,
-                shareEl: false,
-                //preloaderEl: 3,
-              }}
-              onClose={closeSlideshow}
-            />
-          )}
+          <Modal
+            isOpen={isModalOpen}
+            onRequestClose={closeSlideshow}
+            contentLabel="Image Slideshow"
+            className="modal"
+            overlayClassName="modal_overlay"
+          >
+            {current !== null && (
+              <div
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleModalSwipe}
+                onTouchEnd={handleTouchEnd}
+                onWheel={handleCursorSwipe}
+              >
+                <>
+                  <img
+                    className="slideshow-image"
+                    src={images[current]?.src}
+                    alt={`Image ${current}`}
+                    loading="lazy"
+                  />
+                  <div className="slideshow-nav">
+                    <button
+                      className="slideshow-nav-btn-left"
+                      onClick={() =>
+                        setCurrent((current + images.length - 1) % images.length)
+                      }
+                    >
+                      &larr;
+                    </button>
+                    <button
+                      className="slideshow-nav-btn-right"
+                      onClick={() => setCurrent((current + 1) % images.length)}
+                      >
+                      &rarr;
+                    </button>
+                  </div>
+                  <div className="modal_close" onClick={closeSlideshow}>
+                    &#10005;
+                  </div>
+                </>
+              </div>
+            )}
+          </Modal>
           <Footer />
         </div>
       </div>
@@ -283,3 +271,4 @@ function Photos() {
 }
 
 export default Photos;
+
