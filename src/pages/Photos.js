@@ -32,12 +32,13 @@ function Photos() {
   
       // Calculate the new width and height while maintaining the aspect ratio
       let newWidth, newHeight;
+  
       if (img.width / img.height > screenWidth / screenHeight) {
         newWidth = screenWidth;
-        newHeight = (screenWidth * img.height) / img.width;
+        newHeight = (newWidth * img.height) / img.width;
       } else {
         newHeight = screenHeight;
-        newWidth = (screenHeight * img.width) / img.height;
+        newWidth = (newHeight * img.width) / img.height;
       }
   
       return {
@@ -49,6 +50,7 @@ function Photos() {
   
     setImages(photoArray);
   }, []);
+  
   
   
   
