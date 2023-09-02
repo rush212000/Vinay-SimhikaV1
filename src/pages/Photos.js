@@ -31,19 +31,18 @@ function Photos() {
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
 
-      if (scrollY + windowHeight >= documentHeight - 100) {
+      if (scrollY + windowHeight >= documentHeight - 200) {
         setCurrentPage((prevPage) => prevPage + 1);
       }
     };
 
     window.addEventListener("scroll", handleScroll);
-
+  
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
-
+  
   useEffect(() => {
     if (isModalOpen) {
       document.body.style.overflow = "hidden";
@@ -143,6 +142,14 @@ function Photos() {
 
   const columnClassName = "masonry-grid-column";
 
+  const imagesPerPage = 12; // Adjust this number as needed
+
+   // Calculate the index range to display
+   const startIndex = 0;
+   const endIndex = currentPage * imagesPerPage;
+
+   // Use slice to select images within the desired range
+   const displayedImages = images.slice(startIndex, endIndex);
 
 
   const Footer = () => {
@@ -199,7 +206,7 @@ function Photos() {
             className="masonry-grid"
             columnClassName={columnClassName}
           >
-            {images.map((image, index) => (
+            {displayedImages.map((image, index) => (
               <div
                 key={index}
                 className="photo-item"
