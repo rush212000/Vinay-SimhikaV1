@@ -31,7 +31,7 @@ function Photos() {
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
 
-      if (scrollY + windowHeight >= documentHeight - 200) {
+      if (scrollY + windowHeight >= documentHeight - 100) {
         setCurrentPage((prevPage) => prevPage + 1);
       }
     };
