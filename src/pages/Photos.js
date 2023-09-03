@@ -7,6 +7,7 @@ import "react-lazy-load-image-component/src/effects/blur.css"; // Import a blur 
 import "./Photos.css";
 import VSfoot from '../img/Photos/vsFoot.png';
 import { imageArray } from "./PhotosImports";
+import { Fade } from "react-awesome-reveal";
 
 
 function Photos() {
@@ -16,6 +17,7 @@ function Photos() {
   const [touchStartX, setTouchStartX] = useState(null);
   const [swipeInProgress, setSwipeInProgress] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+  
   
   useEffect(() => {
     // Create an array of photo objects for your gallery
@@ -31,7 +33,7 @@ function Photos() {
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
 
-      if (scrollY + windowHeight >= documentHeight - 100) {
+      if (scrollY + windowHeight >= documentHeight - 200) {
         setCurrentPage((prevPage) => prevPage + 1);
       }
     };
@@ -216,13 +218,15 @@ function Photos() {
                 onTouchEnd={handleTouchEnd}
                 onWheel={handleCursorSwipe}
               >
+            <Fade>
                 <LazyLoadImage
                 className="photo-image"
                 src={image.src}
-                alt={`Image ${index}`}
                 effect="blur" // Apply a blur effect during loading
                 loading="lazy" // Enable lazy loading
-              />
+                alt={`Image ${index}`}
+                />
+             </Fade>
               </div>
             ))}
           </Masonry>
