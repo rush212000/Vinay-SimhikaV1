@@ -1,139 +1,49 @@
 import React, { useState, useEffect } from "react";
-import Modal from "react-modal";
 import Masonry from "react-masonry-css";
-import { LazyLoadImage } from "react-lazy-load-image-component"; // Use this package for lazy loading
-import "react-lazy-load-image-component/src/effects/opacity.css"; // Import a fade-in effect
-import "react-lazy-load-image-component/src/effects/blur.css"; // Import a blur effect
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/opacity.css";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import "./Photos.css";
 import VSfoot from '../img/Photos/vsFoot.png';
 import { imageArray } from "./PhotosImports";
 import { Fade } from "react-awesome-reveal";
-
+import FsLightbox from "fslightbox-react";
 
 function Photos() {
-  const [current, setCurrent] = useState(null);
   const [images, setImages] = useState([]);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [touchStartX, setTouchStartX] = useState(null);
-  const [swipeInProgress, setSwipeInProgress] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  
-  
+  const [currentImageIndex, setCurrentImageIndex] = useState(null);
+  const [toggler, setToggler] = useState(false);
+
   useEffect(() => {
-    // Create an array of photo objects for your gallery
-    const photoArray = imageArray.map((image) => ({
-      src: image,
-    }));
+    const photoArray = imageArray.map((image) => ({ src: image }));
     setImages(photoArray);
   }, []);
-  
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
 
-      if (scrollY + windowHeight >= documentHeight - 200) {
+      if (scrollY + windowHeight >= documentHeight - 100) {
         setCurrentPage((prevPage) => prevPage + 1);
       }
     };
 
     window.addEventListener("scroll", handleScroll);
-  
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  
-  useEffect(() => {
-    if (isModalOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "visible";
-    }
-  }, [isModalOpen]);
 
   const openSlideshow = (index) => {
-    setCurrent(index);
-    setIsModalOpen(true);
+    setCurrentImageIndex(index);
+    setToggler(!toggler);
   };
 
-  const closeSlideshow = () => {
-    setCurrent(null);
-    setIsModalOpen(false);
-  };
-
-  const handleSwipe = (delta) => {
-    if (Math.abs(delta) > 50) {
-      if (delta > 0) {
-        setCurrent((current + images.length - 1) % images.length);
-      } else if (delta < 0) {
-        setCurrent((current + 1) % images.length);
-      }
-    }
-  };
-
-  const handleTouchStart = (e) => {
-    setTouchStartX(e.touches[0].clientX);
-  };
-
-  const handleTouchMove = (e) => {
-    if (touchStartX !== null) {
-      const touchCurrentX = e.touches[0].clientX;
-      const touchDiff = touchCurrentX - touchStartX;
-      handleSwipe(touchDiff);
-    }
-  };
-
-  const handleTouchEnd = () => {
-    setTouchStartX(null);
-    setSwipeInProgress(false);
-  };
-
-  const handleCursorSwipe = (e) => {
-    const cursorDiff = e.deltaX;
-    handleSwipe(cursorDiff);
-  };
-
-  const handleModalSwipe = (e) => {
-    const touchCurrentX = e.touches[0].clientX;
-    const touchDiff = touchCurrentX - touchStartX;
-
-    if (Math.abs(touchDiff) > 50) {
-      if (touchDiff > 0) {
-        if (!swipeInProgress) {
-          setCurrent((current + images.length - 1) % images.length);
-          setSwipeInProgress(true);
-        }
-      } else if (touchDiff < 0) {
-        if (!swipeInProgress) {
-          setCurrent((current + 1) % images.length);
-          setSwipeInProgress(true);
-        }
-      }
-    }
-  };
-
-  const handleKeyDown = (e) => {
-    if (isModalOpen && (e.key === "ArrowLeft" || e.key === "ArrowRight")) {
-      if (e.key === "ArrowLeft") {
-        setCurrent((current + images.length - 1) % images.length);
-      } else if (e.key === "ArrowRight") {
-        setCurrent((current + 1) % images.length);
-      }
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener("keydown", handleKeyDown);
-
-    return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [current, isModalOpen]);
-
-  const imagesPerColumn = "";
-  const totalColumns = "";
+  const imagesPerPage = 12;
 
   const columnBreakpoints = {
     default: 3,
@@ -144,31 +54,20 @@ function Photos() {
 
   const columnClassName = "masonry-grid-column";
 
-  const imagesPerPage = 12; // Adjust this number as needed
+  const startIndex = 0;
+  const endIndex = currentPage * imagesPerPage;
+  const displayedImages = images.slice(startIndex, endIndex);
 
-   // Calculate the index range to display
-   const startIndex = 0;
-   const endIndex = currentPage * imagesPerPage;
-
-   // Use slice to select images within the desired range
-   const displayedImages = images.slice(startIndex, endIndex);
-
-
-  const Footer = () => {
-    return (
-      <footer className="footer mt-auto">
-        <div className="container mx-auto py-4">
-          {/* Add your footer content here */}
-          <div className="flex justify-center items-center">
-            <img src={VSfoot} alt="Footer Image" className="w-20 h-20 mr-4" />
-            <p className="text-center text-gray-600">
-              
-            </p>
-          </div>
+  const Footer = () => (
+    <footer className="footer mt-auto">
+      <div className="container mx-auto py-4">
+        <div className="flex justify-center items-center">
+          <img src={VSfoot} alt="Footer Image" className="w-20 h-20 mr-4" />
+          <p className="text-center text-gray-600"></p>
         </div>
-      </footer>
-    );
-  };
+      </div>
+    </footer>
+  );
 
   return (
     <div style={{ backgroundColor: "#E0E0E0" }}>
@@ -213,67 +112,26 @@ function Photos() {
                 key={index}
                 className="photo-item"
                 onClick={() => openSlideshow(index)}
-                onTouchStart={handleTouchStart}
-                onTouchMove={handleTouchMove}
-                onTouchEnd={handleTouchEnd}
-                onWheel={handleCursorSwipe}
               >
-            <Fade>
-                <LazyLoadImage
-                className="photo-image"
-                src={image.src}
-                effect="blur" // Apply a blur effect during loading
-                loading="lazy" // Enable lazy loading
-                alt={`Image ${index}`}
-                />
-             </Fade>
+                <Fade>
+                  <LazyLoadImage
+                    className="photo-image"
+                    src={image.src}
+                    effect="blur"
+                    loading="lazy"
+                    alt={`Image ${index}`}
+                  />
+                </Fade>
               </div>
             ))}
           </Masonry>
-          <Modal
-            isOpen={isModalOpen}
-            onRequestClose={closeSlideshow}
-            contentLabel="Image Slideshow"
-            className="modal"
-            overlayClassName="modal_overlay"
-          >
-            {current !== null && (
-              <div
-                onTouchStart={handleTouchStart}
-                onTouchMove={handleModalSwipe}
-                onTouchEnd={handleTouchEnd}
-                onWheel={handleCursorSwipe}
-              >
-                <>
-                  <img
-                    className="slideshow-image"
-                    src={images[current]?.src}
-                    alt={`Image ${current}`}
-                    loading="lazy"
-                  />
-                  <div className="slideshow-nav">
-                    <button
-                      className="slideshow-nav-btn-left"
-                      onClick={() =>
-                        setCurrent((current + images.length - 1) % images.length)
-                      }
-                    >
-                      &larr;
-                    </button>
-                    <button
-                      className="slideshow-nav-btn-right"
-                      onClick={() => setCurrent((current + 1) % images.length)}
-                      >
-                      &rarr;
-                    </button>
-                  </div>
-                  <div className="modal_close" onClick={closeSlideshow}>
-                    &#10005;
-                  </div>
-                </>
-              </div>
-            )}
-          </Modal>
+
+          <FsLightbox
+            toggler={toggler}
+            sources={images.map((image) => image.src)}
+            sourceIndex={currentImageIndex !== null ? currentImageIndex : 0}
+          />
+
           <Footer />
         </div>
       </div>
@@ -282,4 +140,3 @@ function Photos() {
 }
 
 export default Photos;
-
