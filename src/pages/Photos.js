@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Masonry from "react-masonry-css";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/opacity.css";
-import "react-lazy-load-image-component/src/effects/blur.css";
+import LazyImg from "react-lazyimg-component";
 import "./Photos.css";
 import VSfoot from '../img/Photos/vsFoot.png';
 import { imageArray } from "./PhotosImports";
@@ -43,8 +41,6 @@ function Photos() {
     setToggler(!toggler);
   };
 
-  const imagesPerPage = 12;
-
   const columnBreakpoints = {
     default: 3,
     1100: 3,
@@ -53,10 +49,6 @@ function Photos() {
   };
 
   const columnClassName = "masonry-grid-column";
-
-  const startIndex = 0;
-  const endIndex = currentPage * imagesPerPage;
-  const displayedImages = images.slice(startIndex, endIndex);
 
   const Footer = () => (
     <footer className="footer mt-auto">
@@ -107,18 +99,16 @@ function Photos() {
             className="masonry-grid"
             columnClassName={columnClassName}
           >
-            {displayedImages.map((image, index) => (
+            {images.map((image, index) => (
               <div
                 key={index}
                 className="photo-item"
                 onClick={() => openSlideshow(index)}
               >
                 <Fade>
-                  <LazyLoadImage
+                  <LazyImg
                     className="photo-image"
                     src={image.src}
-                    effect="blur"
-                    loading="lazy"
                     alt={`Image ${index}`}
                   />
                 </Fade>

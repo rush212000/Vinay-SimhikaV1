@@ -20,6 +20,7 @@
     "react-imgix": "^9.8.0",
     "react-intersection-observer": "^9.5.2",
     "react-lazy-load-image-component": "^1.6.0",
+    "react-lazyimg-component": "^1.0.1",
     "react-masonry-css": "^1.0.16",
     "react-modal": "^3.16.1",
     "react-photoswipe": "^1.3.0",
