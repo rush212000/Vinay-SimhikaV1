@@ -277,7 +277,12 @@ import VSG276 from '../img/Photos/V&SGallery-276.jpg';
 import VSG277 from '../img/Photos/V&SGallery-277.jpg';
 import VSG278 from '../img/Photos/V&SGallery-278.jpg';
 import VSG279 from '../img/Photos/V&SGallery-279.jpg';
-
+import VSG280 from '../img/Photos/V&SGallery-280.jpg';
+import VSG281 from '../img/Photos/V&SGallery-281.jpg';
+import VSG282 from '../img/Photos/V&SGallery-282.jpg';
+import VSG283 from '../img/Photos/V&SGallery-283.jpg';
+import VSG284 from '../img/Photos/V&SGallery-284.jpg';
+import VSG285 from '../img/Photos/V&SGallery-285.jpg';
 
 export const imageArray = [
     VSG1,
@@ -559,5 +564,11 @@ export const imageArray = [
     VSG277,
     VSG278,
     VSG279,
+    VSG280,
+    VSG281,
+    VSG282,
+    VSG283,
+    VSG284,
+    VSG285,
   ];
   
