@@ -181,6 +181,8 @@ const OurEvent = () => {
             <br/>
             <br/>
              Dress code: Bright and vibrant outfits
+             <br/>
+             This event will be for Vinay's guests.
           
         </div>
         <br/>

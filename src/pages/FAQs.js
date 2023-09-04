@@ -118,7 +118,7 @@ const FAQs = () => {
           <br/>
           <p style={{fontSize: '30px'}}><span style={{fontWeight: '500'}}>What will the weather be like this time of year?</span></p>
           <br/>
-          Be prepared for heat! We recommend packing plenty of sun protection as temperatures can surpass 40&#176;C. We aim to keep you as cool and comfortable as possible and have measures in place for this. 
+          Be prepared for heat! We recommend packing plenty of sun protection as temperatures can surpass 40&#176;C. We aim to keep you as cool and comfortable as possible. 
           <br/>
           <br/>
           <br/>
